@@ -26,7 +26,7 @@ export default function Footer() {
         DIANA BUSCH · NEXT CHAPTER · 2026
       </span>
       <a
-        href="https://github.com/diana-busch"
+        href="https://github.com/DBusch-Developer/pre-work"
         target="_blank"
         rel="noopener noreferrer"
         style={{
