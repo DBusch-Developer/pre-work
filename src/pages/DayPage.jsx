@@ -24,7 +24,7 @@ export default function DayPage({ day, activeDay, totalDays, setActiveDay }) {
             opacity: 0.8,
           }}
         >
-          Day {day.number} of {totalDays}
+          Day {activeDay + 1} — {day.label}
         </div>
         <h2
           style={{

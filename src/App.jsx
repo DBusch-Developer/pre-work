@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { days } from "./data/days";
+import { days } from "./data/index.js";
 import Header from "./components/Header";
 import DayNav from "./components/DayNav";
 import Footer from "./components/Footer";

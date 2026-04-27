@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function AccordionItem({ q, a, accentColor }) {
+export default function AccordionItem({ q, a, link, accentColor }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -66,7 +66,24 @@ export default function AccordionItem({ q, a, accentColor }) {
             wordBreak: "break-word",
           }}
         >
-          {a}
+          {a}<br />
+          {link && (
+            <a
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "inline-block",
+                marginTop: "8px",
+                color: accentColor,
+                textDecoration: "none",
+                borderBottom: `1px solid ${accentColor}`,
+                opacity: 0.85,
+              }}
+            >
+              {link.label}
+            </a>
+          )}
         </div>
       )}
     </div>

@@ -1,4 +1,4 @@
-import { days } from "../data/days";
+import { days } from "../data/index.js";
 
 export default function Header({ activeDay }) {
   return (
@@ -37,7 +37,9 @@ export default function Header({ activeDay }) {
       >
         Diana Busch
         <br />
-        <span style={{ color: "#525252", fontStyle: "italic" }}>learning out loud.</span>
+        <span style={{ color: "#525252", fontStyle: "italic" }}>
+          learning out loud.
+        </span>
       </h1>
 
       <p
@@ -49,8 +51,9 @@ export default function Header({ activeDay }) {
           maxWidth: "520px",
         }}
       >
-        Five days of pre-work before Day 1 of the Next Chapter AI-Augmented Builder program.
-        Every question I asked AI, every answer it gave, every place it broke — documented here.
+        A running record of learning to build with AI inside the Next Chapter
+        program. Every prompt, every answer, every moment it surprised me —
+        documented here.
       </p>
 
       {/* Progress dots */}

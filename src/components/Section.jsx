@@ -34,7 +34,7 @@ export default function Section({ section, accentColor }) {
       </div>
 
       {section.qa.map((item, i) => (
-        <AccordionItem key={i} q={item.q} a={item.a} accentColor={accentColor} />
+        <AccordionItem key={i} q={item.q} a={item.a} link={item.link} accentColor={accentColor} />
       ))}
     </div>
   );

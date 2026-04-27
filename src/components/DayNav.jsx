@@ -1,4 +1,4 @@
-import { days } from "../data/days";
+import { days } from "../data/index.js";
 
 export default function DayNav({ activeDay, setActiveDay }) {
   return (
@@ -21,7 +21,10 @@ export default function DayNav({ activeDay, setActiveDay }) {
           style={{
             background: "none",
             border: "none",
-            borderBottom: i === activeDay ? `2px solid ${d.color}` : "2px solid transparent",
+            borderBottom:
+              i === activeDay
+                ? `2px solid ${d.color}`
+                : "2px solid transparent",
             padding: "16px 20px 14px",
             cursor: "pointer",
             fontFamily: "'Courier New', monospace",
@@ -33,7 +36,7 @@ export default function DayNav({ activeDay, setActiveDay }) {
             flexShrink: 0,
           }}
         >
-          DAY {d.number}
+          {d.label}
         </button>
       ))}
     </nav>
