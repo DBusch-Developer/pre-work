@@ -350,7 +350,7 @@ const message = "Hello, " + name + "! Your favorite color is " + color + " and y
         },
         {
           q: "Did the modification work?",
-          a: "(what you saw when you ran it)",
+          a: `Yes! The program now asks for the user's favorite food and includes it in the greeting message. If you type "Sushi" as your favorite food, the output would be: "Hello, Marcus! Your favorite color is green and your favorite food is Sushi." This shows how we can easily expand the functionality by adding more prompts and updating the output message accordingly.`,
         },
       ],
     },
