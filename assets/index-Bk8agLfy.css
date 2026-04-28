@@ -1,0 +1,1 @@
+*,:before,:after{box-sizing:border-box}body{margin:0;padding:0}.day-nav::-webkit-scrollbar{height:2px}.day-nav::-webkit-scrollbar-track{background:0 0;margin:0 40%}.day-nav::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb,#f59e0b);border-radius:999px}.day-nav::-webkit-scrollbar-thumb:hover{background:var(--scrollbar-thumb,#f59e0b);opacity:.8}

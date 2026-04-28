@@ -603,4 +603,309 @@ AI's Answer: The best thing about Fridays is that everything feels a little ligh
 
 AI's Answer: If I could have any superpower, I would choose the ability to pause time—so I could think, explore, and enjoy moments without everything rushing past.`},{q:`Part A — "The hardest part about starting something new is" — my answer vs. AI's`,a:`My Answer: The hardest part about starting something new is the fear of looking stupid or failing.
           
-AI's Answer: The hardest part about starting something new is getting past that first moment of doubt—when you don’t feel ready but have to begin anyway.`},{q:`Did AI's answers match mine? Why or why not?`,a:`AI's answers were thoughtful and well-written, but they didn’t match mine at all. That’s because AI generates responses based on patterns in data, not personal experience or feelings.`},{q:`I ran prompt #1 three times — did I get the same answer each time?`,a:`No, I got a different answer each time. This shows that AI can generate multiple valid responses to the same prompt, and it doesn’t have a single “right” answer.`},{q:`Part B — I asked AI what year it is. What happened?`,a:`It said - It’s 2026.`},{q:`Part B — I asked AI to count the letters in "strawberry." What happened?`,a:`Strawberry has 10 letters. It got it right.`},{q:`Part B — I asked AI something about myself it couldn't possibly know. What happened?`,a:"I asked ChatGPT if I had mental issues... it said, `I can’t tell whether you have any mental health issues. That’s something a qualified professional—like a therapist, psychologist, or doctor—would need to assess based on a real conversation. If you’re asking because something feels off (stress, anxiety, mood changes, trouble focusing, etc.), it might help to talk it through with someone you trust or a professional. If you want, you can tell me what’s been going on, and I can help you sort through it or suggest what next steps might look like.`"}]},{heading:`Lab 5 — AI Can Code`,description:`The prompt → copy → paste → run loop. Your first working webpage.`,qa:[{q:`I asked AI to write the Hello World HTML page. What did it generate?`,a:`A blank page with the words 'Hello, World!' in big blue letters in the center.`},{q:`Did it work when I pasted into Replit and hit Run?`,a:`Yes! It worked perfectly the first time. The page displayed exactly as described, with 'Hello, World!' in big blue letters in the center.`},{q:`Level 1 — I changed 'Hello, World!' to my name. What did I change?`,a:`I changed the text inside the <h1> tags from 'Hello, World!' to 'Diana Busch'. So it went from <h1 style="color: blue; text-align: center; margin-top: 20%;">Hello, World!</h1> to <h1 style="color: blue; text-align: center; margin-top: 20%;">Diana Busch</h1>.`},{q:`Level 2 — I changed the color from blue to red. How?`,a:`I changed the value of the 'color' property in the style attribute of the <h1> tag from 'blue' to 'red'. So it went from <h1 style="color: blue; text-align: center; margin-top: 20%;">Diana Busch</h1> to <h1 style="color: red; text-align: center; margin-top: 20%;">Diana Busch</h1>.`},{q:`Level 3 — I added a second line of text. What did I add?`,a:`I added a new <p> tag below the <h1> tag with the text 'Learning to code with AI!' and styled it to be centered and green. So I added <p style="color: green; text-align: center;">Learning to code with AI!</p> right after the closing </h1> tag.`}]}]}],f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeDay:e}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Pre-Work Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`8px`,marginTop:`28px`},children:d.map((t,n)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:n===e?t.color:`#2a2a2a`,transition:`background 0.3s`}},n))})]})}function h({activeDay:e,setActiveDay:t}){return(0,p.jsx)(`nav`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`0 32px`,borderBottom:`1px solid #1a1a1a`,display:`flex`,overflowX:`auto`},children:d.map((n,r)=>(0,p.jsx)(`button`,{onClick:()=>t(r),style:{background:`none`,border:`none`,borderBottom:r===e?`2px solid ${n.color}`:`2px solid transparent`,padding:`16px 20px 14px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:r===e?n.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:n.label},r))})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,activeDay:t,totalDays:n,setActiveDay:r}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[`Day `,t+1,` — `,e.label]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:()=>r(Math.max(0,t-1)),disabled:t===0,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:t===0?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:t===0?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:()=>r(Math.min(n-1,t+1)),disabled:t===n-1,style:{background:`none`,border:`1px solid ${t===n-1?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:t===n-1?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:t===n-1?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),n=d[e];return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeDay:e}),(0,p.jsx)(h,{activeDay:e,setActiveDay:t}),(0,p.jsx)(y,{day:n,activeDay:e,totalDays:d.length,setActiveDay:t}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
+AI's Answer: The hardest part about starting something new is getting past that first moment of doubt—when you don’t feel ready but have to begin anyway.`},{q:`Did AI's answers match mine? Why or why not?`,a:`AI's answers were thoughtful and well-written, but they didn’t match mine at all. That’s because AI generates responses based on patterns in data, not personal experience or feelings.`},{q:`I ran prompt #1 three times — did I get the same answer each time?`,a:`No, I got a different answer each time. This shows that AI can generate multiple valid responses to the same prompt, and it doesn’t have a single “right” answer.`},{q:`Part B — I asked AI what year it is. What happened?`,a:`It said - It’s 2026.`},{q:`Part B — I asked AI to count the letters in "strawberry." What happened?`,a:`Strawberry has 10 letters. It got it right.`},{q:`Part B — I asked AI something about myself it couldn't possibly know. What happened?`,a:"I asked ChatGPT if I had mental issues... it said, `I can’t tell whether you have any mental health issues. That’s something a qualified professional—like a therapist, psychologist, or doctor—would need to assess based on a real conversation. If you’re asking because something feels off (stress, anxiety, mood changes, trouble focusing, etc.), it might help to talk it through with someone you trust or a professional. If you want, you can tell me what’s been going on, and I can help you sort through it or suggest what next steps might look like.`"}]},{heading:`Lab 5 — AI Can Code`,description:`The prompt → copy → paste → run loop. Your first working webpage.`,qa:[{q:`I asked AI to write the Hello World HTML page. What did it generate?`,a:`A blank page with the words 'Hello, World!' in big blue letters in the center.`},{q:`Did it work when I pasted into Replit and hit Run?`,a:`Yes! It worked perfectly the first time. The page displayed exactly as described, with 'Hello, World!' in big blue letters in the center.`},{q:`Level 1 — I changed 'Hello, World!' to my name. What did I change?`,a:`I changed the text inside the <h1> tags from 'Hello, World!' to 'Diana Busch'. So it went from <h1 style="color: blue; text-align: center; margin-top: 20%;">Hello, World!</h1> to <h1 style="color: blue; text-align: center; margin-top: 20%;">Diana Busch</h1>.`},{q:`Level 2 — I changed the color from blue to red. How?`,a:`I changed the value of the 'color' property in the style attribute of the <h1> tag from 'blue' to 'red'. So it went from <h1 style="color: blue; text-align: center; margin-top: 20%;">Diana Busch</h1> to <h1 style="color: red; text-align: center; margin-top: 20%;">Diana Busch</h1>.`},{q:`Level 3 — I added a second line of text. What did I add?`,a:`I added a new <p> tag below the <h1> tag with the text 'Learning to code with AI!' and styled it to be centered and green. So I added <p style="color: green; text-align: center;">Learning to code with AI!</p> right after the closing </h1> tag.`}]}]},{number:7,label:`Cohort 2`,title:`Cohort Day 2 — Prompt Makeover`,subtitle:`Better questions get better answers. The proof is in the output.`,color:`#a78bfa`,sections:[{heading:`Lab 1 — Prompt Makeover`,description:`Three bad prompts. Rewrite them. Compare what changes.`,qa:[{q:`Bad Prompt A — original: "Write code for a calculator" — output`,a:`Write code for a calculator
+
+Here's a simple calculator program in Python:
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Error: Division by zero"
+    return a / b
+
+print("Simple Calculator")
+print("Operations: +  -  *  /")
+
+while True:
+    choice = input("Enter operation (+, -, *, /) or 'q' to quit: ")
+    if choice == 'q':
+        print("Goodbye!")
+        break
+    if choice not in ['+', '-', '*', '/']:
+        print("Invalid operation")
+        continue
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+    except ValueError:
+        print("Invalid input. Please enter numbers.")
+        continue
+    if choice == '+':
+        print("Result:", add(num1, num2))
+    elif choice == '-':
+        print("Result:", subtract(num1, num2))
+    elif choice == '*':
+        print("Result:", multiply(num1, num2))
+    elif choice == '/':
+        print("Result:", divide(num1, num2))`},{q:`Bad Prompt A — my improved prompt`,a:`I want a more advanced version with a GUI.`},{q:`Bad Prompt A — improved output`,a:`Here's a more advanced Python GUI calculator using tkinter:
+
+import tkinter as tk
+import math
+
+def press(value):
+    entry.insert(tk.END, value)
+
+def clear():
+    entry.delete(0, tk.END)
+
+def backspace():
+    current = entry.get()
+    entry.delete(0, tk.END)
+    entry.insert(0, current[:-1])
+
+def calculate():
+    try:
+        expression = entry.get()
+        expression = expression.replace("π", str(math.pi))
+        expression = expression.replace("√", "math.sqrt")
+        expression = expression.replace("^", "**")
+        result = eval(expression, {"math": math, "__builtins__": {}})
+        entry.delete(0, tk.END)
+        entry.insert(0, result)
+    except Exception:
+        entry.delete(0, tk.END)
+        entry.insert(0, "Error")
+
+def scientific(func):
+    try:
+        value = float(entry.get())
+        if func == "sin":   result = math.sin(math.radians(value))
+        elif func == "cos": result = math.cos(math.radians(value))
+        elif func == "tan": result = math.tan(math.radians(value))
+        elif func == "log": result = math.log10(value)
+        elif func == "ln":  result = math.log(value)
+        elif func == "sqrt": result = math.sqrt(value)
+        elif func == "factorial": result = math.factorial(int(value))
+        entry.delete(0, tk.END)
+        entry.insert(0, result)
+    except Exception:
+        entry.delete(0, tk.END)
+        entry.insert(0, "Error")
+
+root = tk.Tk()
+root.title("Advanced GUI Calculator")
+root.geometry("400x550")
+root.resizable(False, False)
+
+entry = tk.Entry(root, font=("Arial", 24), borderwidth=5, relief="ridge", justify="right")
+entry.pack(fill="both", padx=10, pady=10, ipady=10)
+
+buttons = [
+    ["C", "⌫", "(", ")"],
+    ["sin", "cos", "tan", "√"],
+    ["log", "ln", "x!", "π"],
+    ["7", "8", "9", "/"],
+    ["4", "5", "6", "*"],
+    ["1", "2", "3", "-"],
+    ["0", ".", "^", "+"],
+    ["="]
+]
+
+for row in buttons:
+    frame = tk.Frame(root)
+    frame.pack(expand=True, fill="both")
+    for button in row:
+        action = lambda x=button: press(x)
+        if button == "C": action = clear
+        elif button == "⌫": action = backspace
+        elif button == "=": action = calculate
+        elif button == "sin": action = lambda: scientific("sin")
+        elif button == "cos": action = lambda: scientific("cos")
+        elif button == "tan": action = lambda: scientific("tan")
+        elif button == "log": action = lambda: scientific("log")
+        elif button == "ln":  action = lambda: scientific("ln")
+        elif button == "√":  action = lambda: scientific("sqrt")
+        elif button == "x!": action = lambda: scientific("factorial")
+        tk.Button(frame, text=button, font=("Arial", 18), command=action).pack(side="left", expand=True, fill="both")
+
+root.mainloop()
+
+Run it with: python calculator.py`},{q:`Bad Prompt A — what changed and why the output improved`,a:`The original prompt was very vague — it didn't specify a programming language, the type of calculator, or any features. The output was a basic terminal calculator in Python. The improved prompt added a specific request for a GUI, which led to a much more complex and user-friendly application. The output went from a simple command-line tool to a full graphical interface with scientific functions, demonstrating how adding specific requirements can guide the AI to produce a more useful and targeted result.`},{q:`Bad Prompt B — original: "Help me with my resume" — output`,a:`Help me with my resume.
+
+Sure! I'd be happy to help with your resume. To get started, could you share:
+
+  • Your current resume or a description of your work experience
+  • The type of job you're applying for
+  • Your education and any certifications
+  • Key skills you want to highlight
+
+Once I have those details, I can help you:
+  • Format it professionally
+  • Write strong bullet points
+  • Tailor it to a specific job description
+  • Make it ATS-friendly
+
+Feel free to paste your resume text or describe your background and I'll get to work!`},{q:`Bad Prompt B — my improved prompt`,a:`I'm a backend developer with experience in NestJS, TypeScript, PostgreSQL, Redis, and Kafka. I recently worked at a live streaming startup called Hype Live and I'm now looking for a mid-level backend or full-stack developer role. Write me a one-page resume with a summary, skills section, work experience, and education. Keep it clean and ATS-friendly. Emphasize API development, real-time systems, and database work.`},{q:`Bad Prompt B — improved output`,a:`Absolutely — with your background, you actually have a strong story for a resume because you combine:
+
+  • Real-world hands-on work experience
+  • Leadership/customer-facing roles
+  • Full-stack development training
+  • IT/cybersecurity interest
+  • Persistence and career transition into tech
+
+That combination stands out more than a generic "junior developer" resume.
+
+Professional Summary
+Recent Full-Stack Web Development graduate with hands-on experience building responsive web applications using JavaScript, React, Node.js, Express, and MongoDB. Background includes customer service, operations leadership, technical troubleshooting, and hands-on field work across multiple industries. Passionate about software development, cybersecurity, and building practical solutions with strong user experience and clean functionality. Known for adaptability, persistence, and fast learning in high-pressure environments.
+
+Technical Skills
+JavaScript • React • Node.js • Express.js • MongoDB • HTML5 • CSS3 • Tailwind CSS • Redux • Git / GitLab • REST APIs • Responsive Web Design • SQL / PostgreSQL • Basic Python • Cybersecurity Fundamentals
+
+You also have a major advantage: your varied work history makes you look experienced and resilient instead of "just another bootcamp grad."
+
+Send me what you currently have and I'll help transform it into something employer-ready.`},{q:`Bad Prompt B — what changed and why the output improved`,a:`What changed was the level of specificity and context. The original prompt was very broad and didn't give the AI enough information to create a tailored resume. The improved prompt provided specific details about your background, skills, and the type of role you're targeting. This allowed the AI to generate a much more relevant and personalized resume that highlights your unique strengths and experiences, making it more likely to catch the attention of employers.`},{q:`Bad Prompt C — original: "Make a quiz" — output`,a:`Make a quiz.
+
+Sure! Here's a quick general knowledge quiz:
+
+Quiz Time! 🎉
+
+1. What is the capital of France?
+   A) London  B) Berlin  C) Paris  D) Madrid
+
+2. How many planets are in our solar system?
+   A) 7  B) 8  C) 9  D) 10
+
+3. What is 12 × 12?
+   A) 124  B) 144  C) 134  D) 154
+
+4. Who wrote Romeo and Juliet?
+   A) Charles Dickens  B) Mark Twain  C) William Shakespeare  D) Jane Austen
+
+5. What is the largest ocean on Earth?
+   A) Atlantic  B) Indian  C) Arctic  D) Pacific
+
+Answers: 1-C, 2-B, 3-B, 4-C, 5-D
+
+Want me to make it harder, change the topic, or turn it into an interactive format?`},{q:`Bad Prompt C — my improved prompt`,a:`Create a 5-question multiple choice quiz about JavaScript fundamentals for someone who just completed their first week of a coding bootcamp. Each question should have 4 options (A–D) with one correct answer. Cover topics like variables, data types, and basic syntax. After each question, show whether the answer was correct and give a one-sentence explanation.`},{q:`Bad Prompt C — improved output`,a:`JavaScript Fundamentals Quiz — Week 1
+
+Question 1:
+Which keyword is used to declare a variable that cannot be reassigned?
+  A) var
+  B) let
+  C) const ✓
+  D) def
+
+✅ Correct answer: C — const declares a variable whose binding cannot be reassigned. It's the preferred choice when a value won't change.
+
+---
+
+Question 2:
+What data type is the value "hello" in JavaScript?
+  A) integer
+  B) boolean
+  C) array
+  D) string ✓
+
+✅ Correct answer: D — Any value wrapped in quotes (single or double) is a string in JavaScript.
+
+---
+
+Question 3:
+What will console.log(typeof 42) print?
+  A) "integer"
+  B) "number" ✓
+  C) "string"
+  D) "float"
+
+✅ Correct answer: B — JavaScript uses "number" for all numeric values, whether whole or decimal.
+
+---
+
+Question 4:
+Which of the following is a boolean value?
+  A) "true"
+  B) 1
+  C) true ✓
+  D) "false"
+
+✅ Correct answer: C — A boolean is either true or false (no quotes). "true" with quotes is a string.
+
+---
+
+Question 5:
+What symbol is used for single-line comments in JavaScript?
+  A) #
+  B) /* */
+  C) //  ✓
+  D) --
+
+✅ Correct answer: C — // starts a single-line comment. /* */ is used for multi-line comments.`},{q:`Bad Prompt C — what changed and why the output improved`,a:`The output improved because the improved prompt provided specific details about the topic (JavaScript fundamentals), the target audience (someone who just completed their first week of a coding bootcamp), and the format (5 multiple choice questions with explanations). This allowed the AI to generate a quiz that is relevant, appropriately challenging, and educational for the intended user, rather than a generic quiz with no clear focus.`},{q:`Stretch goal — Bad Prompt A iterated 3 times. What changed each round?`,a:`Iteration 1: "Write code for a calculator"
+→ Got a basic Python terminal calculator. No GUI, no context, just bare functions.
+
+Iteration 2: "I want a more advanced version with a GUI."
+→ Got a full Python tkinter GUI with scientific functions (sin, cos, log, sqrt, factorial), backspace, and parentheses support.
+
+Iteration 3: "Now make it web-based using HTML, CSS, and JavaScript — styled dark theme, responsive layout, same scientific functions."
+→ Got a fully styled single-file HTML calculator with dark UI, CSS grid button layout, and all the same scientific operations running in the browser with no Python required.
+
+Each iteration added specificity: language → interface type → platform + visual style. The output got more useful and more targeted every round.`}]},{heading:`Lab 2 — Reading Code AI Wrote`,description:`You read it before you run it. That's the habit.`,qa:[{q:`The prompt I sent to get the name/color code`,a:`Write a simple JavaScript program that:
+- Asks the user for their name
+- Asks the user for their favorite color
+- Displays a greeting message that includes both
+
+Use prompt() for input and document.write() for output.
+Add comments explaining each line.`},{q:`What does prompt() do?`,a:`prompt() opens a small browser dialog box that asks the user to type something. Whatever they type gets returned as a string and stored in the variable. If they click Cancel, it returns null.`},{q:`What does const mean?`,a:`const declares a variable that cannot be reassigned. Once you set it, that binding is locked. It doesn't mean the value itself is frozen (objects/arrays can still be mutated), but you can't point the variable at something new.`},{q:`What does the + operator do with text?`,a:`When used with strings, + concatenates them — it joins them end to end. So "Hello, " + "Diana" produces "Hello, Diana". This is called string concatenation.`},{q:`If I type "Marcus" and "green", what will the output be?`,a:`Hello, Marcus! Your favorite color is green.`},{q:`What happens if I click "Cancel" on the prompt?`,a:`The variable gets assigned null instead of a string. When null gets concatenated into the message, it renders as the literal word "null" — so you'd see: "Hello, null! Your favorite color is null." It doesn't crash, it just looks broken.`},{q:`Step 4 — I added a third question (favorite food) and updated the message. What did I add?`,a:`// Ask the user for their favorite food
+const food = prompt("What is your favorite food?");
+
+// Updated message including all three answers
+const message = "Hello, " + name + "! Your favorite color is " + color + " and your favorite food is " + food + ".";`},{q:`Did the modification work?`,a:`(what you saw when you ran it)`}]},{heading:`Peer Activity — Prompt Partners`,description:`Same task, two prompts, one winner. Why?`,qa:[{q:`Task card we picked`,a:`Task 3: "Get AI to create a simple HTML page for a dog walking business."`},{q:`My prompt`,a:`Create me a simple but effective marketing html website for a dog walking business. It needs to have phone number, hours, rates, services, experiences, references. The user interface needs to be inviting yet simple and user friendly. But also attractive from a marketing perspective.`},{q:`My partner's prompt`,a:`Make a vanilla HTML site for a dog walking business, ensure that it is formatted properly, mobile first, and has sleek visuals. Does not need to be minimal, can be bubbly and fun. Please use just plain js, css and html`},{q:`Whose prompt got a better result and why?`,a:`So we deciced my prompt was better because it was more specific in terms of content (phone number, hours, rates, services, experiences, references) and also gave clearer guidance on the tone and style (inviting yet simple and user friendly, attractive from a marketing perspective). My partner's prompt was good in asking for mobile-first design and sleek visuals, but it lacked the specific content requirements and was a bit more vague on the desired tone. So some of it's feature were rendered useless because it wasn't attached to content. The result from my prompt had more of the necessary information for a business website with a complete functional product in the end.`},{q:`One thing I learned from seeing my partner's approach`,a:`One thing I learned about my partner's approach is that they focused more on the visual and design aspects (mobile-first, sleek visuals) which is important for user experience. It made me realize that while I was more focused on content and structure, I could have also included more specific design instructions to ensure the final product was not only informative but also visually appealing. It's a good reminder that both content and design are crucial for a successful website.`}]},{heading:`Exercise 1 — Tip Calculator`,description:`Read the code, trace the values, then modify it.`,qa:[{q:`Code tracing — if bill = 50 and tip = 20%, fill in the blanks`,a:`bill = 50
+tipPercent = 20
+tip = 50 * (20 / 100) = 50 * 0.20 = 10
+total = 50 + 10 = 60`},{q:`Level 1 — show tip per person split between 2. What did I add?`,a:`document.write("<p>Tip per person (2): $" + (tip / 2).toFixed(2) + "</p>");`},{q:`Level 2 — split between any number of people. What changed?`,a:`const people = parseFloat(prompt("How many people are splitting the bill?"));
+
+document.write("<p>Tip per person (" + people + "): $" + (tip / people).toFixed(2) + "</p>");
+document.write("<p>Total per person: $" + (total / people).toFixed(2) + "</p>");`},{q:`Level 3 — "Generous tipper!" message if tip > $20. What did I add?`,a:`if (tip > 20) {
+  document.write("<p>Generous tipper! 🎉</p>");
+}`}]},{heading:`Exercise 2 — Temperature Converter`,description:`Trace the math, then flip the formula.`,qa:[{q:`Code tracing — if input is 212°F, fill in the blanks`,a:`F - 32 = 212 - 32 = 180
+× 5/9 = 180 × 5/9 = 100
+Result: 100°C  ✓ (the boiling point of water)`},{q:`Level 1 — convert Celsius to Fahrenheit instead. What changed?`,a:`const celsius = parseFloat(prompt("Enter temperature in Celsius:"));
+const fahrenheit = (celsius * 9/5) + 32;
+document.write("<p>" + celsius + "°C = " + fahrenheit + "°F</p>");`},{q:`Level 2 — ask the user which direction to convert. How did I handle that?`,a:`const direction = prompt("Type 'ftoc' for F→C or 'ctof' for C→F:");
+
+if (direction === "ftoc") {
+  const f = parseFloat(prompt("Enter Fahrenheit:"));
+  const c = (f - 32) * 5/9;
+  document.write("<p>" + f + "°F = " + c + "°C</p>");
+} else if (direction === "ctof") {
+  const c = parseFloat(prompt("Enter Celsius:"));
+  const f = (c * 9/5) + 32;
+  document.write("<p>" + c + "°C = " + f + "°F</p>");
+} else {
+  document.write("<p>Invalid direction entered.</p>");
+}`},{q:`Level 3 — round to 1 decimal. What did AI tell me to use?`,a:`AI said to use .toFixed(1) — a built-in number method that rounds to a set number of decimal places and returns a string.
+
+Example:
+const c = ((f - 32) * 5/9).toFixed(1);
+// 98.6°F → "37.0"`}]},{heading:`Exercise 3 — Compliment Generator`,description:`Arrays, Math.random(), and a first look at randomness in code.`,qa:[{q:`What is the list of compliments stored in?`,a:`An array — a variable that holds multiple values in order, accessed by index starting at 0. Written with square brackets:
+
+const compliments = ["You're amazing", "You've got this", ...]`},{q:`What does Math.random() do?`,a:`It generates a random decimal number between 0 (inclusive) and 1 (exclusive) — something like 0.4273 or 0.9981. Every call gives a different number. It never returns exactly 1.`},{q:`What does Math.floor() do?`,a:`It rounds a decimal DOWN to the nearest whole number.
+Math.floor(3.9) → 3
+Math.floor(0.1) → 0
+
+We need it because array indexes must be whole numbers — you can't access index 2.7.`},{q:`Why do we need compliments.length?`,a:`So the random number scales to however many compliments are in the array. If there are 5 compliments, we want a random index from 0–4. Using compliments.length means the math stays correct automatically even if we add or remove items later.`},{q:`If Math.random() returns 0.7 and there are 5 compliments, which index gets picked?`,a:`0.7 × 5 = 3.5
+Math.floor(3.5) = 3
+→ Index 3 gets picked (the 4th compliment in the array).`},{q:`Level 1 — I added 3 more compliments. What are they?`,a:`"You show up even when it's hard.",
+"The way you think is genuinely impressive.",
+"You're going to look back on this and be proud."`},{q:`Level 2 — display TWO random compliments. What changed?`,a:`const index1 = Math.floor(Math.random() * compliments.length);
+const index2 = Math.floor(Math.random() * compliments.length);
+
+document.write("<p>" + name + ", " + compliments[index1] + "</p>");
+document.write("<p>Also: " + compliments[index2] + "</p>");
+
+// Note: both could be the same compliment — that's expected.`},{q:`Level 3 — "Get another compliment" while loop. How did it work?`,a:`let again = "yes";
+
+while (again === "yes") {
+  const index = Math.floor(Math.random() * compliments.length);
+  document.write("<p>" + name + ", " + compliments[index] + "</p>");
+  again = prompt("Want another compliment? (yes/no)");
+}
+
+document.write("<p>You're all set. Go be great. 👊</p>");`}]}]}],f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeDay:e}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Pre-Work Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`8px`,marginTop:`28px`},children:d.map((t,n)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:n===e?t.color:`#2a2a2a`,transition:`background 0.3s`}},n))})]})}function h({activeDay:e,setActiveDay:t}){let n=d[e]?.color||`#f59e0b`;return(0,p.jsx)(`nav`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`0 32px`,borderBottom:`1px solid #1a1a1a`,display:`flex`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${n} transparent`,"--scrollbar-thumb":n},className:`day-nav`,children:d.map((n,r)=>(0,p.jsx)(`button`,{onClick:()=>t(r),style:{background:`none`,border:`none`,borderBottom:r===e?`2px solid ${n.color}`:`2px solid transparent`,padding:`16px 20px 14px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:r===e?n.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:n.label},r))})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,activeDay:t,totalDays:n,setActiveDay:r}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[`Day `,t+1,` — `,e.label]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:()=>r(Math.max(0,t-1)),disabled:t===0,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:t===0?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:t===0?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:()=>r(Math.min(n-1,t+1)),disabled:t===n-1,style:{background:`none`,border:`1px solid ${t===n-1?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:t===n-1?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:t===n-1?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),n=d[e];return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeDay:e}),(0,p.jsx)(h,{activeDay:e,setActiveDay:t}),(0,p.jsx)(y,{day:n,activeDay:e,totalDays:d.length,setActiveDay:t}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
