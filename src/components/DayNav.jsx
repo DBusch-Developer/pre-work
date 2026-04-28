@@ -1,6 +1,8 @@
 import { days } from "../data/index.js";
 
 export default function DayNav({ activeDay, setActiveDay }) {
+  const activeColor = days[activeDay]?.color || "#f59e0b";
+
   return (
     <nav
       style={{
@@ -12,7 +14,11 @@ export default function DayNav({ activeDay, setActiveDay }) {
         borderBottom: "1px solid #1a1a1a",
         display: "flex",
         overflowX: "auto",
+        scrollbarWidth: "thin",
+        scrollbarColor: `${activeColor} transparent`,
+        "--scrollbar-thumb": activeColor,
       }}
+      className="day-nav"
     >
       {days.map((d, i) => (
         <button
@@ -21,10 +27,7 @@ export default function DayNav({ activeDay, setActiveDay }) {
           style={{
             background: "none",
             border: "none",
-            borderBottom:
-              i === activeDay
-                ? `2px solid ${d.color}`
-                : "2px solid transparent",
+            borderBottom: i === activeDay ? `2px solid ${d.color}` : "2px solid transparent",
             padding: "16px 20px 14px",
             cursor: "pointer",
             fontFamily: "'Courier New', monospace",
