@@ -1,6 +1,6 @@
 export const day4 = {
     number: 4,
-    label: "Pre-Work 4",
+    label: "Day 4",
     title: "Tools & Setup",
     subtitle: "Accounts created. Environment tested.",
     color: "#f472b6",

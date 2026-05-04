@@ -1,6 +1,6 @@
 import Section from "../components/Section";
 
-export default function DayPage({ day, activeDay, totalDays, setActiveDay }) {
+export default function DayPage({ day, week, activeDayInWeek, onPrev, onNext, isFirst, isLast }) {
   return (
     <main
       style={{
@@ -24,7 +24,7 @@ export default function DayPage({ day, activeDay, totalDays, setActiveDay }) {
             opacity: 0.8,
           }}
         >
-          Day {activeDay + 1} — {day.label}
+          {week.label} — Day {activeDayInWeek + 1}
         </div>
         <h2
           style={{
@@ -65,16 +65,16 @@ export default function DayPage({ day, activeDay, totalDays, setActiveDay }) {
         }}
       >
         <button
-          onClick={() => setActiveDay(Math.max(0, activeDay - 1))}
-          disabled={activeDay === 0}
+          onClick={onPrev}
+          disabled={isFirst}
           style={{
             background: "none",
             border: "1px solid #1f1f1f",
             padding: "10px 20px",
-            cursor: activeDay === 0 ? "not-allowed" : "pointer",
+            cursor: isFirst ? "not-allowed" : "pointer",
             fontFamily: "'Courier New', monospace",
             fontSize: "0.72rem",
-            color: activeDay === 0 ? "#2a2a2a" : "#6b7280",
+            color: isFirst ? "#2a2a2a" : "#6b7280",
             letterSpacing: "0.05em",
             transition: "color 0.2s, border-color 0.2s",
           }}
@@ -82,16 +82,16 @@ export default function DayPage({ day, activeDay, totalDays, setActiveDay }) {
           ← prev day
         </button>
         <button
-          onClick={() => setActiveDay(Math.min(totalDays - 1, activeDay + 1))}
-          disabled={activeDay === totalDays - 1}
+          onClick={onNext}
+          disabled={isLast}
           style={{
             background: "none",
-            border: `1px solid ${activeDay === totalDays - 1 ? "#1f1f1f" : day.color}`,
+            border: `1px solid ${isLast ? "#1f1f1f" : day.color}`,
             padding: "10px 20px",
-            cursor: activeDay === totalDays - 1 ? "not-allowed" : "pointer",
+            cursor: isLast ? "not-allowed" : "pointer",
             fontFamily: "'Courier New', monospace",
             fontSize: "0.72rem",
-            color: activeDay === totalDays - 1 ? "#2a2a2a" : day.color,
+            color: isLast ? "#2a2a2a" : day.color,
             letterSpacing: "0.05em",
             transition: "color 0.2s, border-color 0.2s",
           }}

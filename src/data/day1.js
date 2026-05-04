@@ -1,6 +1,6 @@
 export const day1 = {
     number: 1,
-    label: "Pre-Work 1",
+    label: "Day 1",
     title: "What Is AI?",
     subtitle: "Testing limits, building intuition",
     color: "#f59e0b",

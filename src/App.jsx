@@ -1,13 +1,40 @@
 import { useState } from "react";
-import { days } from "./data/index.js";
+import { weeks } from "./data/index.js";
 import Header from "./components/Header";
 import DayNav from "./components/DayNav";
 import Footer from "./components/Footer";
 import DayPage from "./pages/DayPage";
 
 export default function App() {
-  const [activeDay, setActiveDay] = useState(0);
-  const day = days[activeDay];
+  const [activeWeek, setActiveWeek] = useState(0);
+  const [activeDayInWeek, setActiveDayInWeek] = useState(0);
+
+  const week = weeks[activeWeek];
+  const day = week.days[activeDayInWeek];
+
+  function goToPrev() {
+    if (activeDayInWeek > 0) {
+      setActiveDayInWeek(activeDayInWeek - 1);
+    } else if (activeWeek > 0) {
+      const prevWeek = weeks[activeWeek - 1];
+      setActiveWeek(activeWeek - 1);
+      setActiveDayInWeek(prevWeek.days.length - 1);
+    }
+  }
+
+  function goToNext() {
+    if (activeDayInWeek < week.days.length - 1) {
+      setActiveDayInWeek(activeDayInWeek + 1);
+    } else if (activeWeek < weeks.length - 1) {
+      setActiveWeek(activeWeek + 1);
+      setActiveDayInWeek(0);
+    }
+  }
+
+  const isFirst = activeWeek === 0 && activeDayInWeek === 0;
+  const isLast =
+    activeWeek === weeks.length - 1 &&
+    activeDayInWeek === week.days.length - 1;
 
   return (
     <div
@@ -31,13 +58,21 @@ export default function App() {
         }}
       />
 
-      <Header activeDay={activeDay} />
-      <DayNav activeDay={activeDay} setActiveDay={setActiveDay} />
+      <Header activeWeek={activeWeek} activeDayInWeek={activeDayInWeek} />
+      <DayNav
+        activeWeek={activeWeek}
+        activeDayInWeek={activeDayInWeek}
+        setActiveWeek={setActiveWeek}
+        setActiveDayInWeek={setActiveDayInWeek}
+      />
       <DayPage
         day={day}
-        activeDay={activeDay}
-        totalDays={days.length}
-        setActiveDay={setActiveDay}
+        week={week}
+        activeDayInWeek={activeDayInWeek}
+        onPrev={goToPrev}
+        onNext={goToNext}
+        isFirst={isFirst}
+        isLast={isLast}
       />
       <Footer />
     </div>

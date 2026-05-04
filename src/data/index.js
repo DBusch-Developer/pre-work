@@ -7,5 +7,21 @@ import { day6 } from "./day6";
 import { day7 } from "./day7";
 import { day8 } from "./day8";
 import { day9 } from "./day9";
+import { week2day1 } from "./week2day1";
 
-export const days = [day1, day2, day3, day4, day5, day6, day7, day8, day9];
+export const weeks = [
+  {
+    label: "Pre-Work",
+    days: [day1, day2, day3, day4, day5],
+  },
+  {
+    label: "Week 1",
+    days: [day6, day7, day8, day9],
+  },
+  {
+    label: "Week 2",
+    days: [week2day1],
+  },
+];
+
+export const days = weeks.flatMap((w) => w.days);

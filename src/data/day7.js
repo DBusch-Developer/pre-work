@@ -1,6 +1,6 @@
 export const day7 = {
   number: 7,
-  label: "Cohort 2",
+  label: "Day 2",
   title: "Cohort Day 2 — Prompt Makeover",
   subtitle: "Better questions get better answers. The proof is in the output.",
   color: "#a78bfa",

@@ -1,6 +1,6 @@
 export const day9 = {
   number: 9,
-  label: "Cohort 4",
+  label: "Day 4",
   title: "Cohort Day 4 — Structured Prompting & Applied Judgment",
   subtitle:
     "How you ask shapes what you get. And what you get still needs your brain.",

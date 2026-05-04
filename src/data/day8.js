@@ -1,6 +1,6 @@
 export const day8 = {
   number: 8,
-  label: "Cohort 3",
+  label: "Day 3",
   title: "Cohort Day 3 — Sequence, Selection, Iteration",
   subtitle: "The three building blocks of every program ever written.",
   color: "#34d399",

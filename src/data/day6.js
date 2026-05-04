@@ -1,6 +1,6 @@
 export const day6 = {
   number: 6,
-  label: "Cohort 1",
+  label: "Day 1",
   title: "Cohort Day 1 — First Contact",
   subtitle: "Tools live. Code runs. The loop begins.",
   color: "#60a5fa",

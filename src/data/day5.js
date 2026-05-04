@@ -1,6 +1,6 @@
 export const day5 = {
     number: 5,
-    label: "Pre-Work 5",
+    label: "Day 5",
     title: "Reflection",
     subtitle: "What I actually think, after a week of using it for real.",
     color: "#fb923c",

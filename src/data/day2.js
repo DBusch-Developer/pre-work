@@ -1,6 +1,6 @@
 export const day2 = {
     number: 2,
-    label: "Pre-Work 2",
+    label: "Day 2",
     title: "How Builders Work With AI",
     subtitle: "Prompting with intention",
     color: "#34d399",
