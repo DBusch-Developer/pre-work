@@ -22,7 +22,7 @@ export default function Header({ activeWeek, activeDayInWeek }) {
           marginBottom: "16px",
         }}
       >
-        Next Chapter Initiative — Pre-Work Documentation
+        Next Chapter Initiative — Program Documentation
       </div>
 
       <h1
