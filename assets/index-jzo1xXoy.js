@@ -1865,4 +1865,270 @@ form.addEventListener("submit", (event) => {
   summary.textContent = \`Your favorite color is \${color} and you've been coding for \${years} year(s).\`;
 });
 
-Two things I added beyond the spec: .trim() on the color value, because someone typing a space and hitting submit should still trigger the validation — and return inside the if block, which exits the function before it can reach the summary line. Without return, the if block would set the error message and then immediately overwrite it with the summary. The return is what makes the if act as a guard.`}]}]}]}];d.flatMap(e=>e.days);var f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeWeek:e,activeDayInWeek:t}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Program Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`16px`,marginTop:`28px`,alignItems:`center`},children:d.map((n,r)=>(0,p.jsxs)(`div`,{style:{display:`flex`,gap:`6px`,alignItems:`center`},children:[n.days.map((n,i)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:r===e&&i===t?n.color:r<e||r===e&&i<t?`#3a3a3a`:`#1e1e1e`,transition:`background 0.3s`}},i)),r<d.length-1&&(0,p.jsx)(`div`,{style:{width:`12px`,height:`1px`,background:`#1e1e1e`,marginLeft:`2px`}})]},r))})]})}function h({activeWeek:e,activeDayInWeek:t,setActiveWeek:n,setActiveDayInWeek:r}){let i=d[e],a=i.days[t]?.color||`#f59e0b`;return(0,p.jsxs)(`div`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{display:`flex`,padding:`0 32px`,gap:`0`,borderBottom:`1px solid #141414`},children:d.map((t,i)=>(0,p.jsx)(`button`,{onClick:()=>{n(i),r(0)},style:{background:`none`,border:`none`,borderBottom:i===e?`2px solid ${t.days[0]?.color||`#f59e0b`}`:`2px solid transparent`,padding:`12px 20px 10px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.68rem`,letterSpacing:`0.08em`,textTransform:`uppercase`,color:i===e?`#d4d4d4`:`#3a3a3a`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`},children:t.label},i))}),(0,p.jsx)(`nav`,{style:{display:`flex`,padding:`0 32px`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${a} transparent`},className:`day-nav`,children:i.days.map((e,n)=>(0,p.jsx)(`button`,{onClick:()=>r(n),style:{background:`none`,border:`none`,borderBottom:n===t?`2px solid ${e.color}`:`2px solid transparent`,padding:`14px 18px 12px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:n===t?e.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:e.label},n))})]})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,week:t,activeDayInWeek:n,onPrev:r,onNext:i,isFirst:a,isLast:o}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[t.label,` — Day `,n+1]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:r,disabled:a,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:a?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:a?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:i,disabled:o,style:{background:`none`,border:`1px solid ${o?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:o?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:o?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(0),i=d[e],a=i.days[n];function o(){if(n>0)r(n-1);else if(e>0){let n=d[e-1];t(e-1),r(n.days.length-1)}}function s(){n<i.days.length-1?r(n+1):e<d.length-1&&(t(e+1),r(0))}let c=e===0&&n===0,u=e===d.length-1&&n===i.days.length-1;return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeWeek:e,activeDayInWeek:n}),(0,p.jsx)(h,{activeWeek:e,activeDayInWeek:n,setActiveWeek:t,setActiveDayInWeek:r}),(0,p.jsx)(y,{day:a,week:i,activeDayInWeek:n,onPrev:o,onNext:s,isFirst:c,isLast:u}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
+Two things I added beyond the spec: .trim() on the color value, because someone typing a space and hitting submit should still trigger the validation — and return inside the if block, which exits the function before it can reach the summary line. Without return, the if block would set the error message and then immediately overwrite it with the summary. The return is what makes the if act as a guard.`}]}]},{number:12,label:`Day 3`,title:`Week 2, Day 3 — Debugging & DevTools`,subtitle:`The bug is always somewhere. This is how you find it.`,color:`#fb923c`,sections:[{heading:`Warmup — Break Your Day 2 Page on Purpose`,description:`Four intentional breaks on greet.html + greet.js. Watch what happens. Write down what you saw.`,qa:[{q:`Break 1: Changed document.getElementById("name-input") to document.getElementById("nam-input"). What error appeared in the console?`,a:`Uncaught TypeError: Cannot read properties of null (reading 'value')
+    at HTMLFormElement.<anonymous> (greet.js:14:22)
+
+The typo "nam-input" doesn't match any element ID in the HTML, so getElementById returned null. Null has no .value property, so the moment the submit handler ran and tried to read nameInput.value, it crashed.
+
+The console points directly to the line — greet.js:14 — which is where const name = nameInput.value; lives. The error message even tells you what property it was trying to read when it failed: "reading 'value'".`},{q:`Break 2: Commented out event.preventDefault(). Submitted the form. What happened and why did the result disappear?`,a:`The greeting flashed on the screen for maybe half a second, then vanished. The page reloaded and reset to its blank initial state.
+
+What happened: without event.preventDefault(), the form did what forms do by default — it submitted, which triggered a page navigation. The browser reloaded the page. Any DOM changes (like writing the greeting into the paragraph) only existed in the current page's memory. Once the page reloaded, they were gone.
+
+The greeting technically appeared. It just got wiped out before it could be read. That half-second flash is the browser completing the textContent write and then immediately reloading.
+
+This is why preventDefault is the first line in every submit handler. Without it, you're racing against the browser's default behavior — and losing.`},{q:`Break 3: Changed nameInput.value to nameInput.values (plural). Clicked submit. What did the greeting show? Was there an error?`,a:`The greeting showed: "Hello, undefined!"
+
+No console error. That's what makes this one sneaky — .values is not a property that exists on an input element, but JavaScript doesn't throw when you access a property that doesn't exist. It just returns undefined silently. Then undefined gets dropped into the template literal and rendered as the literal word "undefined".
+
+So the code ran fine. The output just looked broken. This is a logic bug, not a syntax error — the kind the console won't catch for you. You have to read the output, notice it's wrong, and trace back to where the wrong value came from.`},{q:`Break 4: Moved <script src="greet.js"><\/script> from bottom of <body> to inside <head>. What happened and why?`,a:`The page crashed immediately on load with:
+
+Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
+    at greet.js:8:6
+
+When the script tag is in <head>, the browser runs the JavaScript the moment it hits that tag — before it has parsed any of the HTML below it. So when greet.js tries to run document.getElementById("greet-form"), the form doesn't exist yet. getElementById returns null. And null.addEventListener() throws immediately.
+
+The fix is putting the script at the bottom of <body>, after all the HTML elements, so the DOM is fully built before any JavaScript tries to interact with it. This is why the script tag belongs at the end — not because of style, because of execution order.`}]},{heading:`Exercise 1 — Read the Error`,description:`Five error messages. For each: type, plain English meaning, line number, fix.`,qa:[{q:`Error A: "Uncaught ReferenceError: username is not defined at script.js:3:18"`,a:`Type: ReferenceError
+
+Plain English: JavaScript is looking for a variable called "username" but it doesn't exist anywhere in scope. The variable was declared as "userName" (capital N) on line 1 — but line 3 tries to use "username" (all lowercase). JavaScript is case-sensitive: userName and username are two completely different names.
+
+Line: 3
+Fix: Change "username" on line 3 to "userName" to match the declaration.
+
+  // Before (broken):
+  const greeting = "Hello, " + username;
+
+  // After (fixed):
+  const greeting = "Hello, " + userName;`},{q:`Error B: "Uncaught TypeError: Cannot read properties of undefined (reading 'length') at script.js:2:24"`,a:`Type: TypeError
+
+Plain English: Something is undefined, and you tried to read a property off it. "let fruits;" declares the variable but never assigns it a value — so its value is undefined by default. undefined has no properties, so accessing .length on it throws.
+
+Line: 2
+Fix: Give fruits a value before you try to access its properties.
+
+  // Before (broken):
+  let fruits;
+  console.log(fruits.length); // fruits is undefined
+
+  // After (fixed):
+  let fruits = [];
+  console.log(fruits.length); // 0 — empty array has length`},{q:`Error C: "Uncaught SyntaxError: Unexpected token '}' at script.js:4:1"`,a:`Type: SyntaxError
+
+Plain English: JavaScript found a closing curly brace it wasn't expecting. The function has one body that opens with { and needs one } to close it. There are two } in the code — line 3 closes the function correctly, and then line 4 has an extra one that has nothing to close.
+
+Line: 4
+Fix: Delete the extra } on line 4.
+
+  // Before (broken):
+  function sayHello(name) {
+    console.log("Hello, " + name)
+  }
+  } // ← this one doesn't belong to anything
+
+  // After (fixed):
+  function sayHello(name) {
+    console.log("Hello, " + name)
+  }`},{q:`Error D: "Uncaught TypeError: document.getElementByID is not a function at script.js:1:24"`,a:`Type: TypeError
+
+Plain English: getElementByID is not a real method — it doesn't exist on the document object. The correct spelling is getElementById (lowercase 'd'). JavaScript is case-sensitive, so "getElementByID" and "getElementById" are completely different names. Since getElementByID doesn't exist, calling it throws a TypeError.
+
+Line: 1
+Fix: Change the capitalization.
+
+  // Before (broken):
+  const title = document.getElementByID("main-title");
+
+  // After (fixed):
+  const title = document.getElementById("main-title");`},{q:`Error E: "Uncaught SyntaxError: Unterminated string literal at script.js:1:20"`,a:`Type: SyntaxError
+
+Plain English: A string was opened with a quotation mark but never closed. The semicolon at the end got swallowed into the string — JavaScript kept reading looking for a closing quote and hit the end of the line without finding one.
+
+Line: 1
+Fix: Add the closing quote mark before the semicolon.
+
+  // Before (broken):
+  const message = "Hello, World!;
+  //                            ^ missing closing quote — semicolon is inside the string
+
+  // After (fixed):
+  const message = "Hello, World!";`}]},{heading:`Exercise 2 — Console.log Detective`,description:`The code runs. The math is wrong. Add console.logs and trace exactly where it breaks.`,qa:[{q:`The calculateAverage bug — what SHOULD the output be for scores 80, 90, 70?`,a:`(80 + 90 + 70) / 3 = 240 / 3 = 80
+
+Expected output: "Your average score is: 80"
+Actual output:   "Your average score is: 120"
+
+The sum is calculated correctly at 240. The bug is on the next line — dividing by 2 instead of 3.`},{q:`Console.log trace — fill in the variable values and mark which one is wrong`,a:`Variable   | Expected | Actual | Correct?
+-----------|----------|--------|--------
+score1     | 80       | 80     | ✓
+score2     | 90       | 90     | ✓
+score3     | 70       | 70     | ✓
+sum        | 240      | 240    | ✓
+average    | 80       | 120    | ✗
+
+The sum is correct. The average is wrong. That tells you exactly which line has the bug: const average = sum / 2. The fix: change 2 to 3.`},{q:`Which line has the bug? What's the fix?`,a:`Bug line: const average = sum / 2;
+
+240 / 2 = 120 — wrong. There are 3 scores, not 2.
+
+Fix: const average = sum / 3;
+
+240 / 3 = 80 — correct.
+
+The console.log trace made this trivial to find. sum logged as 240 (correct), average logged as 120 (wrong). The bug is on the one line between those two logs.`},{q:`The applyDiscount bug — console.log(applyDiscount(150)) expected 135, got 15. Find and fix it.`,a:`Bug: const discounted = price * 0.10;
+
+This calculates 10% OF the price — the discount amount — not the price after the discount is applied.
+
+  price * 0.10 = 150 * 0.10 = 15   ← this is the discount, not the final price
+  price * 0.90 = 150 * 0.90 = 135  ← this is what the customer actually pays
+
+A 10% discount means the customer pays 90% of the original price.
+
+Fix: const discounted = price * 0.90;
+
+console.log added inside the function:
+  console.log("price:", price);           // 150
+  console.log("discounted:", discounted); // was 15, now 135
+
+The naming "discounted" was part of the confusion — the variable was storing the discount amount, not the discounted price. Renaming it "discountAmount" for the original value and "discountedPrice" for what the customer pays would make the intent clearer.`}]},{heading:`Exercise 3 — DevTools Scavenger Hunt`,description:`Live browser inspection on your greet.html page from Day 2.`,qa:[{q:`Challenge 1 — Console tab: typed 2 + 2, document.title, then changed document.title. What happened?`,a:`2 + 2 → the console evaluated it and returned 4 immediately. The console is a live JavaScript environment — any valid JS expression runs right there.
+
+document.title → returned "Greet Me" — the string from the <title> tag in the HTML head.
+
+document.title = "I changed the title!" → the browser tab updated instantly. The text in the tab changed from "Greet Me" to "I changed the title!" without any page reload. That's the DOM being mutated live — JavaScript can change anything on the page, including the tab title, in real time.`},{q:`Challenge 2 — Elements tab: found the CSS rule styling the heading, changed color to red, added text-decoration: underline. What happened?`,a:`Clicking the h1 in the Elements panel highlighted it and opened the Styles panel on the right showing:
+
+  h1 {
+    font-size: 2rem;
+    font-weight: normal;
+    color: #f5f5f5;
+    ...
+  }
+
+Double-clicking the color value (#f5f5f5) let me type "red" — the heading turned red instantly on the page without refreshing.
+
+Adding text-decoration: underline in the Styles panel (clicking the empty space at the bottom of the rule) drew a line under the heading text immediately.
+
+Both changes were live and instant. No saving, no refreshing. DevTools is editing the CSS in the browser's memory directly — which is why the changes disappeared on refresh. The actual style.css file on disk was never touched.`},{q:`Challenge 3 — Box Model: which element, and what were the margin, border, padding, and content dimensions?`,a:`Clicked on the form element in the Elements panel and switched to the Computed tab.
+
+Box model:
+  Content:  480px × auto (the max-width from the form CSS rule)
+  Padding:  0 (no padding set on the form itself)
+  Border:   0 (no border on the form)
+  Margin:   0 top/bottom from reset, 0 left/right
+
+Clicked on an input element:
+  Content:  ~456px × 38px
+  Padding:  10px top/bottom, 12px left/right (from the input CSS rule)
+  Border:   1px on all sides (#2d2d44)
+  Margin:   0
+
+The box model diagram shows exactly what's eating space — the 10px padding inside the input is why text doesn't butt up against the edge.`},{q:`Challenge 4 — Network tab: how many files loaded? What did you find?`,a:`Refreshed with the Network tab open. Three files loaded:
+
+  greet.html    — the HTML document itself
+  style.css     — the stylesheet linked in the head
+  greet.js      — the script linked at the bottom of body
+
+Clicked on style.css in the Network tab → the Response tab showed the full CSS source, the same as what's in the file. The browser fetched it over HTTP and cached it.
+
+No images, no fonts (Georgia is a system font, loaded locally), no external requests. Clean and minimal.`},{q:`Challenge 5 — Live editing: changed a paragraph's text in the Elements panel. What happened on refresh?`,a:`Double-clicked the text content of the <p id="greeting"> element in the Elements panel and typed "I edited this directly in DevTools."
+
+It appeared on the page immediately. No JavaScript, no form submission — just direct DOM editing through the browser.
+
+Refreshed the page → gone. Back to an empty paragraph, exactly as written in greet.html.
+
+That's the important lesson: DevTools edits are in-memory only. They modify the living DOM that the browser is currently rendering, not the file on disk. The moment you refresh, the browser reloads the original HTML and the change disappears. DevTools is for experimenting and debugging — not for making permanent changes.`}]},{heading:`Exercise 4 — Fix AI's Bugs`,description:`Four AI-generated programs, one bug each. Found without asking AI first.`,qa:[{q:`Buggy Program 1 — Greeting Generator: heading stays empty. Found the bug, fixed it.`,a:`Bug: document.getElementById("greetng") — typo, missing the 'i'.
+
+getElementById("greetng") searched the DOM for an element with id="greetng". There is no such element — the h1 has id="greeting". So it returned null. Then null.textContent = greeting threw:
+
+  Uncaught TypeError: Cannot read properties of null (reading 'textContent')
+
+Found it: checked the console, saw the TypeError, it pointed to the exact line. Compared the string in the JS to the id in the HTML — spotted the missing 'i'.
+
+Fix:
+  // Before: document.getElementById("greetng").textContent = greeting;
+  // After:  document.getElementById("greeting").textContent = greeting;`},{q:`Buggy Program 2 — Color Changer: clicking the button does nothing. No console error.`,a:`Bug: document.querySelector("h1").style.colour = selectedColor;
+
+"colour" is the British English spelling. JavaScript's style API uses American English — "color". .style.colour is not a valid CSS property in the DOM style object, so the assignment silently does nothing. No error, no effect.
+
+This is the hardest kind of bug to find — it fails silently. The code runs without throwing, but nothing happens. No console error to point you to a line. You have to read the code carefully and know that .style.color is the correct property.
+
+Found it: added console.log(selectedColor) to confirm the color was being picked correctly (it was). Then looked at the line that was supposed to apply it — noticed the British spelling.
+
+Fix:
+  // Before: document.querySelector("h1").style.colour = selectedColor;
+  // After:  document.querySelector("h1").style.color = selectedColor;`},{q:`Buggy Program 3 — Counter: display shows the word "count" instead of the number.`,a:`Bug: document.getElementById("count").textContent = "count";
+
+The string literal "count" (in quotes) was passed instead of the variable count (no quotes). JavaScript set the text content to the word "count" exactly as written — because that's what a string literal is.
+
+Found it: clicked +1, saw the word "count" appear instead of 1. Read the line — spotted the quotes. The variable name and the string representation are identical, which is what makes it easy to miss.
+
+Fix:
+  // Before: document.getElementById("count").textContent = "count";
+  // After:  document.getElementById("count").textContent = count;
+
+Removing the quotes tells JavaScript to evaluate count as a variable and use its current numeric value.`},{q:`Buggy Program 4 — Temperature Message: entering "9" says "It's hot outside!" instead of cold.`,a:`Bug: prompt() returns a string, not a number. The variable temp holds the string "9", not the number 9.
+
+When JavaScript compares "9" > 85 using a string on the left, it does string comparison, not numeric comparison. Strings are compared character by character — "9" is compared to the first character of "85" which is "8". Since "9" comes after "8" in Unicode/ASCII order, "9" > "85" evaluates to true. So the first condition fires and the page says "It's hot outside!" for a temperature of 9.
+
+console.log(typeof temp) confirmed it — logged "string" instead of "number".
+
+Fix: Convert the input to a number before comparing.
+  // Before:
+  const temp = prompt("Enter the temperature in Fahrenheit:");
+
+  // After:
+  const temp = parseFloat(prompt("Enter the temperature in Fahrenheit:"));
+
+Now 9 > 85 is a numeric comparison — false — and the correct cold message shows.`}]},{heading:`Exercise 5 — Describe a Bug to AI`,description:`Structured bug report vs. vague one. See which gets better help.`,qa:[{q:`The bug I chose and my structured bug description`,a:`Used Bug 4 — the Temperature Message string comparison issue.
+
+---
+I'm working on a temperature message program in JavaScript.
+
+What I expected to happen:
+Entering 9 should display "It's cold! Bundle up!" since 9 is below 60.
+
+What actually happens:
+Entering 9 displays "It's hot outside!" — the same message as entering 90.
+
+Error message (if any):
+No error message. The code runs without throwing — it just gives the wrong output.
+
+Here's the relevant code:
+
+  const temp = prompt("Enter the temperature in Fahrenheit:");
+
+  if (temp > 85) {
+    message = "It's hot outside!";
+  } else if (temp > 60) {
+    message = "Nice weather!";
+  } else {
+    message = "It's cold! Bundle up!";
+  }
+---`},{q:`Did AI identify the correct bug? Was AI's fix correct? Same as mine or different?`,a:`Yes — AI identified the bug immediately and correctly. It explained that prompt() returns a string and that JavaScript's > operator does lexicographic (string) comparison when the left side is a string, which causes "9" to be greater than "85".
+
+AI's fix was the same as mine: wrap prompt() in parseFloat() or Number(). It also offered parseInt() as an option and noted that parseFloat handles decimals too.
+
+AI explained WHY better than I initially understood it — it spelled out that string comparison is character by character and gave "9" vs "85" as the specific example of why that breaks here.`},{q:`Sent "my code doesn't work" with the same code. Compare the two responses.`,a:`With just "my code doesn't work" and the code pasted in:
+
+AI gave a generic response — it listed several things that could be wrong: maybe the prompt is missing, maybe there's a syntax error somewhere, maybe the element IDs don't match. It found the actual bug eventually, but it led with three guesses before getting there. The response was longer and less focused.
+
+With the structured bug report:
+
+AI went directly to the cause. First sentence identified the type conversion issue. No guessing, no listing possibilities. It knew exactly what "entering 9 shows hot" meant and what kind of bug causes that.
+
+The difference was significant. The structured report gave AI the symptom (9 shows hot), the expected behavior, and the confirmation that no error was thrown — which immediately ruled out syntax errors and pointed to a logic/type issue. "my code doesn't work" gives AI nothing to reason from. It has to guess at what "doesn't work" means.`}]},{heading:`Exercise 6 — Debug a Multi-File Project`,description:`Two bugs across three files. One file was clean. Decide which is which.`,qa:[{q:`Bug 1 — what was it, which file, how did you find it, how did you fix it?`,a:`Bug: Mismatched HTML list tags — the list opened with <ul> but closed with </ol>.
+
+File: debug-challenge.html
+
+Found it: The task list rendered visually, but something looked off in the layout. Opened DevTools Elements panel — the DOM showed the browser had tried to auto-correct the mismatched tags, which caused unexpected nesting. Looking at the raw HTML, line 22 had <ul id="task-list"> but the closing tag was </ol>.
+
+Fix:
+  // Before: <ul id="task-list">  ...  </ol>
+  // After:  <ul id="task-list">  ...  </ul>`},{q:`Bug 2 — what was it, which file, how did you find it, how did you fix it?`,a:`Bug: CSS property "alignitems" — missing the hyphen. Should be "align-items".
+
+File: debug-style.css
+
+Found it: The delete buttons inside each task item weren't vertically centered — they were floating to the top of the list item instead of aligning with the text. Opened DevTools, clicked on a task item in the Elements panel, checked the Styles panel. The rule "#task-list li" showed up but DevTools had struck through "alignitems" with a warning icon — it wasn't recognized as a valid property.
+
+Fix:
+  // Before: alignitems: center;
+  // After:  align-items: center;`},{q:`Which file was clean, and how did you decide?`,a:`debug-script.js was clean.
+
+Once the HTML and CSS bugs were fixed, everything worked — tasks could be added, displayed, and deleted. No console errors related to the JS, and tracing through the code manually confirmed it was correct: it grabs the input, checks for empty, creates a list item, creates a delete button, wires them together, appends to the list, clears the input. Each step is right.
+
+The decision process: after fixing the two identified bugs, the app worked fully. If the JS had a bug too, something would still be broken. Nothing was. That's how you confirm a file is clean — not just by reading it, but by verifying the working behavior after the other bugs are fixed.`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`Screen-share your interactive page. Walk your partner through what happens step by step.`,qa:[{q:`What bug did I walk through?`,a:``},{q:`How did I find it? What tool or technique?`,a:``},{q:`What was the fix?`,a:``},{q:`How do I know it actually works now?`,a:``},{q:`Partner's question: "What would you try first if you saw a similar bug in a different project?"`,a:``}]}]}]}];d.flatMap(e=>e.days);var f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeWeek:e,activeDayInWeek:t}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Program Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`16px`,marginTop:`28px`,alignItems:`center`},children:d.map((n,r)=>(0,p.jsxs)(`div`,{style:{display:`flex`,gap:`6px`,alignItems:`center`},children:[n.days.map((n,i)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:r===e&&i===t?n.color:r<e||r===e&&i<t?`#3a3a3a`:`#1e1e1e`,transition:`background 0.3s`}},i)),r<d.length-1&&(0,p.jsx)(`div`,{style:{width:`12px`,height:`1px`,background:`#1e1e1e`,marginLeft:`2px`}})]},r))})]})}function h({activeWeek:e,activeDayInWeek:t,setActiveWeek:n,setActiveDayInWeek:r}){let i=d[e],a=i.days[t]?.color||`#f59e0b`;return(0,p.jsxs)(`div`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{display:`flex`,padding:`0 32px`,gap:`0`,borderBottom:`1px solid #141414`},children:d.map((t,i)=>(0,p.jsx)(`button`,{onClick:()=>{n(i),r(0)},style:{background:`none`,border:`none`,borderBottom:i===e?`2px solid ${t.days[0]?.color||`#f59e0b`}`:`2px solid transparent`,padding:`12px 20px 10px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.68rem`,letterSpacing:`0.08em`,textTransform:`uppercase`,color:i===e?`#d4d4d4`:`#3a3a3a`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`},children:t.label},i))}),(0,p.jsx)(`nav`,{style:{display:`flex`,padding:`0 32px`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${a} transparent`},className:`day-nav`,children:i.days.map((e,n)=>(0,p.jsx)(`button`,{onClick:()=>r(n),style:{background:`none`,border:`none`,borderBottom:n===t?`2px solid ${e.color}`:`2px solid transparent`,padding:`14px 18px 12px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:n===t?e.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:e.label},n))})]})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,week:t,activeDayInWeek:n,onPrev:r,onNext:i,isFirst:a,isLast:o}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[t.label,` — Day `,n+1]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:r,disabled:a,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:a?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:a?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:i,disabled:o,style:{background:`none`,border:`1px solid ${o?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:o?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:o?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(0),i=d[e],a=i.days[n];function o(){if(n>0)r(n-1);else if(e>0){let n=d[e-1];t(e-1),r(n.days.length-1)}}function s(){n<i.days.length-1?r(n+1):e<d.length-1&&(t(e+1),r(0))}let c=e===0&&n===0,u=e===d.length-1&&n===i.days.length-1;return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeWeek:e,activeDayInWeek:n}),(0,p.jsx)(h,{activeWeek:e,activeDayInWeek:n,setActiveWeek:t,setActiveDayInWeek:r}),(0,p.jsx)(y,{day:a,week:i,activeDayInWeek:n,onPrev:o,onNext:s,isFirst:c,isLast:u}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
