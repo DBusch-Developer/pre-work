@@ -446,23 +446,47 @@ function renderTasks() {
       qa: [
         {
           q: "Which function did I pick to read aloud?",
-          a: "",
+          a: `for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}`,
         },
         {
           q: "My literal read-through (line by line)",
-          a: "",
+          a: `for open paren let i equals 1 semicolon i less than or equal to 100 semicolon i plus plus close paren open curly brace
+
+if open paren i percent 3 strictly equals 0 ampersand ampersand i percent 5 strictly equals 0 close paren open curly brace
+console dot log open paren quote FizzBuzz quote close paren semicolon close curly brace
+
+else if open paren i percent 3 strictly equals 0 close paren open curly brace
+console dot log open paren quote Fizz quote close paren semicolon close curly brace
+
+else if open paren i percent 5 strictly equals 0 close paren open curly brace
+console dot log open paren quote Buzz quote close paren semicolon close curly brace
+
+else open curly brace
+console dot log open paren i close paren semicolon close curly brace
+
+close curly brace`,
         },
         {
           q: "My plain English explanation",
-          a: "",
+          a: `This is a for loop that counts from 1 to 100. For every number, it checks three conditions in order. If the number divides evenly by both 3 and 5 — no remainder — it prints FizzBuzz. If it only divides by 3, it prints Fizz. If it only divides by 5, it prints Buzz. If none of those are true, it just prints the number itself. The modulo operator — the percent sign — gives us the remainder after division, so i mod 3 equals zero means 3 goes in cleanly with nothing left over.`,
         },
         {
           q: "One thing I'd change and why",
-          a: "",
+          a: `I'd rewrite it to build an output string instead of checking the combined case separately — start with an empty string, append "Fizz" if divisible by 3, append "Buzz" if divisible by 5, then print the string or the number if it's still empty. That removes the top FizzBuzz condition entirely and handles it automatically.`,
         },
         {
           q: `Partner's question: "Why would you change that?" — my defense`,
-          a: "",
+          a: `Because the way it's written now, if I ever needed to add a third rule — say, divisible by 7 prints "Jazz" — I'd have to add not just one new condition but also update every combined case manually. With the string-building approach, I just add one more if statement and FizzJazz, BuzzJazz, or FizzBuzzJazz all fall out automatically. It scales better and has less repeated logic.`,
         },
       ],
     },
