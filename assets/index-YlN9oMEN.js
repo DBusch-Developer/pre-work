@@ -2440,7 +2440,31 @@ function renderTasks() {
 // }
 
 // Checking a box strikes through the task text
-// Unchecking removes the strikethrough — classList.toggle handles both directions`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`Read a function aloud line by line, then explain it, then say what you'd change.`,qa:[{q:`Which function did I pick to read aloud?`,a:``},{q:`My literal read-through (line by line)`,a:``},{q:`My plain English explanation`,a:``},{q:`One thing I'd change and why`,a:``},{q:`Partner's question: "Why would you change that?" — my defense`,a:``}]},{heading:`Going Deeper — Optional Extensions`,description:`Filter buttons, localStorage persistence, and map/filter rewrites.`,qa:[{q:`Filter buttons — All, Done, Not Done. Track task state as objects, filter the rendered list.`,a:`// Updated data structure — tasks are objects instead of strings
+// Unchecking removes the strikethrough — classList.toggle handles both directions`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`Read a function aloud line by line, then explain it, then say what you'd change.`,qa:[{q:`Which function did I pick to read aloud?`,a:`for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    console.log("FizzBuzz");
+  } else if (i % 3 === 0) {
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    console.log("Buzz");
+  } else {
+    console.log(i);
+  }
+}`},{q:`My literal read-through (line by line)`,a:`for open paren let i equals 1 semicolon i less than or equal to 100 semicolon i plus plus close paren open curly brace
+
+if open paren i percent 3 strictly equals 0 ampersand ampersand i percent 5 strictly equals 0 close paren open curly brace
+console dot log open paren quote FizzBuzz quote close paren semicolon close curly brace
+
+else if open paren i percent 3 strictly equals 0 close paren open curly brace
+console dot log open paren quote Fizz quote close paren semicolon close curly brace
+
+else if open paren i percent 5 strictly equals 0 close paren open curly brace
+console dot log open paren quote Buzz quote close paren semicolon close curly brace
+
+else open curly brace
+console dot log open paren i close paren semicolon close curly brace
+
+close curly brace`},{q:`My plain English explanation`,a:`This is a for loop that counts from 1 to 100. For every number, it checks three conditions in order. If the number divides evenly by both 3 and 5 — no remainder — it prints FizzBuzz. If it only divides by 3, it prints Fizz. If it only divides by 5, it prints Buzz. If none of those are true, it just prints the number itself. The modulo operator — the percent sign — gives us the remainder after division, so i mod 3 equals zero means 3 goes in cleanly with nothing left over.`},{q:`One thing I'd change and why`,a:`I'd rewrite it to build an output string instead of checking the combined case separately — start with an empty string, append "Fizz" if divisible by 3, append "Buzz" if divisible by 5, then print the string or the number if it's still empty. That removes the top FizzBuzz condition entirely and handles it automatically.`},{q:`Partner's question: "Why would you change that?" — my defense`,a:`Because the way it's written now, if I ever needed to add a third rule — say, divisible by 7 prints "Jazz" — I'd have to add not just one new condition but also update every combined case manually. With the string-building approach, I just add one more if statement and FizzJazz, BuzzJazz, or FizzBuzzJazz all fall out automatically. It scales better and has less repeated logic.`}]},{heading:`Going Deeper — Optional Extensions`,description:`Filter buttons, localStorage persistence, and map/filter rewrites.`,qa:[{q:`Filter buttons — All, Done, Not Done. Track task state as objects, filter the rendered list.`,a:`// Updated data structure — tasks are objects instead of strings
 const tasks = [];
 // Each task: { text: "Buy groceries", done: false }
 
@@ -2585,4 +2609,2740 @@ for (let i = 1; i <= 100; i++) {
 // output || i — if output is still empty (""), it's falsy, so i prints instead
 
 // This is the version most developers would write.
-// It handles the combined case without a special check.`}]}]}]}];d.flatMap(e=>e.days);var f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeWeek:e,activeDayInWeek:t}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Program Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`16px`,marginTop:`28px`,alignItems:`center`},children:d.map((n,r)=>(0,p.jsxs)(`div`,{style:{display:`flex`,gap:`6px`,alignItems:`center`},children:[n.days.map((n,i)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:r===e&&i===t?n.color:r<e||r===e&&i<t?`#3a3a3a`:`#1e1e1e`,transition:`background 0.3s`}},i)),r<d.length-1&&(0,p.jsx)(`div`,{style:{width:`12px`,height:`1px`,background:`#1e1e1e`,marginLeft:`2px`}})]},r))})]})}function h({activeWeek:e,activeDayInWeek:t,setActiveWeek:n,setActiveDayInWeek:r}){let i=d[e],a=i.days[t]?.color||`#f59e0b`;return(0,p.jsxs)(`div`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{display:`flex`,padding:`0 32px`,gap:`0`,borderBottom:`1px solid #141414`},children:d.map((t,i)=>(0,p.jsx)(`button`,{onClick:()=>{n(i),r(0)},style:{background:`none`,border:`none`,borderBottom:i===e?`2px solid ${t.days[0]?.color||`#f59e0b`}`:`2px solid transparent`,padding:`12px 20px 10px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.68rem`,letterSpacing:`0.08em`,textTransform:`uppercase`,color:i===e?`#d4d4d4`:`#3a3a3a`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`},children:t.label},i))}),(0,p.jsx)(`nav`,{style:{display:`flex`,padding:`0 32px`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${a} transparent`},className:`day-nav`,children:i.days.map((e,n)=>(0,p.jsx)(`button`,{onClick:()=>r(n),style:{background:`none`,border:`none`,borderBottom:n===t?`2px solid ${e.color}`:`2px solid transparent`,padding:`14px 18px 12px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:n===t?e.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:e.label},n))})]})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,week:t,activeDayInWeek:n,onPrev:r,onNext:i,isFirst:a,isLast:o}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[t.label,` — Day `,n+1]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:r,disabled:a,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:a?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:a?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:i,disabled:o,style:{background:`none`,border:`1px solid ${o?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:o?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:o?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(0),i=d[e],a=i.days[n];function o(){if(n>0)r(n-1);else if(e>0){let n=d[e-1];t(e-1),r(n.days.length-1)}}function s(){n<i.days.length-1?r(n+1):e<d.length-1&&(t(e+1),r(0))}let c=e===0&&n===0,u=e===d.length-1&&n===i.days.length-1;return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeWeek:e,activeDayInWeek:n}),(0,p.jsx)(h,{activeWeek:e,activeDayInWeek:n,setActiveWeek:t,setActiveDayInWeek:r}),(0,p.jsx)(y,{day:a,week:i,activeDayInWeek:n,onPrev:o,onNext:s,isFirst:c,isLast:u}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
+// It handles the combined case without a special check.`}]}]}]},{label:`Week 4`,days:[{number:14,label:`Day 1`,title:`Week 4, Day 1 — From Problem to MVP`,subtitle:`Real pain. Specific users. Three features. Defend it out loud.`,color:`#14b8a6`,sections:[{heading:`Exercise 1 — Problem Brainstorm`,description:`Three problems from real life. Who has them, how often they happen, what people do about them right now.`,qa:[{q:`Problem 1`,a:`Description: Plant-based eaters in small towns waste a meal-out figuring out the restaurant has nothing real for them.
+
+Who: Vegans and strict vegetarians in towns under 30k people.
+
+How often: Every time they eat out — multiple times a week.
+
+Current workaround: Calling restaurants ahead, scrolling Yelp photos of menus, asking the server twice, settling for a side salad and "vegetable plate".`},{q:`Problem 2`,a:`Description: Returning students with kids juggle their kid's school schedule and their own assignment deadlines with no single view.
+
+Who: Adult learners with school-age children at home, balancing community college or online programs.
+
+How often: Daily — every morning is a triage of what's due where.
+
+Current workaround: Paper planner, phone calendar, screenshots of Canvas due dates, asking the kid what they have homework on.`},{q:`Problem 3`,a:`Description: Exit tickets on AtlasLearn ask us to reflect on content we didn't actually cover, because the curriculum shifted mid-week and nobody updated the form.
+
+Who: Students in the Next Chapter Phase 1 cohort (and every future cohort as the curriculum keeps iterating).
+
+How often: Daily — exit tickets close out every class, and several days a week the prompts are out of sync with what really happened.
+
+Current workaround: Answering about what we actually did and adding a note explaining the mismatch, asking in Slack what people put, writing "we didn't cover this today" in the field, or skipping the ticket entirely.`},{q:`After sharing with a partner — which one felt like real pain and why?`,a:`Problem 2 — returning students with kids juggling their own coursework deadlines and their kid's school schedule.
+
+I am the user. I'm at Yavapai in ENG 102, the cybersecurity track, precalculus, and Python — all at once — with a teenager at home who has her own school work. Every morning is a triage of "what's due where for who," and I'm the one who has to hold both sides in my head.
+
+The other two are real but easier to dismiss. Problem 1 has HappyCow already half-solving it. Problem 3 (AtlasLearn exit tickets) is acute but narrow — it only affects students in this specific cohort. Problem 2 is something I'd actually use every single day. I want to be the first customer of this tool more than I want to ship something for someone else, and that's the strongest signal I have.`}]},{heading:`Exercise 2 — Stress Test`,description:`Partner pokes holes in my ideas. Real problem or mild inconvenience? Can I build a basic version in a few weeks?`,qa:[{q:`Stress test — answering the four critique questions`,a:`Running this on Problem 2: returning students with kids, juggling their own coursework deadlines and their kid's school schedule.
+
+1. Who would actually use this? Can I name specific people?
+
+Me, first. I'm enrolled at Yavapai in ENG 102, the cybersecurity track, precalculus, and Python — all at once — with a teenager at home. I live this every morning. Past me, I can name peers in the Next Chapter cohort who are parents and other returning students at Yavapai in the same triage loop. Real users, not "everyone."
+
+2. How is this different from something that already exists?
+
+Canvas Parent (Instructure's official mobile app) covers the kid side but is parent-only and mobile-only. Canvas's built-in email notifications fire one message per event with no daily rollup and no "missing" summary — most people turn them off because the volume is unmanageable. Cozi, Google Calendar, MyStudyLife — none of them are Canvas-aware in a way that surfaces both an observer view AND a student view in one place.
+
+The gap I'm targeting: take two Canvas tokens (one observer for my kid, one student for me), pull missing + upcoming work for both, and render a single daily email digest with clear sections for each role.
+
+3. Is this a real problem or a mild inconvenience?
+
+Real. The cost is missed deadlines — my grade drops. Missed permission slips — my kid can't go on the field trip. Missed kid's events — my kid feels unsupported. Stack these up over a semester and the cost compounds into stress, anxiety, and the "am I cut out for this" spiral that already hits returning students hard. It's not "I forgot a meeting." It's "I'm letting two people down at once."
+
+4. Could I build a basic version in a few weeks? If not, how do I scope down?
+
+Yes. Canvas has a documented REST API. The script flow is straightforward — read two tokens from env vars, hit /api/v1/users/self/missing_submissions for me, hit the observer endpoints for my kid, merge the data, render an HTML + plain-text email, send via SMTP, run on cron at 7 AM. The core data fetching is well-trodden territory in Python (requests + standard library).
+
+The harder/uncertain parts are: getting both Canvas tokens authorized correctly, building an email template that renders right across Gmail / Outlook / Apple Mail, and the diff state file for "new since last run" flagging. Two to three weeks of focused work feels right for a working V1, and the scope can shrink further if I drop the diff-tracking nice-to-have for v0.`},{q:`Strongest problem — the one that survived the most scrutiny`,a:`Problem 2 — returning student parents who are themselves enrolled at Canvas-using institutions. It survived all four critique questions clean: I'm the user, the gap in existing tools is real and specific, the cost compounds beyond annoyance, and the scope is achievable in weeks using a documented public API.`},{q:`Final problem statement`,a:`Returning students with kids who are also enrolled at Canvas-using institutions struggle to keep their own coursework deadlines and their kid's school work in one place, because no existing tool — including Canvas's own apps and notification settings — bundles an observer view and a student view into a single daily digest, and right now they juggle two separate Canvas accounts, two notification streams, and a fistful of screenshots.`}]},{heading:`Exercise 3 — User Stories`,description:`5-7 user stories. Different types of users, different moments, what's most important. Each one maps to a feature.`,qa:[{q:`User stories`,a:`1. As a returning student parent, I want to set up the digest with my Canvas observer token (for my kid) AND my own Canvas student token (Yavapai) so the script knows what to pull for both of us.
+
+2. As a returning student parent, I want one daily email summarizing what's missing and what's due for both of us so I know my morning triage before I even open my laptop.
+
+3. As a returning student parent, I want the email to clearly separate "Your stuff" from "Kid's stuff" so I can read it in three seconds and act.
+
+4. As a returning student parent, I want new items since the last digest flagged with a "New" badge so I notice when a teacher just posted something on either side.
+
+5. As a returning student parent, I want items due in the next 24 hours flagged with a "Soon" badge so the most urgent stuff is obvious without scanning.
+
+6. (optional) As a returning student parent, I want the subject line to summarize both sides ("You: 3 missing | Kid: 2 due in 24h") so I can decide whether to open immediately from the inbox preview.
+
+7. (optional) As a returning student parent, I want a --dry-run mode so I can preview the merged digest before scheduling it on cron.`},{q:`Feature mapping — each story to the feature it needs`,a:`User Story                                            | Feature
+------------------------------------------------------+----------------------------------------------
+Set up observer + student tokens                      | Env vars for both Canvas tokens + setup docs
+Daily email of both                                   | Canvas API: observer fetch (kid) + self fetch (parent), scheduled via cron
+Separate "Your stuff" / "Kid's stuff" sections        | Email template with two named blocks
+"New" badges since last run                           | State diff file tracking IDs across runs
+"Soon" badges for due-in-24h                          | Time-until-due check in render
+Smart subject line summarizing both sides             | Subject builder that names both roles
+--dry-run preview                                     | CLI flag, print HTML + text to stdout instead of sending`}]},{heading:`Exercise 4 — Feature Prioritization`,description:`Every feature into one of three buckets. Must Have caps at 2-3 features. Not 7. Not 10.`,qa:[{q:`Three buckets — Must Have, Nice to Have, Later`,a:`MUST HAVE (MVP) — app is useless without these.
+  • Canvas API integration with two tokens (observer for kid, student for parent), pulling missing + upcoming work
+  • Merged daily email with clear "Your stuff" and "Kid's stuff" sections
+  • Cron-friendly automation so the digest sends every morning without manual intervention
+
+NICE TO HAVE — makes it better, not essential.
+  • "New" badges via state-diff tracking so newly-appeared items stand out
+  • "Soon" badges for items due in the next 24 hours
+  • Subject line summarizing both sides at a glance
+  • HTML + plain-text fallback for email client compatibility
+  • Dry-run / preview mode for testing changes
+  • Color coding by section (teal for me, peach for kid)
+
+LATER — V2 or beyond.
+  • Support multiple kids (loop over observees)
+  • Support multiple LMSes for households where the kid is on PowerSchool, Schoology, etc.
+  • SMS digest as an alternative to email
+  • Week-ahead view in addition to daily
+  • Multi-user setup so a co-parent can subscribe to the same digest`},{q:`Final MVP scope`,a:`My app: Canvas Daily — Parent + Student Edition (working title). A daily email digest that pulls missing and upcoming Canvas work for BOTH my Yavapai coursework AND my daughter's school, merging them into one message I can read in the morning before I open my laptop.
+
+Problem: Returning students with kids who are also Canvas users themselves struggle to triage two academic calendars at once, because Canvas's own apps and notification settings keep parent (observer) and student (self) views separate.
+
+MVP features:
+  1. Pull data from Canvas's REST API using two tokens — observer for kid, student for parent — for missing assignments and upcoming work
+  2. Render one merged email with clear "Your stuff" and "Kid's stuff" sections
+  3. Run on cron so the digest sends every morning automatically`}]},{heading:`Exercise 5 — AI-Assisted Competitive Research`,description:`ChatGPT prompts to map the landscape. Watch for hallucinated tools — search if unsure.`,qa:[{q:`Prompt 1 results — existing solutions (top 5)`,a:`1. Canvas Parent — Instructure's official mobile app for observer accounts. Shows assignments, grades, and schedule for paired students. Free, official, mobile-only.
+
+2. Canvas Student (mobile app) — Instructure's app for the student themselves. Self-view only, no parent integration. Mobile-only.
+
+3. Canvas web email notifications — built-in, configurable per assignment / per course. Famously noisy. One email per event, never a daily digest. No "missing" rollup.
+
+4. Open-source Canvas API scripts on GitHub (canvas-cli, pycanvas, various personal digests) — many exist for one-off use cases. Mostly developer-oriented, no email rendering by default, almost always single-role.
+
+5. Generic family calendars (Cozi, TimeTree, Google Calendar) — handle scheduling but have zero Canvas awareness. You'd be re-entering everything by hand.`},{q:`Prompt 2 results — common complaints and gaps`,a:`Canvas Parent: best alternative for the kid side, but mobile-only and doesn't bundle the parent's own coursework. You're switching apps to see your own work.
+
+Canvas Student: solo-user, no parent integration at all. Same context-switch problem in reverse.
+
+Canvas's built-in email notifications: noisy and granular — you get one email per assignment event instead of one summary. No "missing" rollup. Most people turn them off precisely because the volume is unmanageable.
+
+GitHub Canvas scripts: each one solves a sliver — just missing, or just upcoming, or just for one student. None I've found bundle parent + student.
+
+Generic family calendars: zero Canvas awareness. You'd be screenshotting Canvas due dates and re-entering them by hand, which defeats the entire purpose.
+
+The gap across all of them: no tool, official or third-party, takes both a Canvas observer token AND a Canvas student token and produces a unified, diffed, daily digest with both perspectives in one place.`},{q:`Prompt 3 results — what would make my version different`,a:`• Bundle parent + student into one daily email — that's the headline. Two roles, one digest, one inbox.
+
+• Built on the open Canvas REST API. Standard tooling — Python + requests + smtplib + cron. Nothing fancy.
+
+• Email-first delivery. Returning student parents already check their inbox first thing in the morning — meet them where they are, not in a new app to download.
+
+• Diff tracking so "New" items across BOTH sides since the last digest get flagged. Nothing else does this for parent + student in one view.
+
+• Subject-line summary covers both roles so the inbox preview tells the truth before opening.
+
+• Future direction: support multi-LMS households (kid on PowerSchool, parent on Canvas) so the digest works even when the two institutions don't share a vendor.`},{q:`Comparison — top 2 existing solutions and my opportunity`,a:`Existing solution 1: Canvas Parent (Instructure's official mobile app)
+  What it does well: Official integration, free, covers everything observer accounts can see — notifications, grades, schedule, calendar. Best-in-class for the kid side.
+  What it's missing: Mobile-only and parent-only. Zero bundling with the parent's own student work. Every check is a context switch into a separate app.
+
+Existing solution 2: Canvas's built-in email notifications
+  What it does well: Cover every event type, configurable per course, no extra software to install.
+  What it's missing: One email per event, never a daily summary. No "missing" rollup. No diff. No parent + student bundling. Most people turn them off because the volume is unmanageable.
+
+My opportunity: Build a single daily email — one digest, two roles — using the Canvas API. Two tokens, merged rendering, sectioned headers. It covers a workflow no existing tool addresses, and the underlying stack is small enough to be doable in a few weeks.`},{q:`Any tools the AI named that I had to verify? Hallucinations?`,a:`Solid ground here — Canvas Parent and Canvas Student are real Instructure apps. The Canvas REST API is real, well-documented, and stable.
+
+Things to verify before pitching:
+  • Whether any prominent GitHub Canvas-digest project already includes both parent + student bundled (a quick "canvas digest parent observer student" search would tell me). If one exists, I want to know before I duplicate effort.
+  • Whether Canvas's notification settings have a "daily summary" option I overlooked.
+  • Whether there's a recent indie iOS/Android app I've missed that does this exact dual-role bundling.
+  • Whether my Yavapai Canvas instance actually allows student API tokens — most do, but worth confirming before committing to the architecture.
+
+ChatGPT will sometimes hallucinate a polished "Canvas Family Hub" app or similar — those are usually invented. Always click through to verify before citing in a pitch.`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`2 minutes to explain the problem out loud. Partner asks one follow-up.`,qa:[{q:`My 2-minute pitch — who, what, why, current workaround`,a:`Who has the problem (specific — can I name real people?):
+Me. I'm at Yavapai in four classes at once — ENG 102, cybersecurity, precalc, Python — with a teenage daughter at home doing online school on Canvas. I can name peers in the Next Chapter cohort who are parents, and other returning students at Yavapai juggling the same thing. This is a real, named group — not "adult learners" in the abstract.
+
+What's the problem? What does the pain look like day-to-day?:
+Every morning is triage across two Canvas accounts. Mine as a student at Yavapai, hers as a parent through an observer account. Canvas keeps those views completely separate — different apps, different notification streams. To know what's due across both sides I have to log into two accounts, click through every course, and stitch it together in my head. By the time I've done that I've burned the first hour of my day.
+
+Why does it matter? What does it cost in time, money, or opportunity?:
+Missed deadlines on my side drop my grade. Missed permission slips on her side mean she can't go on the field trip. Missed work on her side compounds into a failing semester I don't find out about until progress reports. Stack those across 16 weeks and the cost isn't just academic — it's the stress, the anxiety, the "am I cut out for this" spiral that already hits returning students harder than anyone admits. It's not "I forgot a meeting." It's "I'm letting two people down at once."
+
+Current workaround:
+Two logins, two notification streams, screenshots of due dates, and asking my kid what's due (with the obvious accuracy problems). I've already built half of the fix — a Python script that pulls her side through the Canvas observer API and emails me a daily digest with missing work, what's due this week, "New" badges since the last run, and "Soon" badges for items due in 24 hours. The gap is that it only covers her. Yavapai also uses Canvas. Adding my own student token and merging the two into one email is the MVP.`},{q:`Partner's follow-up question and my answer`,a:`Parnter's question: What would be the MVP version of this? If I had to build something in the next few weeks, what would I focus on?
+
+My answer: The core value prop is the merged parent + student view in one daily email. If I had to strip it down to an MVP, I'd focus on just that: two Canvas tokens (observer + student), a script that pulls missing + upcoming work for both, and a merged email template with "Your stuff" and "Kid's stuff" sections. I'd run it manually at first to prove the concept before automating with cron or adding diff tracking.`},{q:`Saying it out loud surfaced what? What would I refine before the next pitch?`,a:`Saying it out loud surfaced the importance of the "daily email" delivery mechanism — that's a key part of the value prop that I hadn't fully articulated in my head. It also made me realize that the MVP can be really focused on just the merged view, without the diff tracking or smart subject line, which are nice-to-haves but not essential for proving the concept. Before the next pitch, I'd refine my problem statement to emphasize the pain of juggling two separate Canvas accounts and notification streams, and I'd be more explicit about the "daily email digest" as the core solution I'm proposing.`}]}]},{number:15,label:`Day 2`,title:`Week 4, Day 2 — APIs from the Ground Up`,subtitle:`Endpoints, JSON, status codes. Speak it back in plain English.`,color:`#06b6d4`,sections:[{heading:`Exercise 1 — API Explorer`,description:`Hit four public APIs in the browser. Read the JSON. Notice the shape.`,qa:[{q:`API 1 — GitHub User (https://api.github.com/users/octocat)`,a:`Value of "login": "octocat"
+
+Value of "public_repos": 8
+
+Number of followers: 22699
+
+Tried with my own GitHub username — did it work?: Yes! 
+{
+  "login": "DBusch-Developer",
+  "id": 208895580,
+  "node_id": "U_kgDODHN-XA",
+  "avatar_url": "https://avatars.githubusercontent.com/u/208895580?v=4",
+  "gravatar_id": "",
+  "url": "https://api.github.com/users/DBusch-Developer",
+  "html_url": "https://github.com/DBusch-Developer",
+  "followers_url": "https://api.github.com/users/DBusch-Developer/followers",
+  "following_url": "https://api.github.com/users/DBusch-Developer/following{/other_user}",
+  "gists_url": "https://api.github.com/users/DBusch-Developer/gists{/gist_id}",
+  "starred_url": "https://api.github.com/users/DBusch-Developer/starred{/owner}{/repo}",
+  "subscriptions_url": "https://api.github.com/users/DBusch-Developer/subscriptions",
+  "organizations_url": "https://api.github.com/users/DBusch-Developer/orgs",
+  "repos_url": "https://api.github.com/users/DBusch-Developer/repos",
+  "events_url": "https://api.github.com/users/DBusch-Developer/events{/privacy}",
+  "received_events_url": "https://api.github.com/users/DBusch-Developer/received_events",
+  "type": "User",
+  "user_view_type": "public",
+  "site_admin": false,
+  "name": "Diana Busch",
+  "company": null,
+  "blog": "",
+  "location": null,
+  "email": null,
+  "hireable": null,
+  "bio": null,
+  "twitter_username": null,
+  "public_repos": 18,
+  "public_gists": 0,
+  "followers": 4,
+  "following": 10,
+  "created_at": "2025-04-24T01:53:34Z",
+  "updated_at": "2026-05-16T03:33:08Z"
+}`},{q:`API 2 — JSONPlaceholder Posts (https://jsonplaceholder.typicode.com/posts/1)`,a:`Fields in the response: userId, id, title, body
+
+Title of post 1: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit"
+
+/posts/2 — what changed?: The id is 2, the title and body are different, but the userId is the same (1).
+
+/posts (no number) — what do you get? How many posts?: You get an array of 100 posts. Each post has the same fields (userId, id, title, body) but different values. The userIds range from 1 to 10, with 10 posts per user. 
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    "body": "quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "qui est esse",
+    "body": "est rerum tempore vitae
+sequi sint nihil reprehenderit dolor beatae ea dolores neque
+fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis
+qui aperiam non debitis possimus qui neque nisi nulla"
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
+    "body": "et iusto sed quo iure
+voluptatem occaecati omnis eligendi aut ad
+voluptatem doloribus vel accusantium quis pariatur
+molestiae porro eius odio et labore et velit aut"
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "eum et est occaecati",
+    "body": "ullam et saepe reiciendis voluptatem adipisci
+sit amet autem assumenda provident rerum culpa
+quis hic commodi nesciunt rem tenetur doloremque ipsam iure
+quis sunt voluptatem rerum illo velit"
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "nesciunt quas odio",
+    "body": "repudiandae veniam quaerat sunt sed
+alias aut fugiat sit autem sed est
+voluptatem omnis possimus esse voluptatibus quis
+est aut tenetur dolor neque"
+  },
+  {
+    "userId": 1,
+    "id": 6,
+    "title": "dolorem eum magni eos aperiam quia",
+    "body": "ut aspernatur corporis harum nihil quis provident sequi
+mollitia nobis aliquid molestiae
+perspiciatis et ea nemo ab reprehenderit accusantium quas
+voluptate dolores velit et doloremque molestiae"
+  },
+  {
+    "userId": 1,
+    "id": 7,
+    "title": "magnam facilis autem",
+    "body": "dolore placeat quibusdam ea quo vitae
+magni quis enim qui quis quo nemo aut saepe
+quidem repellat excepturi ut quia
+sunt ut sequi eos ea sed quas"
+  },
+  {
+    "userId": 1,
+    "id": 8,
+    "title": "dolorem dolore est ipsam",
+    "body": "dignissimos aperiam dolorem qui eum
+facilis quibusdam animi sint suscipit qui sint possimus cum
+quaerat magni maiores excepturi
+ipsam ut commodi dolor voluptatum modi aut vitae"
+  },
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "nesciunt iure omnis dolorem tempora et accusantium",
+    "body": "consectetur animi nesciunt iure dolore
+enim quia ad
+veniam autem ut quam aut nobis
+et est aut quod aut provident voluptas autem voluptas"
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "optio molestias id quia eum",
+    "body": "quo et expedita modi cum officia vel magni
+doloribus qui repudiandae
+vero nisi sit
+quos veniam quod sed accusamus veritatis error"
+  },
+  {
+    "userId": 2,
+    "id": 11,
+    "title": "et ea vero quia laudantium autem",
+    "body": "delectus reiciendis molestiae occaecati non minima eveniet qui voluptatibus
+accusamus in eum beatae sit
+vel qui neque voluptates ut commodi qui incidunt
+ut animi commodi"
+  },
+  {
+    "userId": 2,
+    "id": 12,
+    "title": "in quibusdam tempore odit est dolorem",
+    "body": "itaque id aut magnam
+praesentium quia et ea odit et ea voluptas et
+sapiente quia nihil amet occaecati quia id voluptatem
+incidunt ea est distinctio odio"
+  },
+  {
+    "userId": 2,
+    "id": 13,
+    "title": "dolorum ut in voluptas mollitia et saepe quo animi",
+    "body": "aut dicta possimus sint mollitia voluptas commodi quo doloremque
+iste corrupti reiciendis voluptatem eius rerum
+sit cumque quod eligendi laborum minima
+perferendis recusandae assumenda consectetur porro architecto ipsum ipsam"
+  },
+  {
+    "userId": 2,
+    "id": 14,
+    "title": "voluptatem eligendi optio",
+    "body": "fuga et accusamus dolorum perferendis illo voluptas
+non doloremque neque facere
+ad qui dolorum molestiae beatae
+sed aut voluptas totam sit illum"
+  },
+  {
+    "userId": 2,
+    "id": 15,
+    "title": "eveniet quod temporibus",
+    "body": "reprehenderit quos placeat
+velit minima officia dolores impedit repudiandae molestiae nam
+voluptas recusandae quis delectus
+officiis harum fugiat vitae"
+  },
+  {
+    "userId": 2,
+    "id": 16,
+    "title": "sint suscipit perspiciatis velit dolorum rerum ipsa laboriosam odio",
+    "body": "suscipit nam nisi quo aperiam aut
+asperiores eos fugit maiores voluptatibus quia
+voluptatem quis ullam qui in alias quia est
+consequatur magni mollitia accusamus ea nisi voluptate dicta"
+  },
+  {
+    "userId": 2,
+    "id": 17,
+    "title": "fugit voluptas sed molestias voluptatem provident",
+    "body": "eos voluptas et aut odit natus earum
+aspernatur fuga molestiae ullam
+deserunt ratione qui eos
+qui nihil ratione nemo velit ut aut id quo"
+  },
+  {
+    "userId": 2,
+    "id": 18,
+    "title": "voluptate et itaque vero tempora molestiae",
+    "body": "eveniet quo quis
+laborum totam consequatur non dolor
+ut et est repudiandae
+est voluptatem vel debitis et magnam"
+  },
+  {
+    "userId": 2,
+    "id": 19,
+    "title": "adipisci placeat illum aut reiciendis qui",
+    "body": "illum quis cupiditate provident sit magnam
+ea sed aut omnis
+veniam maiores ullam consequatur atque
+adipisci quo iste expedita sit quos voluptas"
+  },
+  {
+    "userId": 2,
+    "id": 20,
+    "title": "doloribus ad provident suscipit at",
+    "body": "qui consequuntur ducimus possimus quisquam amet similique
+suscipit porro ipsam amet
+eos veritatis officiis exercitationem vel fugit aut necessitatibus totam
+omnis rerum consequatur expedita quidem cumque explicabo"
+  },
+  {
+    "userId": 3,
+    "id": 21,
+    "title": "asperiores ea ipsam voluptatibus modi minima quia sint",
+    "body": "repellat aliquid praesentium dolorem quo
+sed totam minus non itaque
+nihil labore molestiae sunt dolor eveniet hic recusandae veniam
+tempora et tenetur expedita sunt"
+  },
+  {
+    "userId": 3,
+    "id": 22,
+    "title": "dolor sint quo a velit explicabo quia nam",
+    "body": "eos qui et ipsum ipsam suscipit aut
+sed omnis non odio
+expedita earum mollitia molestiae aut atque rem suscipit
+nam impedit esse"
+  },
+  {
+    "userId": 3,
+    "id": 23,
+    "title": "maxime id vitae nihil numquam",
+    "body": "veritatis unde neque eligendi
+quae quod architecto quo neque vitae
+est illo sit tempora doloremque fugit quod
+et et vel beatae sequi ullam sed tenetur perspiciatis"
+  },
+  {
+    "userId": 3,
+    "id": 24,
+    "title": "autem hic labore sunt dolores incidunt",
+    "body": "enim et ex nulla
+omnis voluptas quia qui
+voluptatem consequatur numquam aliquam sunt
+totam recusandae id dignissimos aut sed asperiores deserunt"
+  },
+  {
+    "userId": 3,
+    "id": 25,
+    "title": "rem alias distinctio quo quis",
+    "body": "ullam consequatur ut
+omnis quis sit vel consequuntur
+ipsa eligendi ipsum molestiae et omnis error nostrum
+molestiae illo tempore quia et distinctio"
+  },
+  {
+    "userId": 3,
+    "id": 26,
+    "title": "est et quae odit qui non",
+    "body": "similique esse doloribus nihil accusamus
+omnis dolorem fuga consequuntur reprehenderit fugit recusandae temporibus
+perspiciatis cum ut laudantium
+omnis aut molestiae vel vero"
+  },
+  {
+    "userId": 3,
+    "id": 27,
+    "title": "quasi id et eos tenetur aut quo autem",
+    "body": "eum sed dolores ipsam sint possimus debitis occaecati
+debitis qui qui et
+ut placeat enim earum aut odit facilis
+consequatur suscipit necessitatibus rerum sed inventore temporibus consequatur"
+  },
+  {
+    "userId": 3,
+    "id": 28,
+    "title": "delectus ullam et corporis nulla voluptas sequi",
+    "body": "non et quaerat ex quae ad maiores
+maiores recusandae totam aut blanditiis mollitia quas illo
+ut voluptatibus voluptatem
+similique nostrum eum"
+  },
+  {
+    "userId": 3,
+    "id": 29,
+    "title": "iusto eius quod necessitatibus culpa ea",
+    "body": "odit magnam ut saepe sed non qui
+tempora atque nihil
+accusamus illum doloribus illo dolor
+eligendi repudiandae odit magni similique sed cum maiores"
+  },
+  {
+    "userId": 3,
+    "id": 30,
+    "title": "a quo magni similique perferendis",
+    "body": "alias dolor cumque
+impedit blanditiis non eveniet odio maxime
+blanditiis amet eius quis tempora quia autem rem
+a provident perspiciatis quia"
+  },
+  {
+    "userId": 4,
+    "id": 31,
+    "title": "ullam ut quidem id aut vel consequuntur",
+    "body": "debitis eius sed quibusdam non quis consectetur vitae
+impedit ut qui consequatur sed aut in
+quidem sit nostrum et maiores adipisci atque
+quaerat voluptatem adipisci repudiandae"
+  },
+  {
+    "userId": 4,
+    "id": 32,
+    "title": "doloremque illum aliquid sunt",
+    "body": "deserunt eos nobis asperiores et hic
+est debitis repellat molestiae optio
+nihil ratione ut eos beatae quibusdam distinctio maiores
+earum voluptates et aut adipisci ea maiores voluptas maxime"
+  },
+  {
+    "userId": 4,
+    "id": 33,
+    "title": "qui explicabo molestiae dolorem",
+    "body": "rerum ut et numquam laborum odit est sit
+id qui sint in
+quasi tenetur tempore aperiam et quaerat qui in
+rerum officiis sequi cumque quod"
+  },
+  {
+    "userId": 4,
+    "id": 34,
+    "title": "magnam ut rerum iure",
+    "body": "ea velit perferendis earum ut voluptatem voluptate itaque iusto
+totam pariatur in
+nemo voluptatem voluptatem autem magni tempora minima in
+est distinctio qui assumenda accusamus dignissimos officia nesciunt nobis"
+  },
+  {
+    "userId": 4,
+    "id": 35,
+    "title": "id nihil consequatur molestias animi provident",
+    "body": "nisi error delectus possimus ut eligendi vitae
+placeat eos harum cupiditate facilis reprehenderit voluptatem beatae
+modi ducimus quo illum voluptas eligendi
+et nobis quia fugit"
+  },
+  {
+    "userId": 4,
+    "id": 36,
+    "title": "fuga nam accusamus voluptas reiciendis itaque",
+    "body": "ad mollitia et omnis minus architecto odit
+voluptas doloremque maxime aut non ipsa qui alias veniam
+blanditiis culpa aut quia nihil cumque facere et occaecati
+qui aspernatur quia eaque ut aperiam inventore"
+  },
+  {
+    "userId": 4,
+    "id": 37,
+    "title": "provident vel ut sit ratione est",
+    "body": "debitis et eaque non officia sed nesciunt pariatur vel
+voluptatem iste vero et ea
+numquam aut expedita ipsum nulla in
+voluptates omnis consequatur aut enim officiis in quam qui"
+  },
+  {
+    "userId": 4,
+    "id": 38,
+    "title": "explicabo et eos deleniti nostrum ab id repellendus",
+    "body": "animi esse sit aut sit nesciunt assumenda eum voluptas
+quia voluptatibus provident quia necessitatibus ea
+rerum repudiandae quia voluptatem delectus fugit aut id quia
+ratione optio eos iusto veniam iure"
+  },
+  {
+    "userId": 4,
+    "id": 39,
+    "title": "eos dolorem iste accusantium est eaque quam",
+    "body": "corporis rerum ducimus vel eum accusantium
+maxime aspernatur a porro possimus iste omnis
+est in deleniti asperiores fuga aut
+voluptas sapiente vel dolore minus voluptatem incidunt ex"
+  },
+  {
+    "userId": 4,
+    "id": 40,
+    "title": "enim quo cumque",
+    "body": "ut voluptatum aliquid illo tenetur nemo sequi quo facilis
+ipsum rem optio mollitia quas
+voluptatem eum voluptas qui
+unde omnis voluptatem iure quasi maxime voluptas nam"
+  },
+  {
+    "userId": 5,
+    "id": 41,
+    "title": "non est facere",
+    "body": "molestias id nostrum
+excepturi molestiae dolore omnis repellendus quaerat saepe
+consectetur iste quaerat tenetur asperiores accusamus ex ut
+nam quidem est ducimus sunt debitis saepe"
+  },
+  {
+    "userId": 5,
+    "id": 42,
+    "title": "commodi ullam sint et excepturi error explicabo praesentium voluptas",
+    "body": "odio fugit voluptatum ducimus earum autem est incidunt voluptatem
+odit reiciendis aliquam sunt sequi nulla dolorem
+non facere repellendus voluptates quia
+ratione harum vitae ut"
+  },
+  {
+    "userId": 5,
+    "id": 43,
+    "title": "eligendi iste nostrum consequuntur adipisci praesentium sit beatae perferendis",
+    "body": "similique fugit est
+illum et dolorum harum et voluptate eaque quidem
+exercitationem quos nam commodi possimus cum odio nihil nulla
+dolorum exercitationem magnam ex et a et distinctio debitis"
+  },
+  {
+    "userId": 5,
+    "id": 44,
+    "title": "optio dolor molestias sit",
+    "body": "temporibus est consectetur dolore
+et libero debitis vel velit laboriosam quia
+ipsum quibusdam qui itaque fuga rem aut
+ea et iure quam sed maxime ut distinctio quae"
+  },
+  {
+    "userId": 5,
+    "id": 45,
+    "title": "ut numquam possimus omnis eius suscipit laudantium iure",
+    "body": "est natus reiciendis nihil possimus aut provident
+ex et dolor
+repellat pariatur est
+nobis rerum repellendus dolorem autem"
+  },
+  {
+    "userId": 5,
+    "id": 46,
+    "title": "aut quo modi neque nostrum ducimus",
+    "body": "voluptatem quisquam iste
+voluptatibus natus officiis facilis dolorem
+quis quas ipsam
+vel et voluptatum in aliquid"
+  },
+  {
+    "userId": 5,
+    "id": 47,
+    "title": "quibusdam cumque rem aut deserunt",
+    "body": "voluptatem assumenda ut qui ut cupiditate aut impedit veniam
+occaecati nemo illum voluptatem laudantium
+molestiae beatae rerum ea iure soluta nostrum
+eligendi et voluptate"
+  },
+  {
+    "userId": 5,
+    "id": 48,
+    "title": "ut voluptatem illum ea doloribus itaque eos",
+    "body": "voluptates quo voluptatem facilis iure occaecati
+vel assumenda rerum officia et
+illum perspiciatis ab deleniti
+laudantium repellat ad ut et autem reprehenderit"
+  },
+  {
+    "userId": 5,
+    "id": 49,
+    "title": "laborum non sunt aut ut assumenda perspiciatis voluptas",
+    "body": "inventore ab sint
+natus fugit id nulla sequi architecto nihil quaerat
+eos tenetur in in eum veritatis non
+quibusdam officiis aspernatur cumque aut commodi aut"
+  },
+  {
+    "userId": 5,
+    "id": 50,
+    "title": "repellendus qui recusandae incidunt voluptates tenetur qui omnis exercitationem",
+    "body": "error suscipit maxime adipisci consequuntur recusandae
+voluptas eligendi et est et voluptates
+quia distinctio ab amet quaerat molestiae et vitae
+adipisci impedit sequi nesciunt quis consectetur"
+  },
+  {
+    "userId": 6,
+    "id": 51,
+    "title": "soluta aliquam aperiam consequatur illo quis voluptas",
+    "body": "sunt dolores aut doloribus
+dolore doloribus voluptates tempora et
+doloremque et quo
+cum asperiores sit consectetur dolorem"
+  },
+  {
+    "userId": 6,
+    "id": 52,
+    "title": "qui enim et consequuntur quia animi quis voluptate quibusdam",
+    "body": "iusto est quibusdam fuga quas quaerat molestias
+a enim ut sit accusamus enim
+temporibus iusto accusantium provident architecto
+soluta esse reprehenderit qui laborum"
+  },
+  {
+    "userId": 6,
+    "id": 53,
+    "title": "ut quo aut ducimus alias",
+    "body": "minima harum praesentium eum rerum illo dolore
+quasi exercitationem rerum nam
+porro quis neque quo
+consequatur minus dolor quidem veritatis sunt non explicabo similique"
+  },
+  {
+    "userId": 6,
+    "id": 54,
+    "title": "sit asperiores ipsam eveniet odio non quia",
+    "body": "totam corporis dignissimos
+vitae dolorem ut occaecati accusamus
+ex velit deserunt
+et exercitationem vero incidunt corrupti mollitia"
+  },
+  {
+    "userId": 6,
+    "id": 55,
+    "title": "sit vel voluptatem et non libero",
+    "body": "debitis excepturi ea perferendis harum libero optio
+eos accusamus cum fuga ut sapiente repudiandae
+et ut incidunt omnis molestiae
+nihil ut eum odit"
+  },
+  {
+    "userId": 6,
+    "id": 56,
+    "title": "qui et at rerum necessitatibus",
+    "body": "aut est omnis dolores
+neque rerum quod ea rerum velit pariatur beatae excepturi
+et provident voluptas corrupti
+corporis harum reprehenderit dolores eligendi"
+  },
+  {
+    "userId": 6,
+    "id": 57,
+    "title": "sed ab est est",
+    "body": "at pariatur consequuntur earum quidem
+quo est laudantium soluta voluptatem
+qui ullam et est
+et cum voluptas voluptatum repellat est"
+  },
+  {
+    "userId": 6,
+    "id": 58,
+    "title": "voluptatum itaque dolores nisi et quasi",
+    "body": "veniam voluptatum quae adipisci id
+et id quia eos ad et dolorem
+aliquam quo nisi sunt eos impedit error
+ad similique veniam"
+  },
+  {
+    "userId": 6,
+    "id": 59,
+    "title": "qui commodi dolor at maiores et quis id accusantium",
+    "body": "perspiciatis et quam ea autem temporibus non voluptatibus qui
+beatae a earum officia nesciunt dolores suscipit voluptas et
+animi doloribus cum rerum quas et magni
+et hic ut ut commodi expedita sunt"
+  },
+  {
+    "userId": 6,
+    "id": 60,
+    "title": "consequatur placeat omnis quisquam quia reprehenderit fugit veritatis facere",
+    "body": "asperiores sunt ab assumenda cumque modi velit
+qui esse omnis
+voluptate et fuga perferendis voluptas
+illo ratione amet aut et omnis"
+  },
+  {
+    "userId": 7,
+    "id": 61,
+    "title": "voluptatem doloribus consectetur est ut ducimus",
+    "body": "ab nemo optio odio
+delectus tenetur corporis similique nobis repellendus rerum omnis facilis
+vero blanditiis debitis in nesciunt doloribus dicta dolores
+magnam minus velit"
+  },
+  {
+    "userId": 7,
+    "id": 62,
+    "title": "beatae enim quia vel",
+    "body": "enim aspernatur illo distinctio quae praesentium
+beatae alias amet delectus qui voluptate distinctio
+odit sint accusantium autem omnis
+quo molestiae omnis ea eveniet optio"
+  },
+  {
+    "userId": 7,
+    "id": 63,
+    "title": "voluptas blanditiis repellendus animi ducimus error sapiente et suscipit",
+    "body": "enim adipisci aspernatur nemo
+numquam omnis facere dolorem dolor ex quis temporibus incidunt
+ab delectus culpa quo reprehenderit blanditiis asperiores
+accusantium ut quam in voluptatibus voluptas ipsam dicta"
+  },
+  {
+    "userId": 7,
+    "id": 64,
+    "title": "et fugit quas eum in in aperiam quod",
+    "body": "id velit blanditiis
+eum ea voluptatem
+molestiae sint occaecati est eos perspiciatis
+incidunt a error provident eaque aut aut qui"
+  },
+  {
+    "userId": 7,
+    "id": 65,
+    "title": "consequatur id enim sunt et et",
+    "body": "voluptatibus ex esse
+sint explicabo est aliquid cumque adipisci fuga repellat labore
+molestiae corrupti ex saepe at asperiores et perferendis
+natus id esse incidunt pariatur"
+  },
+  {
+    "userId": 7,
+    "id": 66,
+    "title": "repudiandae ea animi iusto",
+    "body": "officia veritatis tenetur vero qui itaque
+sint non ratione
+sed et ut asperiores iusto eos molestiae nostrum
+veritatis quibusdam et nemo iusto saepe"
+  },
+  {
+    "userId": 7,
+    "id": 67,
+    "title": "aliquid eos sed fuga est maxime repellendus",
+    "body": "reprehenderit id nostrum
+voluptas doloremque pariatur sint et accusantium quia quod aspernatur
+et fugiat amet
+non sapiente et consequatur necessitatibus molestiae"
+  },
+  {
+    "userId": 7,
+    "id": 68,
+    "title": "odio quis facere architecto reiciendis optio",
+    "body": "magnam molestiae perferendis quisquam
+qui cum reiciendis
+quaerat animi amet hic inventore
+ea quia deleniti quidem saepe porro velit"
+  },
+  {
+    "userId": 7,
+    "id": 69,
+    "title": "fugiat quod pariatur odit minima",
+    "body": "officiis error culpa consequatur modi asperiores et
+dolorum assumenda voluptas et vel qui aut vel rerum
+voluptatum quisquam perspiciatis quia rerum consequatur totam quas
+sequi commodi repudiandae asperiores et saepe a"
+  },
+  {
+    "userId": 7,
+    "id": 70,
+    "title": "voluptatem laborum magni",
+    "body": "sunt repellendus quae
+est asperiores aut deleniti esse accusamus repellendus quia aut
+quia dolorem unde
+eum tempora esse dolore"
+  },
+  {
+    "userId": 8,
+    "id": 71,
+    "title": "et iusto veniam et illum aut fuga",
+    "body": "occaecati a doloribus
+iste saepe consectetur placeat eum voluptate dolorem et
+qui quo quia voluptas
+rerum ut id enim velit est perferendis"
+  },
+  {
+    "userId": 8,
+    "id": 72,
+    "title": "sint hic doloribus consequatur eos non id",
+    "body": "quam occaecati qui deleniti consectetur
+consequatur aut facere quas exercitationem aliquam hic voluptas
+neque id sunt ut aut accusamus
+sunt consectetur expedita inventore velit"
+  },
+  {
+    "userId": 8,
+    "id": 73,
+    "title": "consequuntur deleniti eos quia temporibus ab aliquid at",
+    "body": "voluptatem cumque tenetur consequatur expedita ipsum nemo quia explicabo
+aut eum minima consequatur
+tempore cumque quae est et
+et in consequuntur voluptatem voluptates aut"
+  },
+  {
+    "userId": 8,
+    "id": 74,
+    "title": "enim unde ratione doloribus quas enim ut sit sapiente",
+    "body": "odit qui et et necessitatibus sint veniam
+mollitia amet doloremque molestiae commodi similique magnam et quam
+blanditiis est itaque
+quo et tenetur ratione occaecati molestiae tempora"
+  },
+  {
+    "userId": 8,
+    "id": 75,
+    "title": "dignissimos eum dolor ut enim et delectus in",
+    "body": "commodi non non omnis et voluptas sit
+autem aut nobis magnam et sapiente voluptatem
+et laborum repellat qui delectus facilis temporibus
+rerum amet et nemo voluptate expedita adipisci error dolorem"
+  },
+  {
+    "userId": 8,
+    "id": 76,
+    "title": "doloremque officiis ad et non perferendis",
+    "body": "ut animi facere
+totam iusto tempore
+molestiae eum aut et dolorem aperiam
+quaerat recusandae totam odio"
+  },
+  {
+    "userId": 8,
+    "id": 77,
+    "title": "necessitatibus quasi exercitationem odio",
+    "body": "modi ut in nulla repudiandae dolorum nostrum eos
+aut consequatur omnis
+ut incidunt est omnis iste et quam
+voluptates sapiente aliquam asperiores nobis amet corrupti repudiandae provident"
+  },
+  {
+    "userId": 8,
+    "id": 78,
+    "title": "quam voluptatibus rerum veritatis",
+    "body": "nobis facilis odit tempore cupiditate quia
+assumenda doloribus rerum qui ea
+illum et qui totam
+aut veniam repellendus"
+  },
+  {
+    "userId": 8,
+    "id": 79,
+    "title": "pariatur consequatur quia magnam autem omnis non amet",
+    "body": "libero accusantium et et facere incidunt sit dolorem
+non excepturi qui quia sed laudantium
+quisquam molestiae ducimus est
+officiis esse molestiae iste et quos"
+  },
+  {
+    "userId": 8,
+    "id": 80,
+    "title": "labore in ex et explicabo corporis aut quas",
+    "body": "ex quod dolorem ea eum iure qui provident amet
+quia qui facere excepturi et repudiandae
+asperiores molestias provident
+minus incidunt vero fugit rerum sint sunt excepturi provident"
+  },
+  {
+    "userId": 9,
+    "id": 81,
+    "title": "tempora rem veritatis voluptas quo dolores vero",
+    "body": "facere qui nesciunt est voluptatum voluptatem nisi
+sequi eligendi necessitatibus ea at rerum itaque
+harum non ratione velit laboriosam quis consequuntur
+ex officiis minima doloremque voluptas ut aut"
+  },
+  {
+    "userId": 9,
+    "id": 82,
+    "title": "laudantium voluptate suscipit sunt enim enim",
+    "body": "ut libero sit aut totam inventore sunt
+porro sint qui sunt molestiae
+consequatur cupiditate qui iste ducimus adipisci
+dolor enim assumenda soluta laboriosam amet iste delectus hic"
+  },
+  {
+    "userId": 9,
+    "id": 83,
+    "title": "odit et voluptates doloribus alias odio et",
+    "body": "est molestiae facilis quis tempora numquam nihil qui
+voluptate sapiente consequatur est qui
+necessitatibus autem aut ipsa aperiam modi dolore numquam
+reprehenderit eius rem quibusdam"
+  },
+  {
+    "userId": 9,
+    "id": 84,
+    "title": "optio ipsam molestias necessitatibus occaecati facilis veritatis dolores aut",
+    "body": "sint molestiae magni a et quos
+eaque et quasi
+ut rerum debitis similique veniam
+recusandae dignissimos dolor incidunt consequatur odio"
+  },
+  {
+    "userId": 9,
+    "id": 85,
+    "title": "dolore veritatis porro provident adipisci blanditiis et sunt",
+    "body": "similique sed nisi voluptas iusto omnis
+mollitia et quo
+assumenda suscipit officia magnam sint sed tempora
+enim provident pariatur praesentium atque animi amet ratione"
+  },
+  {
+    "userId": 9,
+    "id": 86,
+    "title": "placeat quia et porro iste",
+    "body": "quasi excepturi consequatur iste autem temporibus sed molestiae beatae
+et quaerat et esse ut
+voluptatem occaecati et vel explicabo autem
+asperiores pariatur deserunt optio"
+  },
+  {
+    "userId": 9,
+    "id": 87,
+    "title": "nostrum quis quasi placeat",
+    "body": "eos et molestiae
+nesciunt ut a
+dolores perspiciatis repellendus repellat aliquid
+magnam sint rem ipsum est"
+  },
+  {
+    "userId": 9,
+    "id": 88,
+    "title": "sapiente omnis fugit eos",
+    "body": "consequatur omnis est praesentium
+ducimus non iste
+neque hic deserunt
+voluptatibus veniam cum et rerum sed"
+  },
+  {
+    "userId": 9,
+    "id": 89,
+    "title": "sint soluta et vel magnam aut ut sed qui",
+    "body": "repellat aut aperiam totam temporibus autem et
+architecto magnam ut
+consequatur qui cupiditate rerum quia soluta dignissimos nihil iure
+tempore quas est"
+  },
+  {
+    "userId": 9,
+    "id": 90,
+    "title": "ad iusto omnis odit dolor voluptatibus",
+    "body": "minus omnis soluta quia
+qui sed adipisci voluptates illum ipsam voluptatem
+eligendi officia ut in
+eos soluta similique molestias praesentium blanditiis"
+  },
+  {
+    "userId": 10,
+    "id": 91,
+    "title": "aut amet sed",
+    "body": "libero voluptate eveniet aperiam sed
+sunt placeat suscipit molestias
+similique fugit nam natus
+expedita consequatur consequatur dolores quia eos et placeat"
+  },
+  {
+    "userId": 10,
+    "id": 92,
+    "title": "ratione ex tenetur perferendis",
+    "body": "aut et excepturi dicta laudantium sint rerum nihil
+laudantium et at
+a neque minima officia et similique libero et
+commodi voluptate qui"
+  },
+  {
+    "userId": 10,
+    "id": 93,
+    "title": "beatae soluta recusandae",
+    "body": "dolorem quibusdam ducimus consequuntur dicta aut quo laboriosam
+voluptatem quis enim recusandae ut sed sunt
+nostrum est odit totam
+sit error sed sunt eveniet provident qui nulla"
+  },
+  {
+    "userId": 10,
+    "id": 94,
+    "title": "qui qui voluptates illo iste minima",
+    "body": "aspernatur expedita soluta quo ab ut similique
+expedita dolores amet
+sed temporibus distinctio magnam saepe deleniti
+omnis facilis nam ipsum natus sint similique omnis"
+  },
+  {
+    "userId": 10,
+    "id": 95,
+    "title": "id minus libero illum nam ad officiis",
+    "body": "earum voluptatem facere provident blanditiis velit laboriosam
+pariatur accusamus odio saepe
+cumque dolor qui a dicta ab doloribus consequatur omnis
+corporis cupiditate eaque assumenda ad nesciunt"
+  },
+  {
+    "userId": 10,
+    "id": 96,
+    "title": "quaerat velit veniam amet cupiditate aut numquam ut sequi",
+    "body": "in non odio excepturi sint eum
+labore voluptates vitae quia qui et
+inventore itaque rerum
+veniam non exercitationem delectus aut"
+  },
+  {
+    "userId": 10,
+    "id": 97,
+    "title": "quas fugiat ut perspiciatis vero provident",
+    "body": "eum non blanditiis soluta porro quibusdam voluptas
+vel voluptatem qui placeat dolores qui velit aut
+vel inventore aut cumque culpa explicabo aliquid at
+perspiciatis est et voluptatem dignissimos dolor itaque sit nam"
+  },
+  {
+    "userId": 10,
+    "id": 98,
+    "title": "laboriosam dolor voluptates",
+    "body": "doloremque ex facilis sit sint culpa
+soluta assumenda eligendi non ut eius
+sequi ducimus vel quasi
+veritatis est dolores"
+  },
+  {
+    "userId": 10,
+    "id": 99,
+    "title": "temporibus sit alias delectus eligendi possimus magni",
+    "body": "quo deleniti praesentium dicta non quod
+aut est molestias
+molestias et officia quis nihil
+itaque dolorem quia"
+  },
+  {
+    "userId": 10,
+    "id": 100,
+    "title": "at nam consequatur ea labore ea harum",
+    "body": "cupiditate quo est a modi nesciunt soluta
+ipsa voluptas error itaque dicta in
+autem qui minus magnam et distinctio eum
+accusamus ratione error aut"
+  }
+]`},{q:`API 3 — JSONPlaceholder Users (https://jsonplaceholder.typicode.com/users/1)`,a:`Name: "Leanne Graham"
+
+City (inside "address"): "Gwenborough"
+
+Company (inside "company"): "Romaguera-Crona"
+
+/users — how many total?: There is an array of 10 users, so 10 total. 
+[
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Clementine Bauch",
+    "username": "Samantha",
+    "email": "Nathan@yesenia.net",
+    "address": {
+      "street": "Douglas Extension",
+      "suite": "Suite 847",
+      "city": "McKenziehaven",
+      "zipcode": "59590-4157",
+      "geo": {
+        "lat": "-68.6102",
+        "lng": "-47.0653"
+      }
+    },
+    "phone": "1-463-123-4447",
+    "website": "ramiro.info",
+    "company": {
+      "name": "Romaguera-Jacobson",
+      "catchPhrase": "Face to face bifurcated interface",
+      "bs": "e-enable strategic applications"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Patricia Lebsack",
+    "username": "Karianne",
+    "email": "Julianne.OConner@kory.org",
+    "address": {
+      "street": "Hoeger Mall",
+      "suite": "Apt. 692",
+      "city": "South Elvis",
+      "zipcode": "53919-4257",
+      "geo": {
+        "lat": "29.4572",
+        "lng": "-164.2990"
+      }
+    },
+    "phone": "493-170-9623 x156",
+    "website": "kale.biz",
+    "company": {
+      "name": "Robel-Corkery",
+      "catchPhrase": "Multi-tiered zero tolerance productivity",
+      "bs": "transition cutting-edge web services"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Chelsey Dietrich",
+    "username": "Kamren",
+    "email": "Lucio_Hettinger@annie.ca",
+    "address": {
+      "street": "Skiles Walks",
+      "suite": "Suite 351",
+      "city": "Roscoeview",
+      "zipcode": "33263",
+      "geo": {
+        "lat": "-31.8129",
+        "lng": "62.5342"
+      }
+    },
+    "phone": "(254)954-1289",
+    "website": "demarco.info",
+    "company": {
+      "name": "Keebler LLC",
+      "catchPhrase": "User-centric fault-tolerant solution",
+      "bs": "revolutionize end-to-end systems"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Mrs. Dennis Schulist",
+    "username": "Leopoldo_Corkery",
+    "email": "Karley_Dach@jasper.info",
+    "address": {
+      "street": "Norberto Crossing",
+      "suite": "Apt. 950",
+      "city": "South Christy",
+      "zipcode": "23505-1337",
+      "geo": {
+        "lat": "-71.4197",
+        "lng": "71.7478"
+      }
+    },
+    "phone": "1-477-935-8478 x6430",
+    "website": "ola.org",
+    "company": {
+      "name": "Considine-Lockman",
+      "catchPhrase": "Synchronised bottom-line interface",
+      "bs": "e-enable innovative applications"
+    }
+  },
+  {
+    "id": 7,
+    "name": "Kurtis Weissnat",
+    "username": "Elwyn.Skiles",
+    "email": "Telly.Hoeger@billy.biz",
+    "address": {
+      "street": "Rex Trail",
+      "suite": "Suite 280",
+      "city": "Howemouth",
+      "zipcode": "58804-1099",
+      "geo": {
+        "lat": "24.8918",
+        "lng": "21.8984"
+      }
+    },
+    "phone": "210.067.6132",
+    "website": "elvis.io",
+    "company": {
+      "name": "Johns Group",
+      "catchPhrase": "Configurable multimedia task-force",
+      "bs": "generate enterprise e-tailers"
+    }
+  },
+  {
+    "id": 8,
+    "name": "Nicholas Runolfsdottir V",
+    "username": "Maxime_Nienow",
+    "email": "Sherwood@rosamond.me",
+    "address": {
+      "street": "Ellsworth Summit",
+      "suite": "Suite 729",
+      "city": "Aliyaview",
+      "zipcode": "45169",
+      "geo": {
+        "lat": "-14.3990",
+        "lng": "-120.7677"
+      }
+    },
+    "phone": "586.493.6943 x140",
+    "website": "jacynthe.com",
+    "company": {
+      "name": "Abernathy Group",
+      "catchPhrase": "Implemented secondary concept",
+      "bs": "e-enable extensible e-tailers"
+    }
+  },
+  {
+    "id": 9,
+    "name": "Glenna Reichert",
+    "username": "Delphine",
+    "email": "Chaim_McDermott@dana.io",
+    "address": {
+      "street": "Dayna Park",
+      "suite": "Suite 449",
+      "city": "Bartholomebury",
+      "zipcode": "76495-3109",
+      "geo": {
+        "lat": "24.6463",
+        "lng": "-168.8889"
+      }
+    },
+    "phone": "(775)976-6794 x41206",
+    "website": "conrad.com",
+    "company": {
+      "name": "Yost and Sons",
+      "catchPhrase": "Switchable contextually-based project",
+      "bs": "aggregate real-time technologies"
+    }
+  },
+  {
+    "id": 10,
+    "name": "Clementina DuBuque",
+    "username": "Moriah.Stanton",
+    "email": "Rey.Padberg@karina.biz",
+    "address": {
+      "street": "Kattie Turnpike",
+      "suite": "Suite 198",
+      "city": "Lebsackbury",
+      "zipcode": "31428-2261",
+      "geo": {
+        "lat": "-38.2386",
+        "lng": "57.2232"
+      }
+    },
+    "phone": "024-648-3804",
+    "website": "ambrose.net",
+    "company": {
+      "name": "Hoeger LLC",
+      "catchPhrase": "Centralized empowering task-force",
+      "bs": "target end-to-end models"
+    }
+  }
+]`},{q:`API 4 — JSONPlaceholder Todos (https://jsonplaceholder.typicode.com/todos/1)`,a:`Fields a todo has: userId, id, title, completed
+
+What does "completed" tell you?: It tells you whether the todo is marked as done (true) or not (false).
+
+/todos — how many total?: 200 todos total.
+
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "delectus aut autem",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "quis ut nam facilis et officia qui",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 3,
+    "title": "fugiat veniam minus",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 4,
+    "title": "et porro tempora",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 5,
+    "title": "laboriosam mollitia et enim quasi adipisci quia provident illum",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 6,
+    "title": "qui ullam ratione quibusdam voluptatem quia omnis",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 7,
+    "title": "illo expedita consequatur quia in",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 8,
+    "title": "quo adipisci enim quam ut ab",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 9,
+    "title": "molestiae perspiciatis ipsa",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 10,
+    "title": "illo est ratione doloremque quia maiores aut",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 11,
+    "title": "vero rerum temporibus dolor",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 12,
+    "title": "ipsa repellendus fugit nisi",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 13,
+    "title": "et doloremque nulla",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 14,
+    "title": "repellendus sunt dolores architecto voluptatum",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 15,
+    "title": "ab voluptatum amet voluptas",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 16,
+    "title": "accusamus eos facilis sint et aut voluptatem",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 17,
+    "title": "quo laboriosam deleniti aut qui",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 18,
+    "title": "dolorum est consequatur ea mollitia in culpa",
+    "completed": false
+  },
+  {
+    "userId": 1,
+    "id": 19,
+    "title": "molestiae ipsa aut voluptatibus pariatur dolor nihil",
+    "completed": true
+  },
+  {
+    "userId": 1,
+    "id": 20,
+    "title": "ullam nobis libero sapiente ad optio sint",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 21,
+    "title": "suscipit repellat esse quibusdam voluptatem incidunt",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 22,
+    "title": "distinctio vitae autem nihil ut molestias quo",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 23,
+    "title": "et itaque necessitatibus maxime molestiae qui quas velit",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 24,
+    "title": "adipisci non ad dicta qui amet quaerat doloribus ea",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 25,
+    "title": "voluptas quo tenetur perspiciatis explicabo natus",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 26,
+    "title": "aliquam aut quasi",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 27,
+    "title": "veritatis pariatur delectus",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 28,
+    "title": "nesciunt totam sit blanditiis sit",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 29,
+    "title": "laborum aut in quam",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 30,
+    "title": "nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 31,
+    "title": "repudiandae totam in est sint facere fuga",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 32,
+    "title": "earum doloribus ea doloremque quis",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 33,
+    "title": "sint sit aut vero",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 34,
+    "title": "porro aut necessitatibus eaque distinctio",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 35,
+    "title": "repellendus veritatis molestias dicta incidunt",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 36,
+    "title": "excepturi deleniti adipisci voluptatem et neque optio illum ad",
+    "completed": true
+  },
+  {
+    "userId": 2,
+    "id": 37,
+    "title": "sunt cum tempora",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 38,
+    "title": "totam quia non",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 39,
+    "title": "doloremque quibusdam asperiores libero corrupti illum qui omnis",
+    "completed": false
+  },
+  {
+    "userId": 2,
+    "id": 40,
+    "title": "totam atque quo nesciunt",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 41,
+    "title": "aliquid amet impedit consequatur aspernatur placeat eaque fugiat suscipit",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 42,
+    "title": "rerum perferendis error quia ut eveniet",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 43,
+    "title": "tempore ut sint quis recusandae",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 44,
+    "title": "cum debitis quis accusamus doloremque ipsa natus sapiente omnis",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 45,
+    "title": "velit soluta adipisci molestias reiciendis harum",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 46,
+    "title": "vel voluptatem repellat nihil placeat corporis",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 47,
+    "title": "nam qui rerum fugiat accusamus",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 48,
+    "title": "sit reprehenderit omnis quia",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 49,
+    "title": "ut necessitatibus aut maiores debitis officia blanditiis velit et",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 50,
+    "title": "cupiditate necessitatibus ullam aut quis dolor voluptate",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 51,
+    "title": "distinctio exercitationem ab doloribus",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 52,
+    "title": "nesciunt dolorum quis recusandae ad pariatur ratione",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 53,
+    "title": "qui labore est occaecati recusandae aliquid quam",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 54,
+    "title": "quis et est ut voluptate quam dolor",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 55,
+    "title": "voluptatum omnis minima qui occaecati provident nulla voluptatem ratione",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 56,
+    "title": "deleniti ea temporibus enim",
+    "completed": true
+  },
+  {
+    "userId": 3,
+    "id": 57,
+    "title": "pariatur et magnam ea doloribus similique voluptatem rerum quia",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 58,
+    "title": "est dicta totam qui explicabo doloribus qui dignissimos",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 59,
+    "title": "perspiciatis velit id laborum placeat iusto et aliquam odio",
+    "completed": false
+  },
+  {
+    "userId": 3,
+    "id": 60,
+    "title": "et sequi qui architecto ut adipisci",
+    "completed": true
+  },
+  {
+    "userId": 4,
+    "id": 61,
+    "title": "odit optio omnis qui sunt",
+    "completed": true
+  },
+  {
+    "userId": 4,
+    "id": 62,
+    "title": "et placeat et tempore aspernatur sint numquam",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 63,
+    "title": "doloremque aut dolores quidem fuga qui nulla",
+    "completed": true
+  },
+  {
+    "userId": 4,
+    "id": 64,
+    "title": "voluptas consequatur qui ut quia magnam nemo esse",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 65,
+    "title": "fugiat pariatur ratione ut asperiores necessitatibus magni",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 66,
+    "title": "rerum eum molestias autem voluptatum sit optio",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 67,
+    "title": "quia voluptatibus voluptatem quos similique maiores repellat",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 68,
+    "title": "aut id perspiciatis voluptatem iusto",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 69,
+    "title": "doloribus sint dolorum ab adipisci itaque dignissimos aliquam suscipit",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 70,
+    "title": "ut sequi accusantium et mollitia delectus sunt",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 71,
+    "title": "aut velit saepe ullam",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 72,
+    "title": "praesentium facilis facere quis harum voluptatibus voluptatem eum",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 73,
+    "title": "sint amet quia totam corporis qui exercitationem commodi",
+    "completed": true
+  },
+  {
+    "userId": 4,
+    "id": 74,
+    "title": "expedita tempore nobis eveniet laborum maiores",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 75,
+    "title": "occaecati adipisci est possimus totam",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 76,
+    "title": "sequi dolorem sed",
+    "completed": true
+  },
+  {
+    "userId": 4,
+    "id": 77,
+    "title": "maiores aut nesciunt delectus exercitationem vel assumenda eligendi at",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 78,
+    "title": "reiciendis est magnam amet nemo iste recusandae impedit quaerat",
+    "completed": false
+  },
+  {
+    "userId": 4,
+    "id": 79,
+    "title": "eum ipsa maxime ut",
+    "completed": true
+  },
+  {
+    "userId": 4,
+    "id": 80,
+    "title": "tempore molestias dolores rerum sequi voluptates ipsum consequatur",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 81,
+    "title": "suscipit qui totam",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 82,
+    "title": "voluptates eum voluptas et dicta",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 83,
+    "title": "quidem at rerum quis ex aut sit quam",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 84,
+    "title": "sunt veritatis ut voluptate",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 85,
+    "title": "et quia ad iste a",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 86,
+    "title": "incidunt ut saepe autem",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 87,
+    "title": "laudantium quae eligendi consequatur quia et vero autem",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 88,
+    "title": "vitae aut excepturi laboriosam sint aliquam et et accusantium",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 89,
+    "title": "sequi ut omnis et",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 90,
+    "title": "molestiae nisi accusantium tenetur dolorem et",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 91,
+    "title": "nulla quis consequatur saepe qui id expedita",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 92,
+    "title": "in omnis laboriosam",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 93,
+    "title": "odio iure consequatur molestiae quibusdam necessitatibus quia sint",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 94,
+    "title": "facilis modi saepe mollitia",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 95,
+    "title": "vel nihil et molestiae iusto assumenda nemo quo ut",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 96,
+    "title": "nobis suscipit ducimus enim asperiores voluptas",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 97,
+    "title": "dolorum laboriosam eos qui iure aliquam",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 98,
+    "title": "debitis accusantium ut quo facilis nihil quis sapiente necessitatibus",
+    "completed": true
+  },
+  {
+    "userId": 5,
+    "id": 99,
+    "title": "neque voluptates ratione",
+    "completed": false
+  },
+  {
+    "userId": 5,
+    "id": 100,
+    "title": "excepturi a et neque qui expedita vel voluptate",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 101,
+    "title": "explicabo enim cumque porro aperiam occaecati minima",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 102,
+    "title": "sed ab consequatur",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 103,
+    "title": "non sunt delectus illo nulla tenetur enim omnis",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 104,
+    "title": "excepturi non laudantium quo",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 105,
+    "title": "totam quia dolorem et illum repellat voluptas optio",
+    "completed": true
+  },
+  {
+    "userId": 6,
+    "id": 106,
+    "title": "ad illo quis voluptatem temporibus",
+    "completed": true
+  },
+  {
+    "userId": 6,
+    "id": 107,
+    "title": "praesentium facilis omnis laudantium fugit ad iusto nihil nesciunt",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 108,
+    "title": "a eos eaque nihil et exercitationem incidunt delectus",
+    "completed": true
+  },
+  {
+    "userId": 6,
+    "id": 109,
+    "title": "autem temporibus harum quisquam in culpa",
+    "completed": true
+  },
+  {
+    "userId": 6,
+    "id": 110,
+    "title": "aut aut ea corporis",
+    "completed": true
+  },
+  {
+    "userId": 6,
+    "id": 111,
+    "title": "magni accusantium labore et id quis provident",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 112,
+    "title": "consectetur impedit quisquam qui deserunt non rerum consequuntur eius",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 113,
+    "title": "quia atque aliquam sunt impedit voluptatum rerum assumenda nisi",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 114,
+    "title": "cupiditate quos possimus corporis quisquam exercitationem beatae",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 115,
+    "title": "sed et ea eum",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 116,
+    "title": "ipsa dolores vel facilis ut",
+    "completed": true
+  },
+  {
+    "userId": 6,
+    "id": 117,
+    "title": "sequi quae est et qui qui eveniet asperiores",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 118,
+    "title": "quia modi consequatur vero fugiat",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 119,
+    "title": "corporis ducimus ea perspiciatis iste",
+    "completed": false
+  },
+  {
+    "userId": 6,
+    "id": 120,
+    "title": "dolorem laboriosam vel voluptas et aliquam quasi",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 121,
+    "title": "inventore aut nihil minima laudantium hic qui omnis",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 122,
+    "title": "provident aut nobis culpa",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 123,
+    "title": "esse et quis iste est earum aut impedit",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 124,
+    "title": "qui consectetur id",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 125,
+    "title": "aut quasi autem iste tempore illum possimus",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 126,
+    "title": "ut asperiores perspiciatis veniam ipsum rerum saepe",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 127,
+    "title": "voluptatem libero consectetur rerum ut",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 128,
+    "title": "eius omnis est qui voluptatem autem",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 129,
+    "title": "rerum culpa quis harum",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 130,
+    "title": "nulla aliquid eveniet harum laborum libero alias ut unde",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 131,
+    "title": "qui ea incidunt quis",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 132,
+    "title": "qui molestiae voluptatibus velit iure harum quisquam",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 133,
+    "title": "et labore eos enim rerum consequatur sunt",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 134,
+    "title": "molestiae doloribus et laborum quod ea",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 135,
+    "title": "facere ipsa nam eum voluptates reiciendis vero qui",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 136,
+    "title": "asperiores illo tempora fuga sed ut quasi adipisci",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 137,
+    "title": "qui sit non",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 138,
+    "title": "placeat minima consequatur rem qui ut",
+    "completed": true
+  },
+  {
+    "userId": 7,
+    "id": 139,
+    "title": "consequatur doloribus id possimus voluptas a voluptatem",
+    "completed": false
+  },
+  {
+    "userId": 7,
+    "id": 140,
+    "title": "aut consectetur in blanditiis deserunt quia sed laboriosam",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 141,
+    "title": "explicabo consectetur debitis voluptates quas quae culpa rerum non",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 142,
+    "title": "maiores accusantium architecto necessitatibus reiciendis ea aut",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 143,
+    "title": "eum non recusandae cupiditate animi",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 144,
+    "title": "ut eum exercitationem sint",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 145,
+    "title": "beatae qui ullam incidunt voluptatem non nisi aliquam",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 146,
+    "title": "molestiae suscipit ratione nihil odio libero impedit vero totam",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 147,
+    "title": "eum itaque quod reprehenderit et facilis dolor autem ut",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 148,
+    "title": "esse quas et quo quasi exercitationem",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 149,
+    "title": "animi voluptas quod perferendis est",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 150,
+    "title": "eos amet tempore laudantium fugit a",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 151,
+    "title": "accusamus adipisci dicta qui quo ea explicabo sed vero",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 152,
+    "title": "odit eligendi recusandae doloremque cumque non",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 153,
+    "title": "ea aperiam consequatur qui repellat eos",
+    "completed": false
+  },
+  {
+    "userId": 8,
+    "id": 154,
+    "title": "rerum non ex sapiente",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 155,
+    "title": "voluptatem nobis consequatur et assumenda magnam",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 156,
+    "title": "nam quia quia nulla repellat assumenda quibusdam sit nobis",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 157,
+    "title": "dolorem veniam quisquam deserunt repellendus",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 158,
+    "title": "debitis vitae delectus et harum accusamus aut deleniti a",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 159,
+    "title": "debitis adipisci quibusdam aliquam sed dolore ea praesentium nobis",
+    "completed": true
+  },
+  {
+    "userId": 8,
+    "id": 160,
+    "title": "et praesentium aliquam est",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 161,
+    "title": "ex hic consequuntur earum omnis alias ut occaecati culpa",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 162,
+    "title": "omnis laboriosam molestias animi sunt dolore",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 163,
+    "title": "natus corrupti maxime laudantium et voluptatem laboriosam odit",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 164,
+    "title": "reprehenderit quos aut aut consequatur est sed",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 165,
+    "title": "fugiat perferendis sed aut quidem",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 166,
+    "title": "quos quo possimus suscipit minima ut",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 167,
+    "title": "et quis minus quo a asperiores molestiae",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 168,
+    "title": "recusandae quia qui sunt libero",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 169,
+    "title": "ea odio perferendis officiis",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 170,
+    "title": "quisquam aliquam quia doloribus aut",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 171,
+    "title": "fugiat aut voluptatibus corrupti deleniti velit iste odio",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 172,
+    "title": "et provident amet rerum consectetur et voluptatum",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 173,
+    "title": "harum ad aperiam quis",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 174,
+    "title": "similique aut quo",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 175,
+    "title": "laudantium eius officia perferendis provident perspiciatis asperiores",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 176,
+    "title": "magni soluta corrupti ut maiores rem quidem",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 177,
+    "title": "et placeat temporibus voluptas est tempora quos quibusdam",
+    "completed": false
+  },
+  {
+    "userId": 9,
+    "id": 178,
+    "title": "nesciunt itaque commodi tempore",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 179,
+    "title": "omnis consequuntur cupiditate impedit itaque ipsam quo",
+    "completed": true
+  },
+  {
+    "userId": 9,
+    "id": 180,
+    "title": "debitis nisi et dolorem repellat et",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 181,
+    "title": "ut cupiditate sequi aliquam fuga maiores",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 182,
+    "title": "inventore saepe cumque et aut illum enim",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 183,
+    "title": "omnis nulla eum aliquam distinctio",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 184,
+    "title": "molestias modi perferendis perspiciatis",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 185,
+    "title": "voluptates dignissimos sed doloribus animi quaerat aut",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 186,
+    "title": "explicabo odio est et",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 187,
+    "title": "consequuntur animi possimus",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 188,
+    "title": "vel non beatae est",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 189,
+    "title": "culpa eius et voluptatem et",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 190,
+    "title": "accusamus sint iusto et voluptatem exercitationem",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 191,
+    "title": "temporibus atque distinctio omnis eius impedit tempore molestias pariatur",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 192,
+    "title": "ut quas possimus exercitationem sint voluptates",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 193,
+    "title": "rerum debitis voluptatem qui eveniet tempora distinctio a",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 194,
+    "title": "sed ut vero sit molestiae",
+    "completed": false
+  },
+  {
+    "userId": 10,
+    "id": 195,
+    "title": "rerum ex veniam mollitia voluptatibus pariatur",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 196,
+    "title": "consequuntur aut ut fugit similique",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 197,
+    "title": "dignissimos quo nobis earum saepe",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 198,
+    "title": "quis eius est sint explicabo",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 199,
+    "title": "numquam repellendus a magnam",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 200,
+    "title": "ipsam aperiam voluptates qui",
+    "completed": false
+  }
+]
+
+A todo marked completed: true?: 
+{
+    "userId": 10,
+    "id": 195,
+    "title": "rerum ex veniam mollitia voluptatibus pariatur",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 196,
+    "title": "consequuntur aut ut fugit similique",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 197,
+    "title": "dignissimos quo nobis earum saepe",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 198,
+    "title": "quis eius est sint explicabo",
+    "completed": true
+  },
+  {
+    "userId": 10,
+    "id": 199,
+    "title": "numquam repellendus a magnam",
+    "completed": true
+  }`},{q:`One thing that surprised me about what an API response looks like`,a:`Nothing surprised me. I have been working with APIs for a while and I expected the response to be in JSON format, which is a common data interchange format used by APIs. The structure of the response, with key-value pairs, is also something I am familiar with. Overall, the response looks as I would expect from an API call. I find it very easy to read and understand the information from the response, such as the userId, id, title, and completed status of each todo item. I am not surprised by anything in the response.`}]},{heading:`Exercise 2 — Make an API Call in Code`,description:`Write the same browser request in JavaScript using fetch(). Run it in Node. Then modify it.`,qa:[{q:`Comprehension — what each piece of the code does`,a:`// Use fetch() to request data from the API URL.
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  // Convert the response from the server into JavaScript data.
+  .then((response) => response.json())
+  // Use the data after it has been converted.
+  .then((data) => {
+    // Display only the title from the data in the console.
+    console.log(data.title);
+  })
+  // Catch and show any errors if something goes wrong.
+  .catch((error) => {
+    // Print the error message in the console.
+    console.error("Error fetching data:", error);
+  });
+
+What does fetch() do? fetch() is a built-in JavaScript function that allows you to make network requests to retrieve resources from a server. It returns a Promise that resolves to the Response object representing the response to the request. You can use fetch() to get data from an API, submit data to a server, or perform other network operations. In this code, fetch() is used to request data from the specified API URL.
+
+What does .then() do? .then() is a method used with Promises in JavaScript. It allows you to specify what should happen when a Promise is resolved (i.e., when the asynchronous operation is completed successfully). The .then() method takes a callback function as an argument, which will be executed with the resolved value of the Promise. In this code, there are two .then() calls: the first one converts the response to JSON format, and the second one uses the converted data to log the title to the console.
+
+What does response.json() do? response.json() is a method of the Response object that parses the response body as JSON and returns a Promise that resolves to a JavaScript object. In this code, it is used to convert the raw response from the server into a format that can be easily manipulated in JavaScript.
+
+What does data.title do? data.title accesses the "title" property of the JavaScript object that was obtained from parsing the JSON response. In this code, it is used to retrieve the title of the post from the data and log it to the console.
+
+What does .catch() do? .catch() is a method used with Promises in JavaScript to handle errors that may occur during the asynchronous operation. It allows you to specify a callback function that will be executed if the Promise is rejected (i.e., if an error occurs). In this code, .catch() is used to catch any errors that may happen during the fetch operation or the processing of the response, and it logs the error message to the console.`},{q:`Modifications — the three levels`,a:`Level 1 — change it to display the body instead of the title:
+// Use fetch() to request data from the API URL.
+fetch("https://jsonplaceholder.typicode.com/posts/1")
+  // Convert the response from the server into JavaScript data.
+  .then((response) => response.json())
+  // Use the data after it has been converted.
+  .then((data) => {
+    // Display only the title from the data in the console.
+    console.log(data.body);
+  })
+  // Catch and show any errors if something goes wrong.
+  .catch((error) => {
+    // Print the error message in the console.
+    console.error("Error fetching data:", error);
+  });
+
+Level 2 — fetch post #5, display both title and body:
+// Use fetch() to request data from the API URL.
+fetch("https://jsonplaceholder.typicode.com/posts/5")
+  // Convert the response from the server into JavaScript data.
+  .then((response) => response.json())
+  // Use the data after it has been converted.
+  .then((data) => {
+    // Display only the title from the data in the console.
+    console.log("title:", data.title);
+    console.log("body:", data.body);
+  })
+  // Catch and show any errors if something goes wrong.
+  .catch((error) => {
+    // Print the error message in the console.
+    console.error("Error fetching data:", error);
+  });
+
+Level 3 — fetch ALL posts and display just the titles of the first 5:
+// Use fetch() to request data from the API URL.
+fetch("https://jsonplaceholder.typicode.com/posts/")
+  // Convert the response from the server into JavaScript data.
+  .then((response) => response.json())
+  // Use the data after it has been converted.
+  .then((data) => {
+    // Get only the first 5 posts from the array.
+    const firstFivePosts = data.slice(0, 5);
+
+    // Loop through each of the first 5 posts.
+    firstFivePosts.forEach((post) => {
+      // Display the title for each post.
+      console.log("title:", post.title);
+
+      // Display the body for each post.
+      console.log("body:", post.body);
+    });
+  })
+  // Catch and show any errors if something goes wrong.
+  .catch((error) => {
+    // Print the error message in the console.
+    console.error("Error fetching data:", error);
+  });
+  `}]},{heading:`Exercise 3 — HTTP Methods in Plain English`,description:`Map the API surface my Phase 2 app needs. Resources first, then endpoints.`,qa:[{q:`Main resources my app deals with`,a:`integrations — Canvas API tokens (I have two: observer for my daughter, student for Yavapai)
+observees — kids tied to an observer token
+assignments — missing and upcoming work, read-only proxy from Canvas
+digests — the daily emails that get generated
+preferences — my settings (delivery time, lookahead window, etc.)`},{q:`My API endpoints — at least 5`,a:`GET    /integrations              -- List my Canvas tokens (observer + student)
+POST   /integrations              -- Add a new Canvas token (e.g., my Yavapai student token)
+PUT    /integrations/:id          -- Update a token after I rotate it in Canvas
+DELETE /integrations/:id          -- Remove a token I no longer use
+
+GET    /observees                 -- List the kids linked to my observer token
+
+GET    /assignments               -- All missing + upcoming across both my accounts
+GET    /assignments?status=missing -- Only past-due / missing items
+GET    /assignments?role=student  -- Only MY Yavapai work
+GET    /assignments?due_within=24h -- Items due in the next 24 hours
+
+GET    /digests/today             -- Preview today's digest in the browser (no send)
+GET    /digests/:id               -- View a specific past digest
+POST   /digests/send              -- Manually trigger a send right now
+
+GET    /preferences               -- My settings (delivery time, lookahead days, email)
+PUT    /preferences               -- Update settings (e.g., change delivery from 7am to 6am) `}]},{heading:`Exercise 4 — Error Handling Exploration`,description:`Break some URLs on purpose. See what comes back. Build a status-code cheat sheet.`,qa:[{q:`Exploring broken URLs — what did I see?`,a:`https://jsonplaceholder.typicode.com/posts/99999 — what came back?: JSON returned with an empty object: {} Is it an error? No, it's not an error. The API is designed to return an empty object when a resource is not found, rather than returning an error status code. This allows the client to handle the case of a missing resource gracefully without having to deal with an error response.
+
+https://api.github.com/users/thisisnotarealgithubusername12345678 — what does "message" say?: {
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "404"
+}`},{q:`Status code reference card`,a:`STATUS CODE REFERENCE CARD
+--------------------------
+200 OK           —  Success! The request was successful and the server returned the requested data.
+
+201 Created      — The request was successful and a new resource was created as a result.
+
+400 Bad Request  — The server could not understand the request due to invalid syntax. The client should not repeat the request without modifications.
+
+401 Unauthorized — The client must authenticate itself to get the requested response. This is typically used when authentication is required and has failed or has not yet been provided. 
+
+403 Forbidden    — The client does not have access rights to the content, i.e., they are unauthorized. Unlike 401 Unauthorized, the client's identity is known to the server.
+
+404 Not Found    — The server can not find the requested resource. This means that the endpoint is valid but the resource itself does not exist.
+
+500 Server Error — The server has encountered a situation it doesn't know how to handle. This is a generic error message, given when no more specific message is suitable. It indicates that the server failed to fulfill a valid request.`}]},{heading:`Exercise 5 — Find a Public API for My Project`,description:`Browse public-apis directory. Pick one that's relevant. Try to call it.`,qa:[{q:`Public API I found`,a:`API: Nager.Date — Public Holiday API
+URL: https://date.nager.at/api/v3/PublicHolidays/{Year}/{CountryCode}
+Example: https://date.nager.at/api/v3/PublicHolidays/2026/US
+
+What it provides:
+Public holidays for 100+ countries as clean JSON. Each record has date, local-language name, English name, country code, whether it's national or regional, and a type field (Public, Bank, School, Authorities, Optional, Observance). No rate limits, CORS enabled, no API key required.
+
+How it could be useful for Canvas Daily:
+My digest tells me what's due, but not what space I have to do it. An assignment due Tuesday hits differently when Monday is a federal holiday and my kid's school is closed. Nager.Date lets the digest enrich each due date with context — "Due Tue, but Mon is MLK Day, so effectively only the weekend." Same logic in reverse for school breaks: surfacing "school is closed Wed-Fri this week" alongside my kid's assignments would catch the gotcha where teachers post work that's technically due during a break.
+
+Issues / verification:
+None for the basic use case. CORS is supported, so the call works directly from browser JS — no proxy needed. One older secondary source claimed CORS wasn't supported, but the official Nager.Date docs confirm it is. Lesson: verify against the actual docs, not the AI summary or the third-party listing. Tested the endpoint directly and got back a clean JSON array of 2026 US holidays.
+
+`},{q:`Did the call work? What issues came up?`,a:`Code I ran (paste or describe):
+
+fetch('https://date.nager.at/api/v3/PublicHolidays/2026/US')
+  .then(response => response.json())
+  .then(holidays => {
+    console.log(\`Found \${holidays.length} US holidays in 2026:\`);
+    holidays.forEach(h => console.log(\`\${h.date} — \${h.name}\`));
+  })
+  .catch(err => console.error('Fetch failed:', err));
+
+Did it work?:
+
+Yes! I got back a JSON array with 11 US holidays for 2026, including New Year's Day, MLK Day, Presidents' Day, Memorial Day, Independence Day, Labor Day, Columbus Day, Veterans Day, Thanksgiving, and Christmas.
+
+Issues (API key required? CORS? confusing docs? rate limits?):
+
+None. The API is open and straightforward to use. CORS is supported, so I could call it directly from the browser without needing a proxy. The documentation is clear and the endpoint worked as expected on the first try. No rate limits or authentication requirements to worry about for this use case.
+`}]},{heading:`Peer Activity — Restaurant Analogy`,description:`2 minutes to explain APIs as a restaurant. Customer, waiter, kitchen, order, JSON.`,qa:[{q:`The restaurant analogy in my own words`,a:`Who is the customer?: The customer is the person who wants to eat at the restaurant. They are the one who makes a request for food and expects to receive a meal in return. In the context of APIs, the customer can be thought of as the client or user who is making a request to the server for data or services.
+
+Who is the waiter?: The waiter is the intermediary between the customer and the kitchen. They take the customer's order, communicate it to the kitchen, and then bring the food back to the customer. In the context of APIs, the waiter can be thought of as the API itself, which receives requests from clients, processes them, and returns responses.
+
+Who is the kitchen?: The kitchen is where the food is prepared. It takes the customer's order, cooks the meal, and then sends it back to the waiter to be delivered to the customer. In the context of APIs, the kitchen can be thought of as the server or backend system that processes requests, performs operations, and generates responses based on the client's request.
+
+What happens when you "order" something (make a request)?: When you order something at a restaurant, you communicate your request to the waiter, who then relays it to the kitchen. The kitchen prepares the food according to your order and sends it back to the waiter, who delivers it to you. In the context of APIs, when you make a request, you send it to the API (the waiter), which processes the request and interacts with the server (the kitchen) to retrieve or manipulate data. The server then sends a response back to the API, which delivers it to you.
+
+What does a 200 mean — in restaurant terms?: A 200 status code in restaurant terms would mean that your order was successfully received, understood, and processed by the kitchen. It indicates that everything went smoothly and you can expect to receive your meal as requested.
+
+What does a 404 mean — in restaurant terms?: A 404 status code in restaurant terms would mean that the item you ordered is not available on the menu. The kitchen cannot find the dish you requested, so they cannot prepare it for you. It indicates that the resource you are trying to access does not exist.
+
+Where does JSON fit in?: JSON (JavaScript Object Notation) is like the format in which the kitchen sends your meal back to the waiter. It's a structured way of representing data that can be easily understood and processed by both the kitchen and the waiter. In the context of APIs, JSON is often used as the format for responses from the server to the client, allowing for easy parsing and manipulation of data on the client side.`},{q:`Partner's follow-up question and my answer`,a:`Partner's follow-up question: If the waiter (API) is the middleman, what happens if the waiter forgets the order or brings back the wrong dish? How does that relate to error handling in APIs?
+
+My answer: If the waiter forgets the order or brings back the wrong dish, it would be similar to an error occurring in an API. In this case, the waiter might return an error message to the customer, such as 'Sorry, we don't have that dish' (which could be a 404 Not Found error) or 'Sorry, there was a problem with your order' (which could be a 500 Internal Server Error). Just like in a restaurant, where the waiter needs to communicate any issues with the order to the customer, APIs need to provide clear error messages and status codes to help clients understand what went wrong and how to fix it.`},{q:`Saying it out loud surfaced what? What part of APIs do I still want to nail down?`,a:`Saying it out loud surfaced the importance of clear communication between the different components of an API. It highlighted how the customer, waiter, and kitchen all need to work together seamlessly to ensure a good experience. In terms of APIs, this means that the client, API, and server need to be well-designed and properly integrated to provide a smooth user experience.
+
+The part of APIs that I still want to nail down is error handling and how to design APIs that can gracefully handle unexpected situations. I want to learn more about best practices for returning error messages, how to use status codes effectively, and how to ensure that clients can understand and respond to errors in a way that improves the overall user experience. Additionally, I want to explore more about API security and how to protect sensitive data while still providing useful functionality.`}]}]}]}];d.flatMap(e=>e.days);var f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeWeek:e,activeDayInWeek:t}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Program Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`16px`,marginTop:`28px`,alignItems:`center`},children:d.map((n,r)=>(0,p.jsxs)(`div`,{style:{display:`flex`,gap:`6px`,alignItems:`center`},children:[n.days.map((n,i)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:r===e&&i===t?n.color:r<e||r===e&&i<t?`#3a3a3a`:`#1e1e1e`,transition:`background 0.3s`}},i)),r<d.length-1&&(0,p.jsx)(`div`,{style:{width:`12px`,height:`1px`,background:`#1e1e1e`,marginLeft:`2px`}})]},r))})]})}function h({activeWeek:e,activeDayInWeek:t,setActiveWeek:n,setActiveDayInWeek:r}){let i=d[e],a=i.days[t]?.color||`#f59e0b`;return(0,p.jsxs)(`div`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{display:`flex`,padding:`0 32px`,gap:`0`,borderBottom:`1px solid #141414`},children:d.map((t,i)=>(0,p.jsx)(`button`,{onClick:()=>{n(i),r(0)},style:{background:`none`,border:`none`,borderBottom:i===e?`2px solid ${t.days[0]?.color||`#f59e0b`}`:`2px solid transparent`,padding:`12px 20px 10px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.68rem`,letterSpacing:`0.08em`,textTransform:`uppercase`,color:i===e?`#d4d4d4`:`#3a3a3a`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`},children:t.label},i))}),(0,p.jsx)(`nav`,{style:{display:`flex`,padding:`0 32px`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${a} transparent`},className:`day-nav`,children:i.days.map((e,n)=>(0,p.jsx)(`button`,{onClick:()=>r(n),style:{background:`none`,border:`none`,borderBottom:n===t?`2px solid ${e.color}`:`2px solid transparent`,padding:`14px 18px 12px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:n===t?e.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:e.label},n))})]})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,week:t,activeDayInWeek:n,onPrev:r,onNext:i,isFirst:a,isLast:o}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[t.label,` — Day `,n+1]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:r,disabled:a,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:a?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:a?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:i,disabled:o,style:{background:`none`,border:`1px solid ${o?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:o?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:o?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(0),i=d[e],a=i.days[n];function o(){if(n>0)r(n-1);else if(e>0){let n=d[e-1];t(e-1),r(n.days.length-1)}}function s(){n<i.days.length-1?r(n+1):e<d.length-1&&(t(e+1),r(0))}let c=e===0&&n===0,u=e===d.length-1&&n===i.days.length-1;return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeWeek:e,activeDayInWeek:n}),(0,p.jsx)(h,{activeWeek:e,activeDayInWeek:n,setActiveWeek:t,setActiveDayInWeek:r}),(0,p.jsx)(y,{day:a,week:i,activeDayInWeek:n,onPrev:o,onNext:s,isFirst:c,isLast:u}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
