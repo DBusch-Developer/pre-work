@@ -21,6 +21,7 @@ import { week5day3 } from "./week5day3";
 import { week5day4 } from "./week5day4";
 import { week6day1 } from "./week6day1";
 import { week6day2 } from "./week6day2";
+import { week6day3 } from "./week6day3";
 
 export const weeks = [
   {
@@ -45,7 +46,7 @@ export const weeks = [
   },
   {
     label: "Week 6",
-    days: [week6day1, week6day2],
+    days: [week6day1, week6day2, week6day3],
   },
 ];
 
