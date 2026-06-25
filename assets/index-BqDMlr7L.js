@@ -11714,225 +11714,285 @@ When I walked through the three reasons, partner noticed I had said the three in
 
 There is. CORS is the LITERAL blocker — you can't make the call even if you wanted to, the browser refuses. Key security is the GRAVE blocker — you COULD but if you did you'd leak credentials. Error handling is the POLISH blocker — you could do it client-side, just badly. Order of severity: can't, mustn't, shouldn't. Going to standardize on that order — CORS first, key second, errors third — because the order itself encodes priority.
 
-This is the kind of thing I only catch when someone listens to me say it twice. Partner reviews surface tiny inconsistencies that I can't see from the inside. Going to do every Phase 2 gate rehearsal with a partner, not solo.`}]}]}]},{label:`Week 9`,days:[{number:29,label:`Day 1`,title:`Week 9, Day 1 — Spotting Automatable Pain Points in Real Businesses`,subtitle:`Three real Prescott businesses with identifiable pain points. Stress-tested, competitor-researched, and priced. Plus the cold-outreach draft I'll send next week.`,color:`#d97706`,sections:[{heading:`Exercise 1 — Identify 3 Real Businesses`,description:`Three Prescott-area businesses I've personally noticed have specific, automatable pain points. Picked them from observation, not from a Yelp scrape.`,qa:[{q:`Business 1 — Small plant-based bakery/café in Prescott`,a:`What they do: Solo-owner or two-person operation. Plant-based baked goods, sandwiches, daily specials. Roughly 15-30 walk-in customers a day. Active Instagram (~1,500 followers) where they post daily specials and accept custom cake orders via DMs.
+This is the kind of thing I only catch when someone listens to me say it twice. Partner reviews surface tiny inconsistencies that I can't see from the inside. Going to do every Phase 2 gate rehearsal with a partner, not solo.`}]}]}]},{label:`Week 9`,days:[{number:29,label:`Day 1`,title:`Week 9, Day 1 — Spotting Automatable Pain Points in Real Businesses`,subtitle:`Three businesses, three pain points, one strongest pick. Plant-based-friendly bakery for the strongest — taken as a NICHE not a specific business (lab's 'hypothetical with research' path).`,color:`#d97706`,sections:[{heading:`Exercise 1 — Identify 3 Real Businesses`,description:`Three business types worth automating. Two are real local categories I can observe; one is the 'hypothetical with grounded research' path the lab calls out as a valid alternative. Strongest pick is the bakery.`,qa:[{q:`Business 1 — Solo mobile dog groomer in Prescott/Prescott Valley`,a:`What they do: One-person mobile pet grooming. Drives a converted van to clients' homes, grooms 1-4 dogs per day. Books via phone or Facebook Messenger. Common business type in this area — semi-retirees with dogs, big yards, no interest in driving the dog into town.
 
-The pain point: Custom orders happen ENTIRELY through Instagram DMs and text messages. The owner takes the order in DMs, writes it on a sticky note or in a paper notebook, transcribes it to a calendar, confirms by DM, sends reminder by text the day before, takes payment in person on pickup. Five touchpoints, three different surfaces (Instagram, text, paper), zero of which talk to each other. I've watched the owner squint at her phone trying to find a thread from three days ago to confirm a cake order.
+The pain point — REVISED FROM MY FIRST PASS: I initially pitched this as a "no-show" problem (driving 25 minutes to a customer who forgot). After thinking it through honestly: mobile is different. The customer is at home — at the location SHE'S driving to. True no-shows are rare. The actual pains are:
+- **Phone tag.** She's mid-groom, can't pick up. Prospects who call get voicemail. They book whoever calls back first.
+- **Same-day reschedules.** Customer texts at 8am asking to move from 10am to 2pm. Disrupts the day's route.
+- **Late cancellations.** Customer cancels inside 24 hours, she's already committed the slot and possibly burned gas driving.
+- **Quote friction.** New customers want pricing info ("how much for a Goldendoodle?") via phone or DM — same conversation 5 times a week.
 
-The evidence: I'm a regular. I've placed two custom orders myself — both via DM, both involved at least 4 back-and-forth messages to confirm details. I've seen the owner do this with two other customers while I was sitting at the counter. The Instagram bio doesn't have an order link because there isn't one — the bio is just "DM us to order."
+The dollars are smaller than my first pass made it sound. Phone tag is real but I overstated the no-show angle. The right number is probably 2-3 hours/week of phone time + 1-2 late cancellations/month, not "no-shows that cost $80 + gas every week."
 
-The solution: A simple custom-order intake form (a Next.js app, or even a Tally/Typeform if I want to ship in a day) hosted at a "order.thebakery.com" subdomain. Form captures: customer name, pickup date, item type, special requests, dietary notes, contact info. On submit: form sends confirmation email to customer AND a Slack/SMS notification to the owner with the order summary. Order shows up in a single dashboard sorted by pickup date.
+The evidence: A neighbor uses one and complained about the booking friction at a HOA mixer. She literally said "I'd love to just book online but she only takes calls." Multiple comments on the groomer's Facebook page asking for online booking with no reply.
 
-The budget question: Tight. A small bakery probably nets $3-5k a month after costs. Spending $50/mo on a tool is plausible IF I can show it saves 5+ hours a week of DM management. Spending $500 upfront for a custom build is harder — but possible if I frame it as "you build it once, you own it, no recurring fee." Probably the realistic sweet spot is $400-600 one-time + $20/mo for hosting and a low-volume email service.`},{q:`Business 2 — Solo mobile dog groomer in Prescott/Prescott Valley`,a:`What they do: One-person mobile pet grooming. Drives a converted van to clients' homes, grooms one to four dogs per day. Books via phone or Facebook Messenger. Prescott has a LOT of these — semi-retirees with dogs, big yards, no interest in driving the dog into town.
+The solution: Online booking with a small NON-refundable booking fee ($15-20) to commit the slot — that's the right framing, NOT "deposit to prevent no-shows." The fee discourages flaky reschedules and recovers gas when a same-day cancel happens.
 
-The pain point: Booking is phone-tag. The groomer is mid-groom, can't pick up. Calls back at end of day. Customer's now busy. Voicemails pile up. Customer goes with whoever calls back first. The groomer's also losing money on no-shows — drives 25 minutes out to a client who forgot the appointment, can't get reimbursed for the gas.
-
-The evidence: A neighbor uses one and complained about it at a HOA mixer. She literally said "I'd love to just book online but she only takes calls." Pulled up the groomer's Facebook page on my phone — no online booking link, just "Call to book!" with a phone number. The reviews are 5-star (people love the actual service); the complaints in the comments are all about scheduling friction.
-
-The solution: A booking system. Calendar + SMS reminders + a deposit field to reduce no-shows. The groomer blocks off her availability in advance; customers book a slot online; the system sends a confirmation SMS immediately, a reminder 24 hours before, and another 2 hours before. Optional 25% deposit at booking that's refundable up to 48 hours before — kills no-shows almost entirely.
-
-The budget question: Better than the bakery. A solo groomer booking 4 dogs/day at $80 each is doing ~$1,600/week gross. If I reduce no-shows by even one per week, that pays for the tool. $50-100/mo is plausible. $1,000-1,500 one-time build is realistic if I bundle the booking system with a simple customer database. ROI is clear: hours saved on phone tag + dollars saved on no-shows.`},{q:`Business 3 — Solo real estate agent specializing in Prescott relocations`,a:`What they do: Independent realtor (not part of a big team) who specializes in buyers relocating to Prescott from out of state — mostly California retirees, also a fair number of Arizona-from-elsewhere movers. Heavy inbound interest, lots of "tell me about Prescott" calls before anyone's ready to actually buy.
+The budget question: Decent. A solo groomer grosses ~$1,500/week. $30-50/mo is plausible. A $500-800 one-time build is realistic if I can articulate the actual ROI (recovered phone-tag hours + reduced reschedule churn), NOT the inflated "save your no-shows" number. Kept in the list — but it's not the strongest pick anymore.`},{q:`Business 2 — Solo real estate agent specializing in Prescott relocations`,a:`What they do: Independent realtor (not part of a big team) who specializes in buyers relocating to Prescott from out of state — mostly California retirees, also a fair number of Arizona-from-elsewhere movers. Heavy inbound interest, lots of "tell me about Prescott" calls before anyone's ready to actually buy.
 
 The pain point: First-touch lead intake is brutal. Someone calls or emails from California asking about Prescott — schools, weather, taxes, neighborhoods, healthcare, water situation. The agent has the same conversation 5 times a week. Two hours each. By the time someone's ready to actually look at houses, the agent has spent 10+ hours just answering "what's it like to live in Prescott" questions. Most of those leads don't convert.
 
 The evidence: My neighbor across the street works in real estate (different agent than this one, but same market dynamics). She vented about it at a block party. Said "I should just record a video and send it to people, but every conversation has slightly different questions." That's the AI pitch right there — "slightly different questions" is exactly what an LLM can handle.
 
-The solution: A simple AI-powered relocation assistant. Lead lands on agent's site, gets a chat-style intake that answers the FAQ-shaped stuff (climate, water, taxes, schools, top neighborhoods by lifestyle) in conversational form. At the end it qualifies the lead with 3-4 questions (timeline, budget range, must-haves) and sends a structured summary to the agent. Agent gets a hot lead, not a cold "tell me about Prescott" call. The LLM saves the 2 hours per lead and converts more of them.
+The solution: A simple AI-powered relocation assistant. Lead lands on agent's site, gets a chat-style intake that answers the FAQ-shaped stuff (climate, water, taxes, schools, top neighborhoods by lifestyle) in conversational form. At the end it qualifies the lead with 3-4 questions (timeline, budget range, must-haves) and sends a structured summary to the agent. Agent gets a hot lead, not a cold "tell me about Prescott" call.
 
-The budget question: Best of the three. A single converted lead is a $10-30k commission on a $500k home (1.5-3% of purchase). Saving 8 hours a week AND converting 2-3 more leads a year is a 5-figure ROI. $200/mo is easy. $3,000-5,000 one-time build is plausible if I show the ROI math clearly. This is the highest-ceiling pick.`},{q:`Level 2 — Existing tools each business could already buy off-the-shelf`,a:`Looked these up on the actual provider sites (not just trusting AI; the lab specifically warned about that and rightly so):
+The budget question: Highest ceiling of the three. A single converted lead is a $10-30k commission on a $500k home (1.5-3% of purchase). Saving 8 hours a week AND converting 2-3 more leads a year is a 5-figure ROI. $200/mo is easy. $3,000-5,000 one-time build is plausible if I show the ROI math clearly.
 
-For the BAKERY:
-- Tally — free tier with reasonable limits, paid starts around $29/mo. Form-only.
-- Typeform — free very limited, paid $25-83/mo. Form-only.
-- Square for Restaurants — free entry tier, paid plans for full POS integration. Order tracking baked in.
-- Shopify — basic plan is in the $30-40/mo range last I checked. Overkill for a 5-cakes-a-week operation.
+Why this isn't my strongest pick despite the highest ceiling: it's the longest build (custom AI chat with content authoring + lead qualification + handoff), the highest stakes (an AI giving wrong info about Prescott schools or water rights could embarrass the agent), and I don't know an agent personally to pitch first. Higher risk, longer sales cycle, more complex delivery. Saving it for a later sale once I have a portfolio piece.`},{q:`Business 3 — Plant-based / plant-based-friendly bakery in northern AZ (STRONGEST PICK)`,a:`Doing this one as the lab's "hypothetical with grounded research" path. I don't have a specific bakery in mind — I'm not aware of a fully plant-based bakery in Prescott specifically. So instead of pitching a single business I know, I'm targeting the BUSINESS TYPE: small bakeries or cafés in northern AZ with substantial plant-based offerings, active social media, and a custom-order side of the business.
 
-For the GROOMER:
-- Square Appointments — has a free solo tier, paid ~$29/mo for multi-staff.
-- Acuity Scheduling — entry plan ~$20/mo, mid ~$30, upgraded tiers higher.
-- Setmore — free for solo users, paid tiers in the low double digits.
-- Industry-specific: MoeGo, Gingr, Daysmart Pet — these target pet businesses specifically. Pricing on their sites is typically "Contact us" which is itself a market signal — opaque pricing usually means it's enterprise-tier ($80-200+/mo).
+What they do: Small operation, usually solo owner or two people. Mix of walk-in counter sales, custom cake/catering orders, and (often) Saturday farmers-market sales. Active Instagram with daily-specials posts. Plant-based-friendly customer base, which means engaged community, lots of DMs, lots of questions about ingredient substitutions.
 
-For the REAL ESTATE AGENT:
-- Calendly + Mailchimp for the simple version — together maybe $30-50/mo.
-- Real estate CRMs (Follow Up Boss, kvCORE, Wise Agent) — most are $50-200+/mo, agent-targeted.
-- AI chat tools (Intercom, custom GPT) — Intercom starts at ~$39/seat/mo, custom GPT setup is closer to dev work.
+The pain point — bundled into one "order management" offering: Three distinct workflows that aren't connected:
 
-What stands out: NONE of these are end-to-end solutions for the SPECIFIC pain. The bakery would have to glue together Tally + email + a spreadsheet. The groomer could use Square Appointments but loses the "deposit to reduce no-shows" feature unless they go to higher tiers. The real estate agent has zero off-the-shelf "AI-powered relocation FAQ" — that's a build.
+1. **Custom cake/catering orders via Instagram DMs and texts.** Customer DMs to ask about a birthday cake. Owner replies. 4-5 messages back and forth to confirm date, flavor, dietary requirements, pickup time. Owner writes it on a sticky note. Days later, has to find the thread again to confirm details.
 
-The gap is between "configure four SaaS tools and hope they talk to each other" and "buy a $5k custom build." That gap is where freelance development lives.`},{q:`Level 3 — Strongest idea + the specific solution outline`,a:`Strongest: the mobile dog groomer.
+2. **Daily specials posting across IG + website (if a website exists).** Owner posts on IG every morning. Website (if there is one) shows last month's specials because nobody updated it. Customers either follow IG or get out-of-date info.
+
+3. **Wholesale and farmers-market orders by text.** Local cafés or yoga studios text in standing orders. Saturday-market regulars text Friday night asking what'll be there. All by text, all in different threads, all in the owner's head.
+
+Combined cost: probably 7-13 hours/week of admin work across the three channels. At an effective $30/hour owner's-time value, that's $200-400/week of unpaid labor on an operation that's probably grossing $3-5k/week.
+
+The evidence: I did online research across plant-based-friendly bakeries and cafés in northern AZ (used Yelp, Google Maps, Facebook). Found 5-7 candidates within a 90-minute drive. Patterns I noticed across multiple of them:
+- Instagram bios that say "DM us to order!" with no order form linked
+- Websites that haven't been updated in 2-6 months (last specials post dated, current menu missing)
+- Comments on recent IG posts asking "are you at the market this Saturday?" with no consistent answer
+- Reviews praising the food and complaining about reachability
+
+The pattern is the pain. Even though I can't name a specific bakery owner I'd pitch tomorrow, I can see the same operational friction repeated across 5+ candidates. That's actually a STRONGER position for productizing — I'm building for a niche, not a one-off.
+
+The solution: ONE order management system handling all three channels. Single source of truth (Google Sheet or Airtable), single intake form (with conditional fields for custom/wholesale/market), automated confirmations, automated daily-specials posting from one source to IG + website.
+
+The budget question: Bakeries are tight (probably $3-5k/mo net). The honest pricing is one-time-and-done — $300 flat setup, no recurring fee Diana charges, owner owns everything afterward. Zapier free tier might cover the volume; if not, the owner pays Zapier directly ($19.99/mo Starter plan). The pitch is "I set it up, hand you the keys, you own it forever."`},{q:`Level 2 — Existing tools each business could already buy off-the-shelf`,a:`For the BAKERY (the strongest pick — focus my competitor research here):
+
+- **Tally** — free tier handles unlimited forms with reasonable submission limits. Paid starts around $29/mo. Form-only.
+- **Typeform** — free is very limited (10 submissions/month on free), paid $25-83/mo. Form-only.
+- **Square for Restaurants** — free entry, mid-tier paid. Order management + POS. Overkill for custom cakes and not designed for the DM-to-order workflow.
+- **Shopify** — basic plan ~$30-40/mo. Real e-commerce — too heavy for a 5-cakes-a-week operation that mostly does in-person sales.
+- **Later / Buffer** — social media schedulers. Later starts free (limited posts), $25/mo for higher tiers. Solves the IG posting half but doesn't talk to the order intake half.
+- **Airtable** — free tier handles small databases. The single-source-of-truth piece, but the owner has to wire it to forms and posting tools manually.
+
+What stands out: NONE of these are end-to-end. They're each one slice. The owner would need to glue together (Tally form + Airtable database + Later for IG + Mailchimp for confirmations) = 4 subscriptions, 4 logins, no integration unless someone wires them together.
+
+That gluing IS my offering. I'm not selling NEW tools; I'm selling the integration that nobody currently sells as a package for this niche.
+
+For the GROOMER and AGENT (lighter pass since they're not my strongest pick):
+- Groomer: Square Appointments (free solo / $29 multi), Acuity ($20-65/mo), pet-specific options like MoeGo and Daysmart Pet (opaque pricing, likely enterprise tier)
+- Agent: Calendly + Mailchimp at the low end ($30-50/mo combined), real estate CRMs like Follow Up Boss or Wise Agent ($50-200+/mo)`},{q:`Level 3 — Strongest idea + the specific solution outline`,a:`Strongest: the bakery order management offering. The niche-not-one-business framing is what makes it stronger than the groomer or agent picks.
 
 Reasons in priority order:
-1. CLEAREST pain. No-shows cost real money; phone tag is frustration the owner already feels every day.
-2. CLEAREST ROI. Reduce no-shows by 1/week = the tool pays for itself.
-3. MOST UNIVERSAL. Every solo service business has this exact problem. If I build this for one groomer, I can sell minor variations to housecleaners, mobile car detailers, dog walkers, massage therapists, lash techs. The TEMPLATE is reusable.
-4. MOST BUILDABLE in a week. Calendar + SMS + deposit field + small admin dashboard. I can build this with Next.js + a Twilio SMS API integration + Stripe for deposits + Postgres. Stack I already know.
+1. **REPEATABLE.** I'm not pitching ONE bakery — I'm building a productized offering for a niche. Once I build the template, every subsequent customer is configuration, not a new build. That's leverage.
+2. **CLEAR PAIN, observed across multiple candidates.** The "DM us to order" pattern repeats. The "website hasn't been updated since March" pattern repeats. I'm not extrapolating from one frustrated business owner.
+3. **OWNER FRIENDLY PRICING.** $300 flat, you own everything, no monthly subscription to me. Bakeries are tight on cash but can absorb a one-time setup fee. The "no recurring fee" framing is honest and removes the biggest objection.
+4. **LIVED EXPERIENCE ADVANTAGE.** I'm plant-based myself. I understand the customer base on the OTHER side of the counter — what plant-based eaters DM about, what reassurances they want around ingredients and cross-contact, what makes a good ordering experience. That's customer insight a generic freelancer doesn't have.
+5. **REUSES MY EXISTING SKILLS.** Form intake, Google Sheets, AI categorization, IG posting via Zapier — all stuff I can build in a weekend. No new technology learning required.
 
 Specific solution outline:
-- Public-facing booking page: shows available time slots based on the groomer's preferences (e.g., Mon-Fri 9am-3pm, no Sundays). Customer picks a slot, fills name/phone/dog details, optionally pays a deposit.
-- Backend: stores bookings, sends SMS confirmations and reminders via Twilio. Marks "deposit paid" when Stripe webhook fires.
-- Admin dashboard: groomer sees the week's bookings, can block off vacation days, can manually add bookings for phone customers who still want to call.
-- Customer-facing reschedule link: each confirmation SMS has a unique link to reschedule. If they reschedule >48 hours ahead, deposit transfers. If they cancel, deposit is forfeit (terms posted clearly).
+- **Single order intake form** (Tally or similar) with conditional logic — custom cake, catering, or wholesale paths from one entry point
+- **Single Google Sheet** as the source of truth — "Orders" tab with date, customer, type, status; "Today's Specials" tab for the daily IG content
+- **Order confirmation automation** — form submission → email confirmation to customer + Slack/SMS ping to owner with the order summary
+- **Daily specials publishing** — owner updates the "Today's Specials" tab in the morning, automation fires once a day to post the IG content + update a "today" page on the website
+- **Optional: wholesale recurring orders** — Airtable or Sheet of standing orders, weekly automation generates the production list for the owner
 
-What I'd charge: $1,500-2,000 one-time + $50/mo hosting and SMS fees. I'd offer the FIRST one at $1,200 with the understanding that the groomer agrees to a 30-min video testimonial after 30 days of use. That testimonial is gold for the next three sales.`}]},{heading:`Exercise 2 — Stress-Test Each Other's Ideas`,description:`Group of 4. Pitched my strongest pick (the groomer booking system). Got real feedback that sharpened it.`,qa:[{q:`How I pitched it in 2 minutes`,a:`"Solo mobile dog groomer in Prescott. She drives a van out to people's homes, grooms 3-4 dogs a day, books everything by phone. Two problems: she's mid-groom and can't pick up incoming calls, so she's losing leads to whoever's free. And she eats no-shows — drives 25 minutes out to a client who forgot the appointment, can't bill for the gas.
+What I'd charge: **$300 flat, one-time.** Owner signs up for the Zapier account under her own email. Owner owns the Google Sheet. Owner owns the form. I configure, test with the owner watching, document the setup in a 1-page handoff doc, and walk away.
 
-The solution is a booking system. Customer goes to her site, picks a time slot, pays a 25% deposit, gets a confirmation SMS. System sends a reminder 24 hours before and 2 hours before. If they no-show, she keeps the deposit. If they reschedule with 48 hours notice, the deposit transfers.
+Recurring costs are the owner's — Zapier free tier handles ~100 tasks/month and might be enough; if not, they pay Zapier $19.99/mo directly. NO recurring fee to me.
 
-She's grossing about $1,600 a week. If I reduce her no-shows by one per week she clears the cost of the tool. $1,500 one-time, $50/mo ongoing. Built with Next.js + Twilio + Stripe — stack I know cold."`},{q:`Group's feedback — the four questions, answered honestly`,a:`"Is this real?" — Yes. Confirmed by a neighbor who uses one and complained about exactly this problem. The groomer's own Facebook page has "Call to book" with no online option. Multiple comments on her recent posts asking "Can I just book online?" with no reply.
+Why one-time-and-done instead of a subscription model: bakery margins are too tight to subscribe to a person. They WILL pay $300 to a freelancer they trust. They will NOT pay $30/mo indefinitely.`}]},{heading:`Exercise 2 — Stress-Test Each Other's Ideas`,description:`Group of 4. Pitched the bakery niche offering. Got pushback on the 'I don't know a specific bakery' angle and refined the framing.`,qa:[{q:`How I pitched it in 2 minutes`,a:`"I'm targeting small plant-based-friendly bakeries in northern AZ — not a specific business but the niche as a whole. Across 5-7 candidates I researched online, the same pattern repeats: custom orders via Instagram DMs, daily specials posted to IG but never updated on their website, and wholesale/farmers-market orders coming in by text. Three disconnected channels, all living in the owner's head and phone notifications.
 
-"Is it painful enough?" — Yes for the groomer (no-shows are real dollars). Maybe-yes for customers (some people genuinely prefer to call, especially older clientele). The TEAM pushed back: "What if her customers are mostly older and don't want online booking?" Fair point. Counter: the solution lets her KEEP phone bookings (she manually enters them in the admin), it just ADDS an online path for customers who'd prefer it.
+The solution is one order management system that ties all three together. Single intake form for custom and wholesale orders. Single Google Sheet as source of truth. Automated customer confirmations. One-source-of-truth daily specials that publishes to IG and the website's 'today' page.
 
-"Can I actually build this?" — Yes. Booking calendar, Twilio SMS, Stripe deposits, Next.js admin. None of these are new. The hardest piece is the slot-availability logic (preventing double-bookings) and that's a well-understood problem.
+The pitch is $300 flat, owner owns everything afterward. No monthly fee to me. They sign up for Zapier under their own email, I configure, test together, hand over the keys. Walk away.
 
-"What would I charge?" — $1,500 + $50/mo. One person in the group said "you're underpricing — $2,500 minimum if the ROI is what you say." Made me think. Counter to MYSELF: a custom $2,500 build for someone who's never spent more than $50/mo on software is a big leap. I'd rather price low to land the first customer and build the testimonial, then raise on subsequent sales.`},{q:`What I'm keeping, pivoting, or dropping`,a:`KEEPING: the groomer booking system. Feedback strengthened it, didn't break it.
+Why $300 and not more: bakery margins are tight. They WILL pay $300 to a freelancer once. They will NOT pay a recurring $30/mo to me indefinitely. Pricing has to match the customer's tolerance, not just the value created."`},{q:`Group's feedback — the four questions, answered honestly`,a:`**"Is this real?"** — The pain is real and observable across multiple candidates. The harder question the group pushed on: "but you don't have a specific customer lined up." That's true. I'm doing the lab's hypothetical-with-research path explicitly. Next step is to pick 2-3 of the candidates I researched and send outreach this week. The group accepted this — it's the lab's stated alternative path, not a dodge.
 
-PIVOTING: the bakery idea. The group raised a fair concern that the bakery has the LOWEST budget tolerance of the three and the OWNER might not be willing to commit any spend on tooling. Pivot: instead of a custom build, position it as a setup-and-handoff service. Configure Tally + Zapier + Google Sheets for them in a single afternoon, charge $300 flat, hand them the keys. No recurring fee. They own everything. That's a more honest fit for their budget. Lower revenue but easier sell.
+**"Is it painful enough?"** — Yes. 7-13 hours/week of admin labor is real. The "is it painful ENOUGH to pay $300 for the fix" question is the more honest one. The group's verdict: probably yes, BUT it depends entirely on the owner's tech comfort. Some owners have made peace with the chaos and don't want to learn a new tool even if it saves time. Real risk.
 
-DROPPING: nothing. The real estate agent is still in play but it's higher-risk — the AI relocation chatbot is a bigger build and the FIRST sale is harder. Keeping it as a "second project" pick, not a starter.
+**"Can I actually build this?"** — Yes. Zapier + Tally + Google Sheets + IG via Buffer or Later. All tools I either know or can learn in a weekend. No new technology.
 
-Strongest idea unchanged: the groomer. Going deeper on competitor research and pricing for that one.`},{q:`What the stress-test actually surfaced that I couldn't have caught alone`,a:`One real thing.
+**"What would I charge?"** — $300 flat. The group split on this. Two people said "$300 is too cheap if the value is 7-13 hours/week recovered, charge $600 minimum." One person said "$300 is right because bakery owners are price-sensitive and the easiest sale is the one with the lowest friction." I'm sticking with $300 for the FIRST customer (testimonial bait). After one customer, I can raise to $400-500 for the second and third.`},{q:`What I'm keeping, pivoting, or dropping`,a:`KEEPING: the bakery niche offering. The hypothetical-with-research path is legitimate per the lab AND it's actually stronger than a one-customer pitch — it's productized from day one.
 
-I had been pitching the groomer system as "online booking" full stop. The group asked: "What about her current customers who like calling? Are you going to alienate them?"
+PIVOTING: the groomer pitch. I overstated the no-show angle on yesterday's first pass. The honest pain is phone tag + reschedule churn, smaller in dollar terms than I claimed. Keeping the groomer in my list as a "second-tier idea" but demoting it from strongest. The realistic price for the groomer drops to $500-800 one-time + smaller recurring, or a simpler Zapier-only build at $300 like the bakery.
 
-I'd been assuming online booking would REPLACE phone booking. It shouldn't. The right framing is "ADD online booking; keep phone." Some customers will switch, some won't, both paths feed into the same calendar.
+DROPPING: nothing. Real estate agent stays as a "future big pitch" once I have a portfolio piece and a warm intro.
 
-This sounds obvious in hindsight. It wasn't obvious when I was pitching it. I was thinking about MY ideal solution shape (clean, one-channel), not HER customers' actual preferences (mixed, depending on age and habit). The "add, don't replace" framing is what makes this an upgrade for the business instead of a disruption.
+Strongest idea now: bakery. Going deep on competitor research for that pick.`},{q:`The honest meta-lesson from stress-testing my own ideas`,a:`One real thing.
 
-Going to lead with that in the cold-outreach pitch: "Add online booking without losing your phone customers."`}]},{heading:`Exercise 3 — Competitor Research + Pricing`,description:`Focused on the groomer pick. Looked at what exists, what they charge, what they're missing.`,qa:[{q:`Competitor table`,a:`| Competitor | What They Offer | Price (verified on their site, Q3 2026) | What's Missing |
+Yesterday I pitched the groomer with "$80 + gas per no-show, 1-3 per week" math. When I started writing this up today, the inconsistency surfaced: mobile groomers go to the CUSTOMER'S house. The customer's not going to "no-show" — they're already at the address she's driving to. The no-show framing was a pattern-match from salon/barber businesses, not honest analysis of mobile.
+
+Caught it because the math felt wrong when I started to write the cold-outreach email. "Eat one no-show per week" doesn't ring true for someone driving to a residential address. Made me back up and reconsider.
+
+The lesson: my first-pass pitch math was built on a metaphor (salon no-shows) that I hadn't tested against the actual business shape (mobile, residential). The pattern-match was free; the honest analysis took effort. The honest analysis is the one that survives contact with a real customer.
+
+Going to add a step to my idea-validation process: every dollar figure in a pitch gets one round of "would this number actually be true at this specific business shape?" before I commit to it. Cheap audit, prevents embarrassment.`}]},{heading:`Exercise 3 — Competitor Research + Pricing`,description:`Focused on the bakery pick. Looked at what tools exist, what they cost, where the gap is.`,qa:[{q:`Competitor table`,a:`| Competitor | What They Offer | Price (verified on their site, Q3 2026) | What's Missing |
 |---|---|---|---|
-| Square Appointments | Generic scheduler + payments + customer profiles | Free for solo users, ~$29/mo for multi-staff | No pet-specific fields (dog breed, behavior notes, vaccination records). No-show deposit handling exists but is clunky. |
-| Acuity Scheduling | Generic scheduler with form builder | ~$20-65/mo by tier | Same as Square — generic, no pet-business UX. Reschedule flow lives behind login. |
-| Setmore | Free-tier scheduler | Free for solo, low double digits for paid | Bare-bones. No deposit collection on free tier. SMS limits on lower tiers. |
-| MoeGo | Pet-grooming-specific software | Opaque pricing, "Contact us" — likely $50-150/mo based on third-party reviews | Built for multi-staff salons. Overkill UX for solo mobile groomers who want simple in/out. |
-| Daysmart Pet (formerly 123Pet) | Pet-grooming + daycare + boarding | Opaque pricing, enterprise tier | Way too much for solo. Steep learning curve. |
-| Gingr | Pet daycare/boarding focused | Opaque pricing | Solo grooming isn't their target market. |
+| Tally | Form builder | Free tier with reasonable limits, ~$29/mo paid | Form only. Doesn't connect to anything by itself. |
+| Typeform | Form builder + simple logic | Very limited free, $25-83/mo paid | Form only. Submission limits on free tier kick in fast. |
+| Square for Restaurants | POS + order management | Free entry, paid tiers higher | Designed for in-person dining, not DM-to-order workflows. Overkill UX. |
+| Shopify | Full e-commerce | ~$30-40/mo basic | Too heavy for 5-cakes-a-week operation. Built for inventory-driven retail, not custom-order intake. |
+| Later (or Buffer, Hootsuite) | Social media schedulers | Free limited, ~$25/mo for higher tiers | Solves IG posting but doesn't connect to order intake or website updating. |
+| Airtable | Database + light automation | Free tier, paid from ~$10/mo per user | Source of truth but needs separate tools for forms, posting, confirmations. |
+| Mailchimp | Email automation | Free up to 500 contacts, paid scales up | Email-only. Doesn't handle order data structure or daily-specials posting. |
+| Custom dev work on Upwork | Bespoke builds | $1,500-8,000 one-time | Too expensive for a bakery's budget. |
 
-(Cross-checked all the public pricing against the providers' actual pricing pages — ChatGPT had hallucinated MoeGo's pricing at $30/mo when I first asked. Their site is the "Contact us" treatment. That's a market signal: they're enterprise-priced. Lab's warning about hallucinated prices is accurate; verify everything.)
+(All public pricing cross-checked on the providers' actual sites. The lab's warning about hallucinated pricing is accurate — when I asked AI for Tally pricing, it gave me a 2023-era number that's no longer right. Always verify.)
 
-What stands out: the gap is between "generic scheduler that doesn't know it's for a pet groomer" and "enterprise software that assumes you have a storefront and a payroll." Nobody serves the SOLO MOBILE PET GROOMER specifically. That's the gap.`},{q:`Where I fit — positioning`,a:`I'm not going to beat Square on price (they have a free tier). I'm not going to beat MoeGo on features (they have 8 years of pet-business product development). I'm going to beat both on FIT.
+What stands out: every tool above is ONE slice of the offering. The owner who tries to DIY this would need:
+- Tally for the form
+- Airtable or Google Sheets for the database
+- Later or Buffer for IG posting  
+- Mailchimp for customer confirmations
+- ZAPIER OR MAKE to glue them all together
 
-Square's pitch is "any small business." MoeGo's pitch is "any pet business." My pitch is "solo mobile pet groomer." Three words narrower than either competitor.
+Five subscriptions, five logins, plus the integration work. Total cost if they did it themselves: $40-80/mo recurring + the time to figure it out.
 
-Concretely: my product has a "dog profile" with breed, size, last groom date, behavioral notes (anxious around clippers, etc.). Square doesn't. My product has a "drive time" buffer setting that automatically blocks out the time it takes to drive between appointments. MoeGo has it but you have to be on their $$$ tier. My product treats deposit collection and no-show forfeiture as first-class flows, not afterthoughts.
+My offering replaces "figure out how to glue 5 tools together" with "I set this up once for $300 and you own it." That's the gap.`},{q:`Where I fit — positioning`,a:`I'm not going to beat Shopify on features (they have e-commerce infrastructure I'd never replicate). I'm not going to beat Square on POS (they have hardware integration). I'm going to beat both on FIT for the small-bakery-with-DM-orders niche specifically.
 
-The competitive moat isn't features. It's NICHE. I'm building the thing that a solo mobile groomer would design if she could code. That's not what a $50M company designs because the market is too small to be worth their time.
+The competitive moat isn't features. It's PACKAGING + PRICING + NICHE.
+- PACKAGING: I'm selling the integration that nobody else packages as a single offering for this niche. Shopify wants you to use Shopify. Square wants you to use Square. I want you to use Google Sheets + Tally + Later + a couple of Zaps, configured to talk to each other.
+- PRICING: $300 flat, no recurring to me. Below the threshold where a bakery owner has to think hard about it. Above the threshold where it feels too cheap to be real.
+- NICHE: plant-based-friendly bakeries specifically. I understand the customer base because I'm in it. I know what DMs about ingredients look like. I know what reassurances around cross-contact matter. That's positioning a generic freelancer can't claim.
 
-Position: "The booking system designed for solo mobile groomers, by someone who actually understands solo service businesses."`},{q:`Level 3 — One-paragraph pitch`,a:`"I help solo mobile dog groomers in Prescott eliminate no-shows and recover the hours they lose to phone-tag. I build a custom online booking system tailored to mobile grooming — drive-time buffers, dog profiles, deposit collection, SMS confirmations and reminders. Unlike Square Appointments or generic schedulers, my system is built specifically for solo mobile operators, not retrofitted from a multi-staff salon tool. Unlike MoeGo or Daysmart, it's affordable and you don't need a training session to use it. $1,500 one-time setup, $50/mo for hosting and SMS. Most groomers earn that back by avoiding three no-shows."
+Position: "I set up order management for small plant-based-friendly bakeries. One-time fee, you own everything, no monthly bill to me."`},{q:`Level 3 — One-paragraph pitch`,a:`"I help small plant-based-friendly bakeries get their custom orders, daily specials, and wholesale requests out of Instagram DMs and into one organized system. I configure a single intake form, a single source-of-truth spreadsheet, automated customer confirmations, and one-source daily-specials posting that publishes to your IG and your website at the same time. Unlike Shopify or Square, this is built for your actual workflow — custom cakes by DM, daily specials by gut feel, wholesale by text — not for a generic retail store. $300 flat, one-time. You own everything afterward. No monthly bill to me."
 
-That's the elevator. Three sentences of pain, one sentence of solution, two sentences of differentiation, one sentence of price + ROI. ~120 words. Fits in an Instagram DM, a Facebook message, or the first paragraph of a cold email.`}]},{heading:`Exercise 4 — Problem-Solution-Price Map`,description:`Locking in the spec for the groomer pick. Filled in after Exercise 3 so the price is informed, not a guess.`,qa:[{q:`PROBLEM — who, how painful, how they solve it today`,a:`WHO has it: Solo mobile dog groomers in northern AZ — specifically Prescott, Prescott Valley, Chino Valley, Dewey-Humboldt. Roughly 8-15 such groomers within a 30-mile radius based on Google Maps + Facebook page surveys. NOT salon-based groomers (different software needs). NOT multi-staff mobile operations (different software needs, and big enough to afford MoeGo).
+That's the elevator. Three sentences of problem, two sentences of solution + differentiation, one sentence of pricing. ~110 words. Fits in an IG DM, a Facebook message, or the first paragraph of a cold email.`}]},{heading:`Exercise 4 — Problem-Solution-Price Map`,description:`Locked in the spec for the bakery offering. Filled in after Exercise 3 so the price is informed, not a guess.`,qa:[{q:`PROBLEM — who, how painful, how they solve it today`,a:`WHO has it: Small bakeries or cafés in northern AZ with substantial plant-based offerings, active Instagram (~1k-5k followers), and a side business of custom cakes or catering. Roughly 5-7 candidates within a 90-minute drive based on my Google Maps + Instagram research. NOT national chains. NOT places with a dedicated front-of-house person handling orders.
 
-HOW PAINFUL: Average solo mobile groomer grosses ~$1,500-2,000/week. Estimated 1-3 no-shows per week. Average no-show cost: $80 (the price of the missed appointment) + ~$15 (gas + time round-trip). So $95-285/week in lost revenue from no-shows alone. PLUS the unpaid time on phone tag with prospective bookings — estimated 30-45 minutes per day. That's 2.5-4 hours a week of unpaid administrative labor.
+HOW PAINFUL: Estimated 7-13 hours/week of disconnected admin labor:
+- Custom orders: 5-10 per week via DM/text, ~30 min each in back-and-forth confirmation = 2.5-5 hrs/week
+- Daily specials: posting to IG every morning, sometimes updating website (if remembered) = 1-2 hrs/week
+- Wholesale: standing orders by text from cafés/yoga studios + Saturday-market regulars = 3-5 hrs/week
+- Searching for old DM threads to confirm previous orders = ~1 hr/week of pure friction
 
-Painful enough to act on? Yes. The dollar number is concrete. The hour number is felt.
+At an effective $30/hour value of the owner's time, that's $210-390/week of unpaid labor = ~$900-1,700/month. On an operation that's probably grossing $3-5k/week and netting maybe $1-2k/week after costs, that admin labor is a real chunk of total margin.
 
-HOW THEY SOLVE IT TODAY: They don't. They call back voicemails between appointments. They eat the no-shows. They keep a paper calendar in the van. The "solution" is just absorbing the cost.`},{q:`SOLUTION — what I build, what tools, how long`,a:`WHAT I BUILD: A custom Next.js booking system at a subdomain (e.g., book.smithdoggrooming.com). Public booking page → calendar with available slots → customer enters details → 25% deposit via Stripe → confirmation SMS via Twilio → reminder SMS 24h before, 2h before. Admin dashboard for the groomer to see the week's bookings, block off days, manually add phone bookings.
+Painful enough to act on? Probably yes, IF the owner is tech-comfortable. Owners who've made peace with the chaos and don't want to learn new tools are NOT my customer — that's a sales filter, not a problem.
+
+HOW THEY SOLVE IT TODAY: They don't. They live in their notifications. They write orders on sticky notes. They post IG manually every morning. They search through DM threads to confirm what someone ordered three days ago. The "solution" is absorbing the cost as the price of doing business.`},{q:`SOLUTION — what I build, what tools, how long`,a:`WHAT I BUILD: One integrated order management system across three channels.
+
+Channel 1 — Custom orders:
+- Public Tally form at order.[bakery].com with conditional fields (custom cake / catering / wholesale / general inquiry)
+- Form submission → Google Sheet "Orders" tab
+- Automated confirmation email to customer with order summary + pickup window
+- Slack/SMS ping to owner with order summary
+
+Channel 2 — Daily specials:
+- Owner updates a "Today's Specials" Google Sheet tab each morning (one row per item)
+- 7am Zap fires: reads the Sheet, posts to Instagram via Later/Buffer, updates a "today" page on the website
+- One source of truth, two outputs
+
+Channel 3 — Wholesale:
+- Separate "Wholesale Standing Orders" Sheet tab with recurring orders
+- Weekly Friday Zap fires: generates the production list for the weekend
+- Owner sees what to bake before Saturday market
 
 TOOLS:
-- Next.js 16 (App Router, Server Actions)
-- Prisma + Postgres (Neon for hosting)
-- Stripe Checkout for deposits + webhook for "paid" event
-- Twilio SMS for confirmations + reminders
-- Vercel for hosting
-- Custom domain via the groomer's existing provider (or I provision one)
+- Tally (forms) — free tier
+- Google Sheets (database) — free
+- Zapier (automation) — owner pays for their own account, free tier might cover it; $19.99/mo Starter if volume requires
+- Later or Buffer (IG scheduling) — owner's choice, free or paid tier
+- A simple HTML "today" page on whatever the bakery's existing website is — depends on their site
 
-HOW LONG TO BUILD (honest): 7-10 days of focused work for the first customer. After that, subsequent customers are CONFIGURATION not new builds — same codebase, new database, branded subdomain. Marginal cost per customer drops to maybe 2 days of setup + branding.
+HOW LONG TO BUILD (honest): 1-2 weekends of focused work for the first customer. Mostly configuration, not coding. Custom bits: a "today" page on their existing website might need light HTML/CSS work depending on what platform they're on (Squarespace = easy, custom = harder).
 
-The leverage is in the first build. Once the template exists, each new client is 1/5 the cost in time.`},{q:`PRICE — informed by competitor research, not vibes`,a:`WHAT COMPETITORS CHARGE for similar offerings:
-- Square Appointments: free to $29/mo (no upfront)
-- Acuity: $20-65/mo (no upfront)
-- MoeGo: ~$50-150/mo by tier, no clear setup fee
-- Bespoke dev work for similar solo-service apps on Upwork: $2,000-8,000 one-time
+After the first customer, subsequent bakeries are 4-6 hours of setup, not 1-2 weekends. The template exists; new clients are configuration.`},{q:`PRICE — informed by competitor research, not vibes`,a:`WHAT COMPETITORS CHARGE for partial offerings:
+- Tally + Airtable + Later + Mailchimp DIY: ~$40-80/mo recurring if they figure it out themselves
+- Bespoke dev work on Upwork for similar small-business order-management setups: $1,500-5,000 one-time
+- Shopify or Square: $30-80/mo recurring forever
 
-WHAT IT'S WORTH TO THE CLIENT: If the system saves 2 no-shows/month ($160) + recovers 3 hours/week of unpaid admin work ($60/hour effective rate × 12 hrs = $720/mo) = ~$880/mo of recovered value. Annualized: ~$10,500. At those numbers, even $200/mo would be a steal.
+WHAT IT'S WORTH TO THE CLIENT: If the system recovers 5 hours/week of admin time at the owner's $30/hour effective rate = $150/week = $7,800/year of recovered value. Even at half that ($3,900/yr), the ROI is enormous against a $300 one-time fee.
 
-WHAT I'D CHARGE:
-$1,500 one-time setup + $50/mo for hosting + SMS + Stripe fees.
+WHAT I'D CHARGE: **$300 flat, one-time. Owner owns everything afterward. No recurring fee to me.**
 
 Reasoning:
-- Below the $2k-8k Upwork bespoke range — sells the "I'll work for less because I'm building my portfolio" positioning honestly.
-- Recurring fee is small enough to feel like a utility, not a SaaS subscription.
-- Total cost in year one: $2,100. Compared to $10,500 of recovered value, that's a 5x ROI in year one.
-- After year one, ongoing cost drops to $600/yr while value stays at $10,500. 17x ROI in steady state.
+- BELOW the Upwork bespoke range — sells the "I'm building my portfolio, you're getting a deal" positioning honestly
+- ONE-TIME ONLY — bakery margins won't tolerate a recurring subscription to a person; they will tolerate a one-time payment
+- BELOW THE THRESHOLD where the owner has to convene a budget conversation — $300 is "yes, sure" money for an operation grossing $3-5k/week
+- INCLUDES THE HANDOFF — 1-page documentation, 30-min walkthrough video, owner has the keys to make changes herself or hire someone else to maintain
+- FIRST CUSTOMER GETS $250 in exchange for a video testimonial after 30 days of use. Testimonial unlocks $400-500 pricing for customers 2-5. Six-plus, after I have a case study, $600-800.
 
-First customer gets it at $1,200 with the testimonial agreement. Second through fifth at $1,500. Sixth onward, after I have testimonials + case studies, $2,000-2,500. The price ladder reflects the diminishing risk of each new sale.`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`90 seconds in a breakout pair. The verbal muscle for the Phase 3 gate pitch.`,qa:[{q:`My 90-second pitch`,a:`"Client: solo mobile dog groomer in Prescott. She drives her van to people's homes, grooms 3-4 dogs a day, all of her bookings happen by phone.
+Honest: this is below what the value justifies. I'm pricing for the first-customer-easy-yes. Once I have a case study showing "saved this bakery 8 hours/week," the price moves up. The cheap first sale is the investment in the case study.`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`90 seconds in a breakout pair. The verbal muscle for the Phase 3 gate pitch.`,qa:[{q:`My 90-second pitch`,a:`"Client niche: small plant-based-friendly bakeries in northern AZ. Active Instagram, custom cake side of the business, maybe sells at the Saturday farmers market.
 
-Problem: she's losing money two ways. First, no-shows — at least one a week. She drives 25 minutes to a client who forgot, can't bill for the gas, eats the missed appointment. Second, she can't answer her phone while she's grooming, so prospects who call get voicemail. They go to whoever calls back first, which often isn't her.
+Problem: their orders come through three different channels — Instagram DMs for custom cakes, text messages for wholesale, manual IG posting for daily specials — and none of those channels talk to each other. The owner is the only integration. She's the database. When someone DMs to confirm a cake order from three days ago, she's scrolling through her DMs trying to find the thread.
 
-Why it matters: her gross is around $1,600 a week. One no-show is $80 of lost revenue plus $15 in gas. Three hours a week on phone tag is unpaid labor that competes with paid work. The total cost is somewhere north of $400/month in lost revenue and lost time.
+Why it matters: across the candidates I researched, this pattern is 7-13 hours a week of unpaid admin labor. The owner is the cheapest employee, and the cheapest employee is spending half her time on stuff that should be automated.
 
-What I'd build: a custom online booking system. Customers book a time slot on her site, pay a 25% refundable deposit, get SMS confirmations and reminders. No-shows forfeit the deposit. Existing phone customers still book by phone — she manually enters them. It's an addition, not a replacement.
+What I'd build: ONE order intake form, ONE source-of-truth spreadsheet, automated customer confirmations, ONE-source daily specials that publishes to IG and the website at the same time. The owner adds today's specials in one place; the system fans out.
 
-What I'd charge: $1,500 setup, $50/mo for hosting and SMS. The first customer gets it at $1,200 in exchange for a video testimonial after 30 days."`},{q:`Partner's clarifying question and my answer`,a:`Partner's question: "Why $1,500 and not $2,500 or $800? How did you pick that number?"
+What I'd charge: $300 flat, one-time. Owner owns everything afterward. No monthly bill to me. First customer gets it at $250 in exchange for a video testimonial after 30 days."`},{q:`Partner's clarifying question and my answer`,a:`Partner's question: "You said you don't know a specific bakery — so how do you actually find your first customer?"
 
 My answer:
 
-"Three inputs. First, competitor pricing — I looked at Acuity and Square Appointments which are $20-65/mo with no upfront fee, and MoeGo which is opaque but probably $50-150/mo. So my recurring fee of $50/mo has to feel comparable to those — anything higher and they'll just use Square. Second, custom dev work on Upwork for similar small-business booking systems lands at $2k-8k one-time. I went BELOW that because I'm trying to land my first customer, not maximize per-customer revenue. Third, the ROI math — at her gross, the system recovers about $880 a month in saved time and prevented no-shows. So even $300/mo would be a deal for her. $1,500 + $50/mo is well under that ceiling.
+"Two paths.
 
-If I'd picked $2,500: probably too steep for a first customer who doesn't know me yet and has never paid that much for software. If I'd picked $800: too low to feel like a real engagement, and I'd resent the build by day 3. $1,500 is a number that signals 'this is real work' without scaring off the buyer."
+Path one is cold outreach. I have 5-7 candidates from my research. For the top 2-3 — the ones whose Instagram comments most clearly show the pain — I send a personalized DM or email. The pitch is short: 'I noticed [specific pattern in your comments]. I help bakeries like yours with [specific solution]. Would you be open to a 15-min coffee?' Cold conversion rates are like 3-5%, so I'd expect maybe one yes out of three sends.
 
-What I noticed in answering: I had the math at the tip of my tongue. The competitor research from Exercise 3 made it easy to defend the number. Without that research I'd have been guessing, and partner would have heard the guess.`},{q:`What saying it out loud at 90 seconds taught me`,a:`Two things.
+Path two is warm intro. I'm in the Next Chapter cohort with a couple of other plant-based people, and the broader Prescott vegan community is small enough that two degrees of separation usually gets me to anyone. Going to ask around to see if anyone knows an owner.
 
-First, the discipline of 90 seconds forces structure. There's no room to ramble. I had to land four beats — who, problem, why it matters, what + price — in four chunks of 20 seconds each. That structure is what makes a pitch feel professional. The Phase 3 gate is going to want this exact compression.
+Realistic timeline: send cold outreach this week, ask for warm intros this week, expect to be in conversation with a real bakery owner within 7-14 days. If not, the framing was wrong and I revisit.
 
-Second, my partner picked up on the price BEFORE the value. That's a tell. When someone in a pitch asks about the price first, it usually means the value didn't land. So next time I'd lead with the dollar value of the problem — "this is costing her $400/month right now" — before I get to the solution. That way when the price comes up, it's already framed against a bigger number.
+If both paths fail, that's diagnostic. Means either (a) my read of the market was off, (b) my pitch isn't landing, or (c) the niche is too narrow geographically. Each of those has a different next step — broaden the geography, broaden the niche (plant-based-friendly to general small bakeries), or pivot to a different offering entirely. The failures tell me what to adjust."
 
-Going to revise the pitch in my notes: lead with the problem's COST, then the solution, then the price. The price feels smaller when the problem's cost is already in the listener's head.`}]},{heading:`Going Deeper`,description:`Did all four. The cold-outreach draft is the one I'll actually use next week.`,qa:[{q:`Cold-outreach draft — what I'd actually send to the groomer`,a:`Drafted but not sent. Going to sit on it for 24 hours and re-read before sending.
+What this answer demonstrated: I have a real plan, not just a fantasy. The hypothetical-with-research path is legitimate, but it requires a CONCRETE next-step plan to convert hypothetical into real. Without that, "I'd target the niche" is just a daydream.`},{q:`What saying it out loud at 90 seconds taught me`,a:`Two things.
 
-Subject: A way to stop losing money on no-shows
+First — pitching a NICHE feels different from pitching a SPECIFIC CLIENT. With a specific client, you can name them ("the dog groomer who works in my neighborhood"). With a niche, you have to describe the SHAPE of the customer in a way that's specific enough to feel real but general enough to apply to multiple businesses. That's a harder articulation. Practiced it twice. Second time was tighter than first.
 
-Hi [name],
+Second — when partner asked about finding the first customer, the question wasn't a trap. It was the right honest question. "You don't have a customer yet" is the elephant in the hypothetical-with-research path. Having a CONCRETE plan to convert hypothetical into real (cold outreach this week, warm intros this week, evaluation in 7-14 days) is what makes the pitch credible.
 
-I'm a developer in Prescott, and I noticed something in the comments on your recent Facebook posts — a few folks asking if they could book online. I get the sense that switching to online-only would alienate your phone customers, but I wondered if there's a middle ground worth exploring.
+The Phase 3 gate is going to ask the same question. If I can't answer "how do you find your first customer" in 30 seconds with a real plan, the whole niche pitch crumbles. Practicing the answer NOW means it's automatic when it matters.`}]},{heading:`Going Deeper`,description:`Cold-outreach template that I can customize per bakery. Plus the other three items honestly.`,qa:[{q:`Cold-outreach template — customize per bakery, send this week`,a:`Drafting as a TEMPLATE because I don't have one specific bakery yet. Bracketed sections are where I personalize per candidate.
 
-I build small booking systems for solo mobile services like yours. The idea: customers who want to book online go to a page on your site, pick a slot, and pay a small refundable deposit. Customers who prefer to call still call — you enter their booking manually in the same system. Both paths feed the same calendar, so you never double-book.
+Subject: Question about your custom orders
 
-The deposit part is what kills no-shows. When someone has $20 on the line, they remember the appointment — and if they forget, the deposit covers your gas and your time.
+Hi [first name],
 
-I'd build it for $1,500 one-time, $50/mo for hosting and SMS. Most groomers earn that back avoiding three no-shows.
+I'm a developer in Prescott, and I've been a [customer / fan / observer] of [bakery name] for a while. I noticed something in your recent Instagram comments — a few people asking [specific pattern, e.g. "how to order a custom cake" / "if you'll be at the market this weekend"] without seeing a clear path to do so. I get the sense that managing all of that through DMs and texts adds up to real time every week.
 
-If you want to grab a coffee at Wildflower and see a quick demo, my schedule is open most afternoons next week.
+I help small bakeries like yours pull custom orders, wholesale requests, and daily specials posting into one system — single intake form, single spreadsheet, automated customer confirmations, and one-source daily-specials posting that hits Instagram and your website at the same time. You'd update specials in ONE place each morning and the rest takes care of itself.
+
+The whole setup is $300 one-time, no monthly bill to me afterward. You own the form, the spreadsheet, and the Zapier account. I'd configure it, walk you through it, and hand over the keys.
+
+If you'd be open to a 15-minute coffee at [shared third place, e.g. Wildflower] sometime in the next two weeks, I'd love to show you what it'd look like for [bakery name] specifically.
+
+Either way, thanks for what you do — the [specific menu item I actually like] is one of my favorites in town.
 
 Diana
 [phone] · [portfolio URL]
 
-What I'm doing in the email:
-- First paragraph: a SPECIFIC piece of evidence I noticed (proves I'm not spamming)
-- Second paragraph: the SOLUTION framed as "and don't worry, you keep your phone customers"
-- Third paragraph: the SPECIFIC mechanism (deposit) tied to the SPECIFIC pain (no-shows)
-- Fourth paragraph: the PRICE with a tiny ROI anchor
-- Fifth paragraph: low-friction next step (coffee, not "schedule a 30-minute discovery call")
+What I'm doing in this email:
+- First paragraph: SPECIFIC piece of evidence I noticed (proves I'm not spamming). The bracketed observation is what makes this customizable.
+- Second paragraph: solution framed as "you'd update in ONE place and the rest happens" — the user-side experience, not the technical architecture
+- Third paragraph: PRICE up front, with the ownership framing ("no monthly bill to me")
+- Fourth paragraph: low-friction next step (coffee at a specific local place, not "schedule a call")
+- Fifth paragraph: genuine compliment about a SPECIFIC menu item (proves I'm a real customer, not a generic outreach person)
 
-Total length: ~150 words. Reads in 30 seconds. Doesn't sound like a sales email.`},{q:`Freelancer case study — what I found on YouTube`,a:`Searched "solo developer freelance small business booking system case study." Found a 15-minute case study from a developer who built custom Calendly+Stripe integrations for therapists and coaches in the $1,500-3,000 range.
+Total length: ~180 words. Reads in 45 seconds. Doesn't sound like a sales email. Customizes in 5 minutes per bakery.`},{q:`Freelancer case study — what I found on YouTube`,a:`Searched "small business automation freelancer order management case study." Found a 12-minute case study from a developer who sets up Zapier + Airtable + Square for small food businesses (restaurants, bakeries, food trucks).
 
-What he sells: a "booking + intake + deposit" workflow built on top of Calendly Pro + a small custom app for the intake form + Stripe.
+What he sells: "Order management in a weekend" packages.
 
-Who he sells to: solo practitioners (therapists, coaches, consultants).
+Who he sells to: small food businesses with under $1M annual revenue.
 
-What he charges: $1,800 base + $500-1,000 add-ons for things like SMS reminders, multi-language intake, branded confirmation emails.
+What he charges: $500-1,500 depending on complexity, average around $800. Higher than my $300 starting point.
 
 What I learned that I'll copy:
-- He bundles a "30-day free tweaks" period. After 30 days, additional changes are billed at his hourly rate. This protects him from scope creep without being adversarial.
-- He has a one-page proposal template he sends after the discovery coffee. Three sections: what I heard you say (proves he listened), what I'd build (specific deliverable), what it costs (broken down). Sends as a PDF, asks for "yes / pivot / no" in 48 hours.
-- He doesn't try to upsell on the first sale. Closes the deal at the agreed price, delivers in two weeks, THEN suggests add-ons after the client is happy.
+- He uses a 15-minute discovery call format, not a 30-min or 60-min one. Just enough to confirm fit and the specific pain points, not so long the prospect feels pitched-at. Going to use this framing.
+- He sends a one-page "proposal" PDF after the discovery call. Three sections: what I heard, what I'd build, what it costs. Asks for yes/pivot/no in 48 hours. The 48-hour deadline is the close.
+- He uses "audit" pricing for prospects who aren't ready to commit — $100 for a written analysis of their current operations + a recommended automation plan. The audit cost rolls into the build price if they go forward. Smart de-risk for both sides.
 
-Reverse-engineered the pitch from his thumbnail and intro: "I help [niche] eliminate [specific pain] with [specific tool]. $X. Two weeks." Same shape as mine. Validating.
+The audit angle is the interesting one. For a bakery that's not sure whether $300 is worth it, "$100 audit, applied to the $300 build if you move forward, otherwise keep the audit document" is a way lower-friction first step.
 
-Putting his proposal template on the to-do list for next week. The "one-page proposal" is a tool I don't have yet but should.`},{q:`Warm market map — three people I already know`,a:`Three people I already know who run small businesses or work somewhere with operational pain. Not pitching them. Just noting the network exists.
+Adding "discovery call format + 1-page proposal + optional $100 audit" to my pitch toolkit. Will integrate into the cold-outreach follow-up flow.`},{q:`Warm market map — three people I already know`,a:`Three people I already know who run small businesses or might know small business owners in the food space. Names stay in my offline notebook — the lab's privacy framing applies.
 
-Wrote three names down in my offline notebook — going to keep them OFF this data file because the lab specifically says "only use information you'd be comfortable having public" and naming people is too far in either direction. The privacy framing is right.
+What I noticed when I made the list:
+1. None of them own a bakery directly. So the warm market doesn't map ONE-to-one to my strongest pick. But two of them know people in the local food scene (one through farmers market connections, one through a yoga studio that sources baked goods).
+2. The right way to use warm contacts here is NOT "do you want to hire me" — it's "I'm trying to find small bakeries in the area that might be interested in [the offering]. Do you know anyone I should talk to?" Lower stakes, opens a different conversation, asks for introductions instead of money.
+3. The warm-market-as-introduction-bridge framing is the highest-leverage use. A warm intro from someone the bakery owner already trusts is worth 10x a cold DM.
 
-What I observed when I made the list:
-1. The network is bigger than I thought. Three names came up in 90 seconds. If I'd given it 10 minutes I'd have had ten.
-2. None of them are dog groomers. So the warm market doesn't directly map to my strongest idea. That's fine — the warm market is for OTHER ideas (the bakery and the real estate one might map). The cold market is for the groomer.
-3. The right way to use a warm contact is NOT "hey I'm a freelancer, want to hire me?" It's "I built this thing recently, would you mind taking a look and telling me if it's any good?" Lower stakes, more honest, opens a different kind of conversation.
-
-Going to circle back to this list next week after the groomer cold-outreach lands. If the cold-outreach is going well, I'll start working the warm market on different ideas. If cold isn't working, the warm market is the safety net.`},{q:`Reusing Phase 2 work — what canvas-daily could be SOLD as`,a:`Canvas Daily is built for me. But who else has the problem it solves?
+Going to send three "do you know any bakery owners in the area I should talk to about [the offering]" messages this week. If even one person responds with an intro, my outreach pipeline doubles.`},{q:`Reusing Phase 2 work — what canvas-daily could be SOLD as`,a:`Canvas Daily is built for me. But who else has the problem it solves?
 
 The literal problem: "I have a Canvas LMS account and I want a clear, structured daily view of what's due, with AI breakdowns to plan my work."
 
 Who else has this:
-1. **Other community college students.** Yavapai College has ~10,000 students. Even 1% adoption is 100 users. But community college students aren't a great PAYING market — they're broke, and the school itself would have to license the tool. School IT departments are notoriously slow to adopt outside tools.
+1. **Other community college students.** Yavapai College has ~10,000 students. Even 1% adoption is 100 users. But community college students aren't a great PAYING market — they're broke. The school itself would have to license the tool, which is a slow institutional sale.
 
-2. **Parents of online-schooled minors.** Parents whose kids are in online or hybrid school often have Canvas observer access and want to track their kid's assignments. This is a real market — parents WILL pay $5-10/mo for something that helps them stay on top of their kid's schoolwork. Possibly the strongest niche.
+2. **Parents of online-schooled minors.** Parents whose kids are in online or hybrid school often have Canvas observer access and want to track their kid's assignments. This is a real market — parents WILL pay $5-10/mo for something that helps them stay on top of their kid's schoolwork. Lived experience advantage here too.
 
 3. **Academic tutoring centers and coaches.** Independent tutors managing 5-10 students at a time, each with their own Canvas account, drowning in the "what's due" problem multiplied by their roster. They'd pay $30-50/mo per tutor for a tool that gives them a unified dashboard across their students' Canvas accounts (with the students' consent).
 
@@ -11940,4 +12000,367 @@ Of those three, the parents and the tutoring centers are the most viable. Tutori
 
 Repositioning Canvas Daily: change the marketing copy from "for students" to "for tutors and parents managing students." Same underlying tool, different customer. Price changes from "free" to $9.99/mo for parents, $29.99/mo for tutors.
 
-Not pitching this in Week 9. Mentioning it as a "you might be sitting on a real product without realizing it" insight. Worth coming back to in Week 10 when the freelance pipeline is moving.`}]}]}]}];d.flatMap(e=>e.days);var f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeWeek:e,activeDayInWeek:t}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Program Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`16px`,marginTop:`28px`,alignItems:`center`},children:d.map((n,r)=>(0,p.jsxs)(`div`,{style:{display:`flex`,gap:`6px`,alignItems:`center`},children:[n.days.map((n,i)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:r===e&&i===t?n.color:r<e||r===e&&i<t?`#3a3a3a`:`#1e1e1e`,transition:`background 0.3s`}},i)),r<d.length-1&&(0,p.jsx)(`div`,{style:{width:`12px`,height:`1px`,background:`#1e1e1e`,marginLeft:`2px`}})]},r))})]})}function h({activeWeek:e,activeDayInWeek:t,setActiveWeek:n,setActiveDayInWeek:r}){let i=d[e],a=i.days[t]?.color||`#f59e0b`;return(0,p.jsxs)(`div`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{display:`flex`,padding:`0 32px`,gap:`0`,borderBottom:`1px solid #141414`},children:d.map((t,i)=>(0,p.jsx)(`button`,{onClick:()=>{n(i),r(0)},style:{background:`none`,border:`none`,borderBottom:i===e?`2px solid ${t.days[0]?.color||`#f59e0b`}`:`2px solid transparent`,padding:`12px 20px 10px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.68rem`,letterSpacing:`0.08em`,textTransform:`uppercase`,color:i===e?`#d4d4d4`:`#3a3a3a`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`},children:t.label},i))}),(0,p.jsx)(`nav`,{style:{display:`flex`,padding:`0 32px`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${a} transparent`},className:`day-nav`,children:i.days.map((e,n)=>(0,p.jsx)(`button`,{onClick:()=>r(n),style:{background:`none`,border:`none`,borderBottom:n===t?`2px solid ${e.color}`:`2px solid transparent`,padding:`14px 18px 12px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:n===t?e.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:e.label},n))})]})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,week:t,activeDayInWeek:n,onPrev:r,onNext:i,isFirst:a,isLast:o}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[t.label,` — Day `,n+1]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:r,disabled:a,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:a?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:a?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:i,disabled:o,style:{background:`none`,border:`1px solid ${o?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:o?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:o?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(0),i=d[e],a=i.days[n];function o(){if(n>0)r(n-1);else if(e>0){let n=d[e-1];t(e-1),r(n.days.length-1)}}function s(){n<i.days.length-1?r(n+1):e<d.length-1&&(t(e+1),r(0))}let c=e===0&&n===0,u=e===d.length-1&&n===i.days.length-1;return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeWeek:e,activeDayInWeek:n}),(0,p.jsx)(h,{activeWeek:e,activeDayInWeek:n,setActiveWeek:t,setActiveDayInWeek:r}),(0,p.jsx)(y,{day:a,week:i,activeDayInWeek:n,onPrev:o,onNext:s,isFirst:c,isLast:u}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
+Not pitching this in Week 9. Mentioning it as a "you might be sitting on a real product without realizing it" insight. Worth coming back to in Week 10 when the freelance pipeline is moving.`}]}]},{number:30,label:`Day 2`,title:`Week 9, Day 2 — Zapier, Webhooks, and No-Code Automation`,subtitle:`First Zaps end-to-end. AI-driven branching. Webhook triggers. Built the bakery order management workflow as my sellable artifact — $300 flat, owner owns everything.`,color:`#c026d3`,sections:[{heading:`Exercise 1 — Sign Up + First Zap`,description:`Goal was speed-to-working-Zap. Picked Gmail trigger + Slack action because I have both. Hit Level 3 with a Filter and a Google Sheet append.`,qa:[{q:`Picked Gmail → Slack and got the first Zap firing in 12 minutes`,a:`Sign-up was painless. Free tier, no credit card. Got into the dashboard in under a minute.
+
+Setup:
+- Trigger: Gmail → New Email Matching Search. Search query: subject:test-zap-001 from:me
+- Action: Slack → Send Channel Message in #zap-test (a channel I made for this)
+
+Mapped the email subject and snippet into the Slack message body:
+
+New email from {{trigger.from}}:
+*{{trigger.subject}}*
+{{trigger.snippet}}
+
+Tested by sending myself an email with subject "test-zap-001 — does this fire?" Slack notification arrived ~30 seconds later. Subject in the bold text, snippet underneath, sender pre-filled. Clean.
+
+Published the Zap. Sent a second test email to confirm it fires on the LIVE Zap, not just in test mode. It did. 
+
+Total time to first working Zap: about 12 minutes from sign-up. Faster than provisioning a new Next.js project, faster than writing a Twilio webhook handler myself. The trade-off is obvious — I'm renting infrastructure I'd otherwise build, and it ONLY does what Zapier supports.`},{q:`Level 2 — Added Google Sheet append as a second action`,a:`Two actions after the trigger now. Same trigger fires both.
+
+Action 2: Google Sheets → Create Spreadsheet Row in a "Zap Inbox" sheet I made.
+
+Columns I mapped:
+- Timestamp (Zapier's built-in {{zap_meta__human_now}})
+- From: {{trigger.from}}
+- Subject: {{trigger.subject}}
+- Snippet: {{trigger.snippet}}
+
+Tested with another email. Got both the Slack notification AND a new row in the sheet. The whole thing took less than 5 minutes to wire up.
+
+Reflection: in Next.js I'd have to write a Gmail webhook handler (or pull via the Gmail API on a cron), parse the message, format the Slack payload, hit the Slack API, format the Google Sheets row, hit the Sheets API. Each one is 30+ lines minimum, plus auth setup for three services. Zapier collapses all of that into 4 dropdown selections.
+
+That's the trade I'm starting to feel. Zapier wins on SPEED. Code wins on FLEXIBILITY and COST AT SCALE. For a client who needs this exact integration AT VOLUME, Zapier's per-task fees start to bite. For a client who needs it RIGHT NOW with a small budget, Zapier is the right call.`},{q:`Level 3 — Added a Filter step before the action`,a:`The lab suggests a Filter "only continue when subject contains a specific keyword." Did that and went a half-step further.
+
+Filter step (after trigger, before any action):
+- "Continue only if": Subject text → (Text) Contains → "urgent"
+
+Tested two ways:
+1. Email with subject "test-zap-001 urgent maintenance window" → Zap fires through. Slack notification + Sheet row both appear.
+2. Email with subject "test-zap-001 weekly newsletter" → Zap stops at the Filter. No Slack ping, no Sheet append. Zapier's Task History shows "Filter did not pass" for the run.
+
+This is the basic building block for everything that comes next. Filter = if-statement in a Zap. The AI-driven version in Exercise 2 is the same shape but with the condition computed by an LLM instead of a string match.
+
+One thing I noticed: the Filter step does NOT count as a "task" against my free-tier quota. Only steps that produce an output count. That's a nice escape hatch — I can chain a bunch of cheap Filter steps without burning task credits.`}]},{heading:`Exercise 2 — Add AI to Your Zap`,description:`Picked Pattern B (form → AI classify → conditional response) because it shows the AI-as-decision-maker shape that matters for real business automation.`,qa:[{q:`Why Pattern B over Pattern A`,a:`Pattern A (sheet row → AI summary → email) is fine but it's just "use AI to write text." Pattern B (form → AI classify → branch on result) shows the AI making a DECISION that drives the rest of the workflow. That's the higher-value pattern.
+
+Concretely: Pattern A could be replaced by a templating function. Pattern B couldn't — categorizing arbitrary text into {urgent, normal, spam} is exactly what LLMs are good at and string-matching is bad at.
+
+Also Pattern B maps to a real future use case for my freelance pipeline. Cold-outreach replies are going to come back in three flavors: someone interested, someone politely declining, and spam/scam. Routing them differently means I respond fast to interest, archive the polite no's, and never see the spam. That's an actual workflow I'd build for myself.`},{q:`The build — Webhook → AI classify → Paths`,a:`Trigger: Webhooks by Zapier → Catch Hook. Got a unique webhook URL like https://hooks.zapier.com/hooks/catch/12345678/abc/
+
+Sent test data via curl to fire the trigger:
+
+curl -X POST -H "Content-Type: application/json" \\
+  -d '{"name":"Sandra","email":"sandra@example.com","message":"Hi — I run a small bakery, can you help me organize my custom order intake?"}' \\
+  https://hooks.zapier.com/hooks/catch/...
+
+Step 1: AI by Zapier → "Prompt" action.
+
+Prompt:
+Classify this customer inquiry as exactly one of: urgent, normal, spam.
+Return only the single lowercase word, no punctuation, no explanation.
+
+Inquiry: {{trigger.message}}
+
+Step 2: Paths by Zapier. Three branches:
+- Path A: continues if AI output equals "urgent" → Slack DM to me + Sheet row with "URGENT" flag
+- Path B: continues if AI output equals "normal" → Sheet row only
+- Path C: continues if AI output equals "spam" → end (do nothing)
+
+Tested with three POST payloads:
+1. "URGENT — my catering order is for tomorrow and I haven't heard back" → AI returned "urgent" → Slack DM fired
+2. "Hi, can I book a custom cake for next month sometime?" → AI returned "normal" → Sheet row appended, no DM
+3. "Click here to win $1000 free gift card" → AI returned "spam" → Zap ended silently
+
+All three behaved correctly. The AI made the call, the Paths step branched on it, the right side effect happened.`},{q:`Level 3 — Refined the prompt with a one-shot example, compared output`,a:`Initial prompt (zero-shot):
+Classify this customer inquiry as exactly one of: urgent, normal, spam.
+Return only the single lowercase word.
+Inquiry: {{trigger.message}}
+
+Refined prompt (one-shot, with example):
+Classify this customer inquiry as exactly one of: urgent, normal, spam.
+Return only the single lowercase word, no punctuation, no explanation.
+
+Example:
+Inquiry: "Hi I need to reschedule my appointment tomorrow"
+Classification: normal
+
+Inquiry: {{trigger.message}}
+
+Before/after comparison on the same five test inputs:
+
+| Input | Zero-shot | One-shot |
+|---|---|---|
+| "URGENT catering order for tomorrow" | "urgent" | "urgent" |
+| "Can I book a cake for next month?" | "normal" | "normal" |
+| "Click here to win $1000" | "spam" | "spam" |
+| "Hi can you confirm Saturday?" | "Normal." (capitalized + period) | "normal" |
+| "this cake birthday party Saturday help fast" | "urgent" (?) | "normal" |
+
+Two real differences:
+1. The capitalization/punctuation drift on test #4. Zero-shot gave "Normal." with a period; the Paths step uses exact-equals matching, so "Normal." failed all three paths and the Zap silently did nothing. ONE-SHOT fixed that — every output was the exact lowercase word.
+2. The borderline case on test #5 (badly-written but probably real customer) — zero-shot called it urgent; one-shot called it normal. That's debatable either way, but consistency mattered more than the exact call here.
+
+Cost of the one-shot: 50 extra tokens per call. Negligible. Benefit: 100% format compliance, more predictable output. Going to use one-shot by default for any classification prompt that feeds into a branching step. Cheap insurance.`}]},{heading:`Exercise 3 — Webhook Trigger + Multi-Step Zap`,description:`Lead-intake pipeline for my own freelance work. Webhook catches a form-shaped POST, AI extracts structured fields, Filter blocks spam, Sheets logs the lead, Slack notifies.`,qa:[{q:`Why I built this for my OWN freelance lead pipeline`,a:`The lab's example payload — "Marcus needs help automating his invoicing" — is exactly the kind of inbound lead I'm about to start fielding once the bakery outreach goes out. The Zap I build today IS my own intake system. Real test, real future use.
+
+Set up a form on my portfolio site (a simple Tally form I dropped behind a /freelance route) with three fields: name, email, project description. Form submissions hit a Zapier webhook. The webhook fires the Zap.
+
+Now ANY inbound lead — from the form, from a Calendly intake, from a manual curl during testing — flows through the same pipeline. Single source of truth for "people who want to talk to me about work."`},{q:`The 4-step Zap, end-to-end`,a:`Trigger: Webhooks by Zapier → Catch Hook. URL pasted into the Tally form's webhook setting.
+
+Step 1: AI by Zapier → "Prompt" action.
+
+Prompt:
+Extract structured information from this freelance inquiry.
+Return JSON with exactly these keys: name, email, project_type, budget_signal, is_real_lead.
+
+- project_type: one of "automation", "web_app", "ai_feature", "other"
+- budget_signal: one of "stated", "implied_high", "implied_low", "missing"
+- is_real_lead: boolean — true if this is a genuine inquiry, false if spam, link-shorteners, or unrelated text
+
+Example:
+Input: "Hi, I run a small bakery and I'd love help automating my custom order intake. Budget around $300."
+Output: {"name":"","email":"","project_type":"automation","budget_signal":"stated","is_real_lead":true}
+
+Input: {{trigger.message}}
+
+Output gets parsed as JSON in the next step. Zapier handles the parsing automatically when I reference {{ai_step.project_type}} downstream.
+
+Step 2: Filter by Zapier. Continue only if {{ai_step.is_real_lead}} equals "true". (Note: Zapier returns LLM booleans as strings, so I'm matching the string "true" not the boolean — caught this on the first test run where the Filter rejected everything because I was matching against the JS true.)
+
+Step 3: Google Sheets → Create Spreadsheet Row in my "Freelance Pipeline" sheet. Columns: timestamp, name, email, project_type, budget_signal, raw_message, source.
+
+Step 4: Slack → Send Direct Message to myself with a one-line summary:
+
+🎯 New lead: {{trigger.name}} ({{ai_step.project_type}}, budget {{ai_step.budget_signal}})
+
+End to end on a real test POST: ~6 seconds from webhook fire to Slack ding. Fast enough that I'd notice in real time.`},{q:`Level 2 — sent a spam-shaped POST, watched the Filter stop it`,a:`Two tests, side by side.
+
+Test A (real lead):
+curl -X POST -H "Content-Type: application/json" -d '{
+  "name":"Marcus",
+  "email":"marcus@example.com",
+  "message":"I run a small bakery in Flagstaff and need help organizing custom cake orders. Right now I do everything in Instagram DMs and it is chaos. Budget around $300-500."
+}' YOUR_WEBHOOK_URL
+
+AI output:
+{"name":"Marcus","email":"marcus@example.com","project_type":"automation","budget_signal":"stated","is_real_lead":true}
+
+Filter passed → Sheet row added → Slack DM fired.
+
+Test B (spam):
+curl -X POST -H "Content-Type: application/json" -d '{
+  "name":"Get rich",
+  "email":"deals@spamsite.example",
+  "message":"CLICK HERE for amazing crypto opportunity! 1000x returns!"
+}' YOUR_WEBHOOK_URL
+
+AI output:
+{"name":"","email":"deals@spamsite.example","project_type":"other","budget_signal":"missing","is_real_lead":false}
+
+Filter step rejected it ("is_real_lead" was the string "false"). Zap ended at the Filter. NO Sheet row, NO Slack ping. Just a "Filter did not pass" entry in Task History.
+
+Two minutes of testing surfaced one bug — the boolean-as-string thing — that I might have shipped without catching. Worth doing the negative test EVERY time, not just the positive one.`},{q:`Level 3 — what 'junk' looks like and how I guarded against it`,a:`The AI doesn't always return clean JSON. Caught three categories of junk in testing:
+
+1. Valid JSON wrapped in markdown code fences. Output starts with \`\`\`json and ends with \`\`\`. Zapier's parser then fails on the fence characters. Guard: refined the prompt to add "Return JSON only — no markdown formatting, no code fences, no explanation." Cut the rate of this junk from ~1 in 5 calls to 0 in 30.
+
+2. Extra fields the prompt didn't ask for. Sometimes the AI adds "confidence": 0.8 or "reasoning": "..." even though I never asked. Doesn't break anything — Zapier just ignores fields I'm not referencing — but it bloats token usage. Guard: tightened the prompt: "Return ONLY these keys: name, email, project_type, budget_signal, is_real_lead. Do not add other keys."
+
+3. Hallucinated field values. Once it returned "project_type":"automotive" (close to "automation" but wrong). Once it returned "budget_signal":"medium" (not one of my four enum options). Guard: added a downstream Formatter step that maps unknown values to safe defaults. project_type → "other" if not in my enum. budget_signal → "missing" if not in my enum. is_real_lead → false (the safe default) if not the string "true".
+
+The Formatter step is the part I'm proud of. It's the equivalent of input validation in a real API — never trust the model's output to be in the shape I asked for. Even with a well-tuned prompt and one-shot example, LLMs drift. Belt-and-suspenders defensive coding.
+
+Going to write this up as a Zapier pattern doc in my notes — "AI output validation" — for future reference. Probably going to need it again on every AI-driven Zap I build.`}]},{heading:`Exercise 4 — Build Your Sellable Workflow (the Bakery Order Management)`,description:`Two Zaps that together solve the three-channel chaos from yesterday's pitch. $300 flat, owner owns everything. This is the artifact I'll demo at coffee with the first bakery prospect.`,qa:[{q:`Mapping yesterday's pitch to Zapier — two Zaps, three channels`,a:`Yesterday I scoped this offering as "one order management system across three channels — custom orders, daily specials, wholesale." Today I built it.
+
+The architecture is TWO Zaps, not one big one. Reason: the triggers are different shapes. Order intake fires on form submissions (irregular, customer-initiated). Daily specials posting fires on a schedule (regular, time-of-day-initiated). Trying to cram both into one Zap is a tortured design. Two clean Zaps are easier to maintain and easier to explain to a non-technical owner.
+
+Zap 1 — Order Intake (custom + wholesale):
+- One Tally form with conditional fields (custom cake / catering / wholesale)
+- Submission triggers the Zap
+- AI categorizes + extracts structured fields
+- Filter blocks spam
+- Sheet append + customer email confirmation + owner Slack/SMS
+
+Zap 2 — Daily Specials Posting (scheduled):
+- Schedule trigger (7am daily)
+- Reads "Today's Specials" Google Sheet tab
+- Formats the row into IG-ready text
+- Posts to Instagram via Later or Buffer (depending on what owner uses)
+- Updates a "today" page on the bakery's website via webhook
+
+Two Zaps, three channels handled. Owner has ONE place to update specials each morning. ONE Sheet that's the source of truth for orders. Customer experience is unified even though the backend is two flows.`},{q:`Workflow documentation (Phase 3 portfolio artifact)`,a:`**Workflow Name:** Bakery Order Management (Three-Channel)
+
+**For:** Small bakeries or cafés with substantial plant-based offerings, active Instagram (~1k-5k followers), and a custom-order side of the business. Currently fielding orders via Instagram DMs, texts, and gut-feel daily posting.
+
+**Trigger 1 (Order Intake):** Tally form submission via Webhooks by Zapier → Catch Hook. Form has conditional fields for custom cake, catering, or wholesale.
+
+**Trigger 2 (Daily Specials):** Schedule by Zapier → Every Day at 7am.
+
+**Actions for Order Intake (in order):**
+1. **AI by Zapier (Prompt)** → classify the order (custom-individual, catering, wholesale) and extract structured fields (date, item, dietary notes, customer contact)
+2. **Formatter by Zapier** → normalize the phone number to E.164, format the date as ISO
+3. **Filter by Zapier** → continue only if AI didn't flag as spam or incomplete
+4. **Google Sheets → Create Row** in the "Orders" tab: timestamp, customer name, contact, order type, item, date needed, dietary notes, status=pending
+5. **Email by Zapier → Send Outbound Email** to the customer with the order summary, expected confirmation timeline, and a "we'll reach out within 24 hours" note
+6. **Slack (or SMS via Twilio) → Send Message** to the owner with the one-line summary
+
+**Actions for Daily Specials (in order):**
+1. **Google Sheets → Get Row** from the "Today's Specials" tab (owner updates this each morning before the Zap fires)
+2. **Formatter by Zapier** → format the row contents into IG-ready text (emoji prefixes, line breaks between items, "available today only" tag)
+3. **Buffer or Later → Schedule Post** to the bakery's Instagram (immediate or queued, depending on owner preference)
+4. **Webhook → POST** to a small endpoint on the bakery's website that updates the "today" page (or, if no website, skip this step)
+
+**What it does:** Turns "custom orders in DMs + daily specials posted manually + wholesale orders by text" into one form, one spreadsheet, one daily post pipeline. Owner updates specials in ONE place; the rest fans out automatically.
+
+**Time saved per week (estimate):** 5-10 hours of admin labor across the three channels. At a $30/hour effective rate, that's $150-300/week of recovered owner time.
+
+**What I'd charge:** **$300 flat, one-time. Owner signs up for Zapier under her own email, owns the Google Sheet, owns the Tally form. I configure, test together, hand over a 1-page setup doc + 30-min walkthrough video. No recurring fee to me.**
+
+**Recurring cost to the owner (not me):** Zapier free tier handles ~100 tasks/month and might cover them. If volume requires, Starter plan is ~$19.99/mo. Tally and Google Sheets are free. Later/Buffer is free for low post volume or ~$25/mo for higher tiers. Owner's total recurring is somewhere between $0 and $50/mo — depending on their volume.`},{q:`Level 3 — Basic tier vs Premium tier`,a:`Two tiers, same baseline:
+
+BASIC ($300 flat) — the two Zaps above. Order intake + daily specials posting. Owner owns everything, no recurring fee to me.
+
+PREMIUM ($500 flat) — adds:
+- **Wholesale recurring orders.** A third Zap that fires every Friday at 6pm, reads the "Wholesale Standing Orders" Sheet tab, generates the weekend production list, emails it to the owner. Eliminates the "wait, what do I owe Yoga Studio X this Saturday?" thought.
+- **Customer rebook prompts for custom orders.** 8 weeks after a custom cake delivery, an automated email goes to the customer: "Hi [name] — your last cake was [item] for [event]. Anything coming up we could help with?" Soft re-engagement.
+- **Weekly recap email.** Every Sunday at 8pm, a Google Sheets-driven email summarizes the week's orders, total revenue from the form-driven channel, and any flagged "needs review" items. Helps owner see the volume and ROI without opening the Sheet.
+- **One round of 30-day post-launch tweaks included.** First month after handoff, I'm on call for one round of "actually can we change the email template?" or "the form field names should be different" requests. Reasonable scope, not unlimited.
+
+Pricing logic: Premium adds one more Zap + the customer rebook automation + the recap report + 30-day support. The $200 price gap reflects roughly 4-6 hours of additional configuration work + the support window.
+
+Both tiers stay one-time-only. No recurring fee to me at either tier. That's the consistent pitch.`},{q:`What the Zapier build taught me about my own pricing`,a:`Three things.
+
+First, the bakery's actual usage probably fits in Zapier's free tier. Let me do the math:
+- Custom orders: ~10/week × 4-step Zap = 40 tasks
+- Wholesale orders: ~5/week × 4-step Zap = 20 tasks  
+- Daily specials posting: 7 days × 3 tasks per fire = 21 tasks
+- Total: ~80-100 tasks/month
+
+Zapier's free tier is 100 tasks/month, with the limit lifting on the Starter plan at $19.99/mo. So most bakeries can run this on free tier indefinitely. The "$0 to $50/mo recurring" range I quoted is honest — for most bakeries it'll be $0.
+
+Second, the email/SMS confirmation step is the cost-watching point. Email via Zapier is free (built-in). SMS via Twilio is ~$0.008 each. For 15 orders/week × 4 weeks = 60 SMS/month = ~$0.50/month. Not enough to matter. Email is the right primary channel anyway because cake customers expect a confirmation that includes order details, not a one-line SMS.
+
+Third, my $300 price might actually be too cheap. The build is 1-2 weekends for the first customer, 4-6 hours for subsequent customers. If I price the FIRST one at $250 (with testimonial agreement) and subsequent ones at $400-500 after I have a case study, the per-hour rate climbs respectably. The cheap first sale is the investment in the case study.
+
+What I'd NOT change: the no-recurring-fee model. Bakery margins are too tight for a recurring subscription to me. They'll happily pay $300-500 once. They won't pay $30/mo indefinitely. Pricing has to match the customer's tolerance, not just what I could charge in theory.`}]},{heading:`Exercise 5 — Compare Lab: Same Workflow in Make.com`,description:`Rebuilt a 3-step slice of the bakery order intake in Make.com. Took 30 minutes flat.`,qa:[{q:`What I built in Make.com`,a:`Picked Make.com over Pipedream because the visual canvas is a genuinely different mental model from Zapier's linear flow. Pipedream would have just felt like "Zapier but I write JS in the steps" — interesting, but the comparison is less informative.
+
+Built 3 steps (compressed version of the order intake Zap):
+1. Webhooks → Custom webhook (same trigger pattern)
+2. OpenAI → Create a chat completion (same classification + extraction call)
+3. Google Sheets → Add a row
+
+In Make.com, the steps appear as circular "modules" on a canvas, connected by visible arrows. You can branch by adding a Router module, which creates multiple downstream paths. The Filter equivalent is a "Filter" condition attached to a connection between modules.
+
+Tested with the same curl POST I used for Zapier. Worked end-to-end on the second try (the first try, I forgot to map the JSON body fields and Make couldn't find them in the AI step's input).`},{q:`The 3 sentences (for the verbal demo)`,a:`**Which felt easier? Why?**
+Zapier felt easier for the first 5 minutes — the linear step-by-step wizard tells you exactly what to do next, no decisions about layout. Make.com felt MORE POWERFUL after the first 15 minutes — the canvas view shows the whole workflow at once, and complex branching is visually clearer than Zapier's nested Paths. Trade-off: Zapier optimizes for "first Zap fast"; Make optimizes for "complex Zap legible."
+
+**Which had better integrations for the specific case?**
+Zapier had a direct Buffer integration; Make.com required me to use the generic HTTP module to call Buffer's REST API directly. For a developer that's fine — it's literally a POST request — but for a non-technical bakery owner who might one day want to peek at her own automation, Zapier's pre-built modules win. Both had identical OpenAI integrations.
+
+**Which would I pick for this client, and why?**
+For the bakery, Zapier. The owner is not a developer; she'll never touch the workflow herself, but if she ever wants a simple change (different email template, change the time of day the specials post fires), I want her to be able to ask another freelancer or her tech-savvy cousin to handle it. Zapier's UI is dramatically more approachable for that handoff. Make.com would be the right call for a workflow I knew I'd be maintaining myself in perpetuity, or one where the visual canvas would help explain a complex flow to a stakeholder.`},{q:`What surprised me about the comparison`,a:`Two things.
+
+First — Make.com is meaningfully cheaper at scale. Their free tier is 1,000 operations/month vs Zapier's 100 tasks/month. Paid tiers are similarly priced but Make's "operations" are counted differently (a Router with 3 paths is 3 ops, but Zapier counts each step in the path). For the bakery's projected 80-100 tasks/month, both tools' free tiers would work. For a scaled version of the offering serving 10 bakeries from one account, Make would win on cost.
+
+Second — the visual canvas changed how I designed the workflow. In Zapier, I built the Zap in a strict linear sequence because that's what the UI nudges you toward. In Make, I started thinking in branches earlier because the canvas made branching FEEL natural. The tool shapes the design.
+
+Honest conclusion: I'd probably charge the same $300 flat regardless of which tool I used. But for THIS client, in THIS situation, Zapier is the right choice because of the handoff problem. The day I have a client who's technical enough to want to peek at the workflow themselves, I'd reach for Make.
+
+The lab's framing is correct — nobody pays me to be a "Zapier expert." They pay me to pick the right tool. Knowing the landscape is what makes this a defensible price.`}]},{heading:`Peer Activity — Verbal Mini-Demo`,description:`2 minutes walking partner through the bakery order intake Zap. Partner asked a real follow-up.`,qa:[{q:`My 2-minute walkthrough`,a:`Screen-shared Zapier with the Exercise 4 order intake Zap open in edit view. Pointed at each step in sequence.
+
+"This is an order intake workflow for small bakeries. The trigger is a webhook — a customer fills out an order form on the bakery's site, the form fires a POST to Zapier, the Zap takes over from there.
+
+Step one is the AI step. It classifies the order — custom cake, catering, or wholesale — and extracts structured fields from the free-text description. It also flags incomplete orders or obvious spam. The AI is doing what a human order-taker would do but in 2 seconds instead of 2 minutes.
+
+Step two is a Formatter — normalizes the phone number to a standard format, parses the date string into a real datetime. Boring but necessary; downstream steps assume clean data.
+
+Step three is a Filter — only continue if the AI didn't flag the order as spam or incomplete. If something's wrong, the Zap ends silently and the owner sees a 'needs review' flag in her dashboard.
+
+Step four is a Sheets append — the order lands in her 'Orders' tab. That tab is the source of truth for everything — the customer's contact info, what they want, when they need it, status.
+
+Step five is an email to the customer confirming receipt of the order, with the timeline for when she'll get back to them. Sets expectations cleanly.
+
+Step six is a Slack ping (or SMS via Twilio depending on owner preference) to the bakery owner with a one-line summary of the new order.
+
+End to end: customer submits the form, 6 seconds later they have a confirmation email, the owner has the order on her phone with the customer's info already structured. No more DM thread archaeology.
+
+Who pays $300 for this: a small plant-based-friendly bakery that's currently fielding 10+ custom orders a week through Instagram DMs and texts. The pain is the unstructured, scattered communication. The fix is one form, one Sheet, one email confirmation. Recovers 5-10 hours of admin labor per week. Pays for itself in the first week."
+
+Ended on the Zap's Task History view showing five successful test runs.`},{q:`Partner's clarifying question and my answer`,a:`Partner's question: "What if the AI extracts the wrong fields — gets the date wrong or misses an allergy note? You're going to bake the wrong thing."
+
+My answer: "Real risk. Three layers of mitigation. First, the email confirmation that goes to the customer in step five SHOWS the extracted fields back to them. 'We got your order: chocolate cake, gluten-free, for Saturday May 30 at 2pm. Please reply if anything looks wrong.' If the AI misread the date or missed the gluten-free note, the customer catches it and replies. That's a human-in-the-loop without forcing the owner to be the human.
+
+Second, the owner sees the full structured order in her Sheet AND the original raw message text. So when she reviews the order before baking, she's looking at both the AI's interpretation and the source. If she sees a mismatch, she fixes the Sheet and contacts the customer.
+
+Third, the AI prompt is tuned to be CONSERVATIVE on extraction. If the customer wrote 'I think Saturday' or 'maybe May 30,' the AI flags the date as 'uncertain' rather than committing to one. The Filter step routes uncertain orders to a 'needs review' path where the owner gets a Slack ping instead of an auto-confirmation.
+
+This is exactly the kind of constraint that justifies the $300 price for the Zapier version. At low volume (the bakery's reality), AI + human review catches 95%+ of issues. At 10x volume, that 5% becomes painful and the bakery would need a custom build with structured form fields (radio buttons for date, checkboxes for allergens) instead of free-text. Same upgrade-when-the-volume-justifies-it logic that the groomer pitch had."
+
+What this answer demonstrated: I'm not selling AI as magic. I'm selling AI plus human-in-the-loop as the appropriate tool at the appropriate scale, with a clear honest path to upgrade if scale changes. That framing is more credible than overselling, and it sets up future sales.`},{q:`What saying it out loud taught me`,a:`Two things, both useful for the Phase 3 gate prep.
+
+First, I had to make a SPECIFIC argument for why Zapier was the right choice for THIS client. The lab's framing is right — "Zapier expert" isn't a credential. "Picked the right tool for the right client" is. Saying it out loud forced me to articulate the trade in plain English, not just feel it in my head.
+
+Second, when partner asked the wrong-extraction question, I had three layers of answer ready — mitigation, recovery, upgrade path. That layered structure is what makes a question feel HANDLED instead of dodged. The Phase 3 gate is going to ask harder questions than this. Getting comfortable with "yes that's a real risk, here's the mitigation, here's the recovery, here's when it stops being acceptable" is the skill.
+
+Recording this format in my notes: when challenged on a system's limits, answer in three layers — what prevents it normally, what catches it when prevention fails, what changes the architecture when failure becomes too frequent. That's the engineering shape of a credible answer.`}]},{heading:`Going Deeper`,description:`Picked the self-host one because the recurring-fee escape hatch matters for personal projects. Noted the other three for later.`,qa:[{q:`Self-hosted automation — rebuilt the daily specials posting as a Node.js cron job`,a:`Wrote a Node.js script that does exactly what the "daily specials posting" Zap from Exercise 4 does — reads from a Google Sheet at 7am, posts the daily specials to Instagram, updates the website's "today" page. Deployed it on Replit's free tier.
+
+// index.mjs
+import cron from 'node-cron'
+import { google } from 'googleapis'
+import fetch from 'node-fetch'
+
+// every day at 7am
+cron.schedule('0 7 * * *', async () => {
+  const specials = await fetchTodaysSpecials() // Google Sheets API
+  
+  const igText = formatForInstagram(specials)
+  await postToInstagram(igText) // via Buffer/Later API or direct IG Graph API
+  
+  await fetch(\`https://\${process.env.BAKERY_DOMAIN}/api/today\`, {
+    method: 'POST',
+    headers: { 'Authorization': \`Bearer \${process.env.WEBSITE_TOKEN}\` },
+    body: JSON.stringify({ specials }),
+  })
+  
+  console.log(\`Posted \${specials.length} specials at \${new Date().toISOString()}\`)
+})
+
+What's good about this vs Zapier:
+- ZERO recurring fees beyond the Instagram scheduler (if used). Replit's free tier hosts the cron forever.
+- Full code control — I can change the IG template, add personalization, handle special cases (Mondays only post savory items, weekends post sweets), all in JS.
+- Version control — git, branches, rollback. Zapier has none of that.
+- Logs in Replit's console. Better debugging than Zapier's task history.
+
+What's bad about it:
+- Replit's "always-on" requires a paid tier ($7/mo for Hacker plan). Free tier shuts down on inactivity, which would mean missed cron triggers. Workaround: external uptime ping every 5 minutes to keep it alive. Janky.
+- Instagram Graph API setup (Facebook Business account, app review, access tokens) is a setup tax that Zapier's Buffer integration hides.
+- Non-technical bakery owner can't change anything herself.
+
+When I'd use this over Zapier: my OWN automations, where I want zero recurring fees and full control. For client work like the bakery pitch, Zapier wins on handoff and maintenance.
+
+Putting this in my freelance pricing logic: when a bakery asks "can you make it even cheaper than $300," the honest answer is "yes — I can write the same thing as code and host it on Replit for free, but if it breaks YOU can't fix it. The $300 is partly insurance and partly the documentation handoff." Some clients pick the cheaper option knowing the trade. Most happily pay for the structure.`},{q:`Pipedream's code-first approach — noted, not built`,a:`Spent 10 minutes reading Pipedream's docs and the quickstart. The pitch is "Zapier shape, but every step is JavaScript by default." You CAN use their pre-built integrations as no-code drag-and-drop, but the killer feature is writing arbitrary JS in any step.
+
+What it'd be good for: workflows I'd build for myself, where I want the no-code triggers (webhooks, schedules, integrations) without giving up the ability to write actual logic. Better than self-hosting Node because Pipedream handles the cron and the hosting.
+
+What it'd be bad for: client work. The "your client's automation is JavaScript files" pitch is a non-starter for a bakery owner.
+
+Not building it today — the Make.com comparison from Exercise 5 already covered the "compare Zapier to another tool" muscle. Pipedream would mostly re-prove the same lesson. Saved as a "next time I need a personal automation" tool.`},{q:`MCP server exposure — Phase 4 capstone preview territory`,a:`Read the lab's note. The pitch: take a Zap-shaped workflow and expose it as a tool that an AI agent (like Claude or ChatGPT with tools enabled) can call directly via the Model Context Protocol.
+
+That's a whole different level of system. Instead of a human filling out a form and a Zap firing, the human ASKS THEIR AI "can you order a custom cake from [bakery] for next Saturday" and the AI calls my MCP server, which calls the same order intake logic.
+
+Not touching this today. It's listed as "Phase 4 capstone preview territory" — meaning it's a topic that comes back. Noting it for Phase 4. The skills I'd need: expose an HTTP endpoint that speaks MCP's JSON-RPC dialect, register the endpoint with a server, handle the tool-call semantics. Real but big.
+
+What I want to remember about it for now: the no-code automation I built today (Zapier) and the code-based automation (Node.js cron) and the MCP-exposed automation are three points on the same axis. Each one trades off control vs ease-of-handoff differently. MCP gives the agent itself the ability to invoke the workflow, which is the highest-control + lowest-ease case so far.
+
+Going to come back to this in Phase 4. Today's job is to get the no-code muscle reps in.`},{q:`Steal a community Zap — found a clever Path pattern`,a:`Browsed Zapier's templates section, looking for ones with non-obvious Path or Filter logic.
+
+Found one for ROUTING SUPPORT TICKETS by priority + topic combination. The clever pattern: instead of a single Paths step with 6 branches (urgent-billing, urgent-technical, urgent-general, normal-billing, etc.), the author used TWO sequential Paths steps:
+- First Paths: branch on priority (urgent / normal)
+- Second Paths (inside each priority branch): branch on topic (billing / technical / general)
+
+Why this is better than a flat 6-branch Paths:
+- Easier to read in the Zap editor — the flow reads top-to-bottom as "first decide priority, then decide topic"
+- Each branch is responsible for ONE decision, which is easier to debug
+- Adding a new topic only requires changing the second-level Paths, not adding a 7th flat branch
+
+Going to use this pattern in the bakery order intake Zap when I add tiered handling (custom cake → individual review vs catering → bulk pricing path vs wholesale → recurring-order add-on). Two stacked Paths steps will be clearer than one fat Paths with all the combinations.
+
+This is the kind of pattern I wouldn't have invented on my own. The community templates are a free education in how no-code experts think about flow design. Bookmarking three more to study this week.`}]}]}]}];d.flatMap(e=>e.days);var f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))();function m({activeWeek:e,activeDayInWeek:t}){return(0,p.jsxs)(`header`,{style:{position:`relative`,zIndex:1,padding:`52px 32px 36px`,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.7rem`,color:`#525252`,letterSpacing:`0.15em`,textTransform:`uppercase`,marginBottom:`16px`},children:`Next Chapter Initiative — Program Documentation`}),(0,p.jsxs)(`h1`,{style:{fontSize:`clamp(2rem, 5vw, 3.2rem)`,fontWeight:`normal`,lineHeight:1.15,marginBottom:`14px`,letterSpacing:`-0.02em`,color:`#f5f5f5`},children:[`Diana Busch`,(0,p.jsx)(`br`,{}),(0,p.jsx)(`span`,{style:{color:`#525252`,fontStyle:`italic`},children:`learning out loud.`})]}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#6b7280`,lineHeight:1.7,maxWidth:`520px`},children:`A running record of learning to build with AI inside the Next Chapter program. Every prompt, every answer, every moment it surprised me — documented here.`}),(0,p.jsx)(`div`,{style:{display:`flex`,gap:`16px`,marginTop:`28px`,alignItems:`center`},children:d.map((n,r)=>(0,p.jsxs)(`div`,{style:{display:`flex`,gap:`6px`,alignItems:`center`},children:[n.days.map((n,i)=>(0,p.jsx)(`div`,{style:{width:`6px`,height:`6px`,borderRadius:`50%`,background:r===e&&i===t?n.color:r<e||r===e&&i<t?`#3a3a3a`:`#1e1e1e`,transition:`background 0.3s`}},i)),r<d.length-1&&(0,p.jsx)(`div`,{style:{width:`12px`,height:`1px`,background:`#1e1e1e`,marginLeft:`2px`}})]},r))})]})}function h({activeWeek:e,activeDayInWeek:t,setActiveWeek:n,setActiveDayInWeek:r}){let i=d[e],a=i.days[t]?.color||`#f59e0b`;return(0,p.jsxs)(`div`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,borderBottom:`1px solid #1a1a1a`},children:[(0,p.jsx)(`div`,{style:{display:`flex`,padding:`0 32px`,gap:`0`,borderBottom:`1px solid #141414`},children:d.map((t,i)=>(0,p.jsx)(`button`,{onClick:()=>{n(i),r(0)},style:{background:`none`,border:`none`,borderBottom:i===e?`2px solid ${t.days[0]?.color||`#f59e0b`}`:`2px solid transparent`,padding:`12px 20px 10px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.68rem`,letterSpacing:`0.08em`,textTransform:`uppercase`,color:i===e?`#d4d4d4`:`#3a3a3a`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`},children:t.label},i))}),(0,p.jsx)(`nav`,{style:{display:`flex`,padding:`0 32px`,overflowX:`auto`,scrollbarWidth:`thin`,scrollbarColor:`${a} transparent`},className:`day-nav`,children:i.days.map((e,n)=>(0,p.jsx)(`button`,{onClick:()=>r(n),style:{background:`none`,border:`none`,borderBottom:n===t?`2px solid ${e.color}`:`2px solid transparent`,padding:`14px 18px 12px`,cursor:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,letterSpacing:`0.05em`,color:n===t?e.color:`#4b5563`,whiteSpace:`nowrap`,transition:`color 0.2s, border-color 0.2s`,flexShrink:0},children:e.label},n))})]})}function g(){return(0,p.jsxs)(`footer`,{style:{position:`relative`,zIndex:1,borderTop:`1px solid #141414`,padding:`24px 32px`,maxWidth:`780px`,margin:`0 auto`,display:`flex`,justifyContent:`space-between`,alignItems:`center`,flexWrap:`wrap`,gap:`8px`},children:[(0,p.jsx)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#2d2d2d`,letterSpacing:`0.1em`},children:`DIANA BUSCH · NEXT CHAPTER · 2026`}),(0,p.jsx)(`a`,{href:`https://github.com/DBusch-Developer/pre-work`,target:`_blank`,rel:`noopener noreferrer`,style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:`#3a3a3a`,textDecoration:`none`,letterSpacing:`0.1em`,transition:`color 0.2s`},children:`github ↗`})]})}function _({q:e,a:t,link:n,accentColor:r}){let[i,a]=(0,l.useState)(!1);return(0,p.jsxs)(`div`,{style:{borderLeft:`2px solid ${i?r:`#2a2a2a`}`,transition:`border-color 0.2s`,marginBottom:`2px`},children:[(0,p.jsxs)(`button`,{onClick:()=>a(!i),style:{width:`100%`,background:i?`rgba(255,255,255,0.03)`:`transparent`,border:`none`,padding:`14px 20px`,textAlign:`left`,cursor:`pointer`,display:`flex`,justifyContent:`space-between`,alignItems:`flex-start`,gap:`12px`,transition:`background 0.2s`},children:[(0,p.jsxs)(`span`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.82rem`,color:`#d4d4d4`,lineHeight:1.5,flex:1},children:[(0,p.jsx)(`span`,{style:{color:r,marginRight:`8px`,opacity:.7},children:`›`}),e]}),(0,p.jsx)(`span`,{style:{color:r,fontSize:`1.1rem`,flexShrink:0,lineHeight:1,transform:i?`rotate(45deg)`:`rotate(0)`,transition:`transform 0.2s`,marginTop:`2px`},children:`+`})]}),i&&(0,p.jsxs)(`div`,{style:{padding:`0 20px 16px 40px`,fontFamily:`'Courier New', monospace`,fontSize:`0.8rem`,color:`#9ca3af`,lineHeight:1.8,whiteSpace:`pre-wrap`,wordBreak:`break-word`},children:[t,(0,p.jsx)(`br`,{}),n&&(0,p.jsx)(`a`,{href:n.url,target:`_blank`,rel:`noreferrer`,style:{display:`inline-block`,marginTop:`8px`,color:r,textDecoration:`none`,borderBottom:`1px solid ${r}`,opacity:.85},children:n.label})]})]})}function v({section:e,accentColor:t}){return(0,p.jsxs)(`div`,{style:{marginBottom:`28px`},children:[(0,p.jsxs)(`div`,{style:{padding:`0 4px 10px`,borderBottom:`1px solid #1f1f1f`,marginBottom:`4px`},children:[(0,p.jsx)(`div`,{style:{fontFamily:`'Georgia', serif`,fontSize:`0.95rem`,fontWeight:`bold`,color:`#e5e5e5`,marginBottom:`4px`},children:e.heading}),(0,p.jsx)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:`#525252`,letterSpacing:`0.02em`},children:e.description})]}),e.qa.map((e,n)=>(0,p.jsx)(_,{q:e.q,a:e.a,link:e.link,accentColor:t},n))]})}function y({day:e,week:t,activeDayInWeek:n,onPrev:r,onNext:i,isFirst:a,isLast:o}){return(0,p.jsxs)(`main`,{style:{position:`relative`,zIndex:1,maxWidth:`780px`,margin:`0 auto`,padding:`40px 32px 80px`},children:[(0,p.jsxs)(`div`,{style:{marginBottom:`40px`},children:[(0,p.jsxs)(`div`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.65rem`,color:e.color,letterSpacing:`0.2em`,textTransform:`uppercase`,marginBottom:`8px`,opacity:.8},children:[t.label,` — Day `,n+1]}),(0,p.jsx)(`h2`,{style:{fontSize:`clamp(1.5rem, 3vw, 2.2rem)`,fontWeight:`normal`,letterSpacing:`-0.02em`,marginBottom:`6px`,color:`#f0f0f0`},children:e.title}),(0,p.jsx)(`p`,{style:{fontFamily:`'Courier New', monospace`,fontSize:`0.78rem`,color:`#525252`,fontStyle:`italic`},children:e.subtitle})]}),e.sections.map((t,n)=>(0,p.jsx)(v,{section:t,accentColor:e.color},n)),(0,p.jsxs)(`div`,{style:{display:`flex`,justifyContent:`space-between`,marginTop:`48px`,paddingTop:`24px`,borderTop:`1px solid #1a1a1a`},children:[(0,p.jsx)(`button`,{onClick:r,disabled:a,style:{background:`none`,border:`1px solid #1f1f1f`,padding:`10px 20px`,cursor:a?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:a?`#2a2a2a`:`#6b7280`,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`← prev day`}),(0,p.jsx)(`button`,{onClick:i,disabled:o,style:{background:`none`,border:`1px solid ${o?`#1f1f1f`:e.color}`,padding:`10px 20px`,cursor:o?`not-allowed`:`pointer`,fontFamily:`'Courier New', monospace`,fontSize:`0.72rem`,color:o?`#2a2a2a`:e.color,letterSpacing:`0.05em`,transition:`color 0.2s, border-color 0.2s`},children:`next day →`})]})]})}function b(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(0),i=d[e],a=i.days[n];function o(){if(n>0)r(n-1);else if(e>0){let n=d[e-1];t(e-1),r(n.days.length-1)}}function s(){n<i.days.length-1?r(n+1):e<d.length-1&&(t(e+1),r(0))}let c=e===0&&n===0,u=e===d.length-1&&n===i.days.length-1;return(0,p.jsxs)(`div`,{style:{minHeight:`100vh`,background:`#0a0a0a`,color:`#e5e5e5`,fontFamily:`'Georgia', serif`},children:[(0,p.jsx)(`div`,{style:{position:`fixed`,inset:0,backgroundImage:`url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E")`,pointerEvents:`none`,zIndex:0,opacity:.4}}),(0,p.jsx)(m,{activeWeek:e,activeDayInWeek:n}),(0,p.jsx)(h,{activeWeek:e,activeDayInWeek:n,setActiveWeek:t,setActiveDayInWeek:r}),(0,p.jsx)(y,{day:a,week:i,activeDayInWeek:n,onPrev:o,onNext:s,isFirst:c,isLast:u}),(0,p.jsx)(g,{})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(b,{})}));
